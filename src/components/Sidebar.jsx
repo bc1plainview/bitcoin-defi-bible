@@ -1,0 +1,130 @@
+import { NavLink, useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+
+// Icons as simple components
+const icons = {
+  intro: '01',
+  slowfi: '02',
+  bitcoin: '03',
+  opnet: '04',
+  tokenwars: '05',
+  motoswap: '06',
+  nativeswap: '07',
+  stablecoins: '08',
+  motochef: '09',
+  hodl: '10',
+  moto: '11',
+  farming: '12',
+  strategy: '13',
+  deploy: '14',
+  farms: '15',
+  security: '16',
+}
+
+const navigation = [
+  {
+    title: 'Getting Started',
+    id: 'getting-started',
+    links: [
+      { name: 'Introduction', slug: 'introduction', icon: icons.intro },
+      { name: 'The SlowFi Thesis', slug: 'what-is-slowfi', icon: icons.slowfi },
+      { name: 'Why Bitcoin?', slug: 'why-bitcoin-defi', icon: icons.bitcoin },
+      { name: 'OP_NET Overview', slug: 'opnet-overview', icon: icons.opnet },
+      { name: 'Bitcoin Token Wars', slug: 'bitcoin-token-wars', icon: icons.tokenwars },
+    ]
+  },
+  {
+    title: 'Core Mechanics',
+    id: 'core-mechanics',
+    links: [
+      { name: 'Motoswap Exchange', slug: 'motoswap', icon: icons.motoswap },
+      { name: 'NativeSwap (BTC Trading)', slug: 'nativeswap', icon: icons.nativeswap },
+      { name: 'OP-20S Stablecoins', slug: 'op20s-stablecoins', icon: icons.stablecoins },
+      { name: 'MotoChef (Yield Farming)', slug: 'motochef', icon: icons.motochef },
+      { name: 'Proof of HODL', slug: 'proof-of-hodl', icon: icons.hodl },
+      { name: '$MOTO Token', slug: 'moto-token', icon: icons.moto },
+    ]
+  },
+  {
+    title: 'Playing the Games',
+    id: 'playing-games',
+    links: [
+      { name: 'Yield Farming', slug: 'yield-farming', icon: icons.farming },
+      { name: 'Farming Strategies', slug: 'farming-strategies', icon: icons.strategy },
+    ]
+  },
+  {
+    title: 'Creating the Games',
+    id: 'creating-games',
+    links: [
+      { name: 'Deploying Tokens', slug: 'deploying-tokens', icon: icons.deploy },
+      { name: 'Deploying Yield Farms', slug: 'deploying-farms', icon: icons.farms },
+    ]
+  },
+  {
+    title: 'Reference',
+    id: 'reference',
+    links: [
+      { name: 'Security', slug: 'security', icon: icons.security },
+    ]
+  }
+]
+
+// Count total pages
+const totalPages = navigation.reduce((acc, section) => acc + section.links.length, 0)
+
+export default function Sidebar({ isOpen }) {
+  const location = useLocation()
+  const [currentPageIndex, setCurrentPageIndex] = useState(0)
+
+  // Calculate current page index for progress
+  useEffect(() => {
+    let index = 0
+    for (const section of navigation) {
+      for (const link of section.links) {
+        if (location.pathname === `/docs/${link.slug}`) {
+          setCurrentPageIndex(index + 1)
+          return
+        }
+        index++
+      }
+    }
+  }, [location])
+
+  const progressPercent = (currentPageIndex / totalPages) * 100
+
+  return (
+    <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
+      {navigation.map((section) => (
+        <div key={section.id} className="sidebar-section">
+          <div className="sidebar-section-title">{section.title}</div>
+          <ul className="sidebar-nav">
+            {section.links.map((link) => (
+              <li key={link.slug}>
+                <NavLink
+                  to={`/docs/${link.slug}`}
+                  className={({ isActive }) => isActive ? 'active' : ''}
+                >
+                  <span className="nav-icon">{link.icon}</span>
+                  {link.name}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+
+      <div className="sidebar-progress">
+        <div className="sidebar-progress-label">
+          Progress: {currentPageIndex} / {totalPages}
+        </div>
+        <div className="sidebar-progress-bar">
+          <div
+            className="sidebar-progress-fill"
+            style={{ width: `${progressPercent}%` }}
+          />
+        </div>
+      </div>
+    </aside>
+  )
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40">
+  <defs>
+    <linearGradient id="motoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f7931a"/>
+      <stop offset="50%" style="stop-color:#ff6b35"/>
+      <stop offset="100%" style="stop-color:#f7931a"/>
+    </linearGradient>
+  </defs>
+  <circle cx="18" cy="20" r="14" fill="none" stroke="url(#motoGrad)" stroke-width="3"/>
+  <path d="M12 20 L18 14 L24 20 L18 26 Z" fill="url(#motoGrad)"/>
+  <text x="40" y="28" font-family="monospace" font-weight="bold" font-size="22" fill="url(#motoGrad)">MOTOSWAP</text>
+</svg>
