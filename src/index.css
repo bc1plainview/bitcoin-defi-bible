@@ -332,6 +332,26 @@ pre code {
   border-color: var(--btc-orange);
 }
 
+/* Mobile language toggle - hidden by default, shown on small screens */
+.lang-toggle-mobile {
+  display: none;
+  padding: 0.4rem 0.6rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--btc-orange);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-left: auto;
+}
+
+.lang-toggle-mobile:hover {
+  background: var(--btc-orange-dim);
+  border-color: var(--btc-orange);
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    LAYOUT - SIDEBAR
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -1074,6 +1094,10 @@ tbody tr:hover {
 @media (max-width: 480px) {
   .header-nav {
     display: none;
+  }
+
+  .lang-toggle-mobile {
+    display: block;
   }
 
   .header-logo .logo-main {

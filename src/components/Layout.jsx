@@ -129,6 +129,15 @@ export default function Layout() {
             {language === LANGUAGES.EN ? '中文' : 'EN'}
           </button>
         </nav>
+
+        {/* Mobile language toggle - visible when header-nav is hidden */}
+        <button
+          className="lang-toggle-mobile"
+          onClick={toggleLanguage}
+          aria-label="Toggle language"
+        >
+          {language === LANGUAGES.EN ? '中文' : 'EN'}
+        </button>
       </header>
 
       {/* Mobile sidebar overlay */}
