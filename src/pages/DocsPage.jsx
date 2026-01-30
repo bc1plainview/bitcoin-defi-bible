@@ -1,11 +1,15 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { docsContent } from '../content/docs'
+import { docsContentZh } from '../content/docs.zh'
+import { useLanguage, LANGUAGES } from '../context/LanguageContext'
 
 export default function DocsPage() {
   const { slug } = useParams()
   const navigate = useNavigate()
-  const doc = docsContent[slug]
+  const { language, t } = useLanguage()
+  const content = language === LANGUAGES.ZH ? docsContentZh : docsContent
+  const doc = content[slug]
 
   // Scroll to top on page change
   useEffect(() => {
@@ -32,10 +36,10 @@ export default function DocsPage() {
   if (!doc) {
     return (
       <div className="docs-content">
-        <h1>Page Not Found</h1>
-        <p>The documentation page you're looking for doesn't exist yet.</p>
+        <h1>{t('Page Not Found', '页面未找到')}</h1>
+        <p>{t("The documentation page you're looking for doesn't exist yet.", '您要查找的文档页面尚不存在。')}</p>
         <Link to="/docs/introduction" className="btn btn-primary" style={{ marginTop: '1rem' }}>
-          Go to Introduction
+          {t('Go to Introduction', '前往简介')}
         </Link>
       </div>
     )
@@ -50,7 +54,7 @@ export default function DocsPage() {
       <nav className="docs-nav">
         {doc.prev ? (
           <Link to={`/docs/${doc.prev.slug}`} className="docs-nav-link prev">
-            <div className="docs-nav-label">← Previous</div>
+            <div className="docs-nav-label">{t('← Previous', '← 上一篇')}</div>
             <div className="docs-nav-title">{doc.prev.title}</div>
           </Link>
         ) : (
@@ -58,7 +62,7 @@ export default function DocsPage() {
         )}
         {doc.next && (
           <Link to={`/docs/${doc.next.slug}`} className="docs-nav-link next">
-            <div className="docs-nav-label">Next →</div>
+            <div className="docs-nav-label">{t('Next →', '下一篇 →')}</div>
             <div className="docs-nav-title">{doc.next.title}</div>
           </Link>
         )}
@@ -86,7 +90,7 @@ export default function DocsPage() {
           borderRadius: '4px',
           border: '1px solid var(--border-color)'
         }}>→</kbd>
-        {' to navigate'}
+        {t(' to navigate', ' 导航')}
       </div>
     </article>
   )

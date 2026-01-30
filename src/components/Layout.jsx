@@ -1,6 +1,7 @@
 import { Outlet, Link, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Sidebar from './Sidebar'
+import { useLanguage, LANGUAGES } from '../context/LanguageContext'
 
 // External link icon
 const ExternalIcon = () => (
@@ -34,6 +35,7 @@ export default function Layout() {
   const isHome = location.pathname === '/'
   const [scrollProgress, setScrollProgress] = useState(0)
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const { language, toggleLanguage, t } = useLanguage()
 
   // Close sidebar on route change
   useEffect(() => {
@@ -91,7 +93,7 @@ export default function Layout() {
             to="/docs/introduction"
             className={location.pathname.startsWith('/docs') ? 'active' : ''}
           >
-            Documentation
+            {t('Documentation', '文档')}
           </Link>
           <span className="nav-divider" />
           <a
@@ -108,7 +110,7 @@ export default function Layout() {
             rel="noopener noreferrer"
             className="external-link"
           >
-            OP_NET Docs <ExternalIcon />
+            {t('OP_NET Docs', 'OP_NET 文档')} <ExternalIcon />
           </a>
           <a
             href="https://github.com/btc-vision"
@@ -118,6 +120,14 @@ export default function Layout() {
           >
             GitHub <ExternalIcon />
           </a>
+          <span className="nav-divider" />
+          <button
+            className="lang-toggle"
+            onClick={toggleLanguage}
+            aria-label="Toggle language"
+          >
+            {language === LANGUAGES.EN ? '中文' : 'EN'}
+          </button>
         </nav>
       </header>
 

@@ -315,6 +315,23 @@ pre code {
   opacity: 0.4;
 }
 
+.lang-toggle {
+  padding: 0.4rem 0.75rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--btc-orange);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.lang-toggle:hover {
+  background: var(--btc-orange-dim);
+  border-color: var(--btc-orange);
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    LAYOUT - SIDEBAR
    ═══════════════════════════════════════════════════════════════════════════ */

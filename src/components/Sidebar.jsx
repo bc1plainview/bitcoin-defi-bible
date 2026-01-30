@@ -1,5 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { useLanguage, LANGUAGES } from '../context/LanguageContext'
 
 // Icons as simple components
 const icons = {
@@ -21,7 +22,7 @@ const icons = {
   security: '16',
 }
 
-const navigation = [
+const navigationEn = [
   {
     title: 'Getting Started',
     id: 'getting-started',
@@ -70,12 +71,63 @@ const navigation = [
   }
 ]
 
+const navigationZh = [
+  {
+    title: '入门指南',
+    id: 'getting-started',
+    links: [
+      { name: '简介', slug: 'introduction', icon: icons.intro },
+      { name: 'SlowFi 理论', slug: 'what-is-slowfi', icon: icons.slowfi },
+      { name: '为什么选择比特币？', slug: 'why-bitcoin-defi', icon: icons.bitcoin },
+      { name: 'OP_NET 概述', slug: 'opnet-overview', icon: icons.opnet },
+      { name: '比特币代币战争', slug: 'bitcoin-token-wars', icon: icons.tokenwars },
+    ]
+  },
+  {
+    title: '核心机制',
+    id: 'core-mechanics',
+    links: [
+      { name: 'Motoswap 交易所', slug: 'motoswap', icon: icons.motoswap },
+      { name: 'NativeSwap (BTC交易)', slug: 'nativeswap', icon: icons.nativeswap },
+      { name: 'OP-20S 稳定币', slug: 'op20s-stablecoins', icon: icons.stablecoins },
+      { name: 'MotoChef (流动性挖矿)', slug: 'motochef', icon: icons.motochef },
+      { name: '持有证明', slug: 'proof-of-hodl', icon: icons.hodl },
+      { name: '$MOTO 代币', slug: 'moto-token', icon: icons.moto },
+    ]
+  },
+  {
+    title: '参与游戏',
+    id: 'playing-games',
+    links: [
+      { name: '流动性挖矿', slug: 'yield-farming', icon: icons.farming },
+      { name: '挖矿策略', slug: 'farming-strategies', icon: icons.strategy },
+    ]
+  },
+  {
+    title: '创建游戏',
+    id: 'creating-games',
+    links: [
+      { name: '部署代币', slug: 'deploying-tokens', icon: icons.deploy },
+      { name: '部署收益农场', slug: 'deploying-farms', icon: icons.farms },
+    ]
+  },
+  {
+    title: '参考资料',
+    id: 'reference',
+    links: [
+      { name: '安全性', slug: 'security', icon: icons.security },
+    ]
+  }
+]
+
 // Count total pages
-const totalPages = navigation.reduce((acc, section) => acc + section.links.length, 0)
+const totalPages = navigationEn.reduce((acc, section) => acc + section.links.length, 0)
 
 export default function Sidebar({ isOpen }) {
   const location = useLocation()
   const [currentPageIndex, setCurrentPageIndex] = useState(0)
+  const { language, t } = useLanguage()
+  const navigation = language === LANGUAGES.ZH ? navigationZh : navigationEn
 
   // Calculate current page index for progress
   useEffect(() => {
@@ -89,7 +141,7 @@ export default function Sidebar({ isOpen }) {
         index++
       }
     }
-  }, [location])
+  }, [location, navigation])
 
   const progressPercent = (currentPageIndex / totalPages) * 100
 
@@ -116,7 +168,7 @@ export default function Sidebar({ isOpen }) {
 
       <div className="sidebar-progress">
         <div className="sidebar-progress-label">
-          Progress: {currentPageIndex} / {totalPages}
+          {t('Progress', '进度')}: {currentPageIndex} / {totalPages}
         </div>
         <div className="sidebar-progress-bar">
           <div
