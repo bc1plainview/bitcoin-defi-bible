@@ -95,6 +95,12 @@ export default function Layout() {
           >
             {t('Documentation', '文档')}
           </Link>
+          <Link
+            to="/quiz"
+            className={location.pathname === '/quiz' ? 'active' : ''}
+          >
+            {t('Quiz', '测验')}
+          </Link>
           <span className="nav-divider" />
           <a
             href="https://motoswap.org"

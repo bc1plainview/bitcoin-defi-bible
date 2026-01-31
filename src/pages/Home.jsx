@@ -155,13 +155,40 @@ export default function Home() {
 
       <section style={{
         padding: '3rem 2rem',
+        background: 'var(--bg-secondary)',
+        borderTop: '1px solid var(--border-color)',
+        borderBottom: '1px solid var(--border-color)'
+      }}>
+        <div style={{
+          maxWidth: '600px',
+          margin: '0 auto',
+          textAlign: 'center'
+        }}>
+          <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📝</div>
+          <h2 style={{ borderBottom: 'none', marginBottom: '0.75rem' }}>
+            {t('Test Your Knowledge', '测试您的知识')}
+          </h2>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
+            {t(
+              'Think you understand SlowFi? Take the quiz to test your knowledge of Bitcoin DeFi, OP_NET, yield farming strategies, and security.',
+              '觉得自己理解 SlowFi 了吗？参加测验，测试您对比特币 DeFi、OP_NET、流动性挖矿策略和安全性的了解。'
+            )}
+          </p>
+          <Link to="/quiz" className="btn btn-primary">
+            {t('Take the Quiz', '参加测验')}
+          </Link>
+        </div>
+      </section>
+
+      <section style={{
+        padding: '3rem 2rem',
         textAlign: 'center'
       }}>
         <div style={{
           maxWidth: '500px',
           margin: '0 auto',
           padding: '2rem',
-          background: 'var(--bg-secondary)',
+          background: 'var(--bg-tertiary)',
           borderRadius: '16px',
           border: '1px solid var(--border-color)'
         }}>
