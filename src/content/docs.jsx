@@ -10,7 +10,15 @@ import {
   NativeSwapArchitectureDiagram,
   MasterChefForkExplosion,
   ProofOfHODLComparison,
-  MOTOFeeFlowDiagram
+  MOTOFeeFlowDiagram,
+  OPNETArchitectureDiagram,
+  FiftyFiftyMechanism,
+  TwoPhaseCommitDiagram,
+  YieldFarmingCycleDiagram,
+  RewardFlowDiagram,
+  EntryTimingDiagram,
+  LPvsSingleSidedDiagram,
+  TokenDeploymentDecisionDiagram
 } from '../components/Charts'
 
 // Placeholder component for images/GIFs that need to be added
@@ -53,6 +61,43 @@ const ImagePlaceholder = ({ description, type = 'image', aspectRatio = '16/9' })
     }}>
       {description}
     </div>
+  </div>
+)
+
+// ASCII Diagram component for text-based diagrams
+const ASCIIDiagram = ({ title, children }) => (
+  <div style={{
+    background: 'var(--bg-code)',
+    border: '1px solid var(--border-color)',
+    borderRadius: '8px',
+    padding: '1.5rem',
+    margin: '1.5rem 0',
+    overflow: 'auto'
+  }}>
+    {title && (
+      <div style={{
+        color: 'var(--btc-orange)',
+        fontFamily: 'var(--font-mono)',
+        fontSize: '0.75rem',
+        textTransform: 'uppercase',
+        letterSpacing: '0.1em',
+        marginBottom: '1rem',
+        textAlign: 'center'
+      }}>
+        {title}
+      </div>
+    )}
+    <pre style={{
+      fontFamily: 'var(--font-mono)',
+      fontSize: '0.8rem',
+      lineHeight: '1.4',
+      color: 'var(--text-secondary)',
+      margin: 0,
+      whiteSpace: 'pre',
+      textAlign: 'center'
+    }}>
+      {children}
+    </pre>
   </div>
 )
 
@@ -468,11 +513,7 @@ export const docsContent = {
           correct execution where every participant must arrive at exactly the same result.
         </p>
 
-        <ImagePlaceholder
-          type="diagram"
-          description="OP_NET architecture diagram: Bitcoin L1 (data layer) → OP_NET nodes (execution) → State consensus"
-          aspectRatio="16/9"
-        />
+        <OPNETArchitectureDiagram />
 
         <p>
           Think of it like this: Bitcoin transactions can include arbitrary data in their
@@ -839,11 +880,7 @@ export const docsContent = {
           have already exited at better prices.
         </p>
 
-        <ImagePlaceholder
-          type="diagram"
-          description="50/50 mechanism: Seller joins queue → 50% impacts price immediately → 50% impacts when their tokens start selling"
-          aspectRatio="16/9"
-        />
+        <FiftyFiftyMechanism />
 
         <h2>The Two-Phase Commit Protocol</h2>
         <p>
@@ -853,11 +890,7 @@ export const docsContent = {
           ETH. On Bitcoin, you've lost your money.
         </p>
 
-        <ImagePlaceholder
-          type="gif"
-          description="Two-phase commit animation: Phase 1 (reservation locks price) → Wait → Phase 2 (execution at locked price)"
-          aspectRatio="16/9"
-        />
+        <TwoPhaseCommitDiagram />
 
         <p>
           NativeSwap solves this with a <strong>two-phase commit protocol</strong>:
@@ -2000,11 +2033,7 @@ export const docsContent = {
           usually held bags to zero.
         </p>
 
-        <ImagePlaceholder
-          type="gif"
-          description="Animated visualization of the yield farming cycle: stake → earn → compound → exit"
-          aspectRatio="4/3"
-        />
+        <YieldFarmingCycleDiagram />
 
         <h2>MotoChef: MasterChef on Bitcoin</h2>
         <p>
@@ -2634,11 +2663,7 @@ export const docsContent = {
           Understanding how rewards are calculated helps you make better decisions.
         </p>
 
-        <ImagePlaceholder
-          type="diagram"
-          description="Yield farming reward flow: Total emissions → Split by pool weights → Split by your share of pool TVL → Your rewards"
-          aspectRatio="16/9"
-        />
+        <RewardFlowDiagram />
 
         <h3>Yield Per Block</h3>
         <p>
@@ -2807,11 +2832,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
 
         <h2>Timing Your Entry</h2>
 
-        <ImagePlaceholder
-          type="gif"
-          description="Animated timeline showing optimal entry: Launch → Bonus period (HIGH rewards) → Normal emissions (diminishing returns) → Late entry (scraps)"
-          aspectRatio="16/9"
-        />
+        <EntryTimingDiagram />
 
         <h3>The Bonus Period is Everything</h3>
         <p>
@@ -2864,11 +2885,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
           This is the most important decision you'll make for each farm.
         </p>
 
-        <ImagePlaceholder
-          type="diagram"
-          description="LP Staking vs Single-Sided decision tree: Risk tolerance, price expectations, APY differential → recommended strategy"
-          aspectRatio="16/9"
-        />
+        <LPvsSingleSidedDiagram />
 
         <h3>LP Staking</h3>
         <p>
@@ -3054,11 +3071,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
           choice: <strong>what kind of game are you creating?</strong>
         </p>
 
-        <ImagePlaceholder
-          type="diagram"
-          description="Decision tree: Token with yield farm (bootstrapping liquidity) vs Simple token (community distribution, utility token)"
-          aspectRatio="16/9"
-        />
+        <TokenDeploymentDecisionDiagram />
 
         <div className="callout info">
           <div className="callout-title">The Core Question</div>

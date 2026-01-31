@@ -663,3 +663,698 @@ export function MOTOFeeFlowDiagram() {
     </div>
   )
 }
+
+// OP_NET Architecture Diagram
+export function OPNETArchitectureDiagram() {
+  const layerStyle = (color, bg) => ({
+    background: bg,
+    border: `2px solid ${color}`,
+    borderRadius: '12px',
+    padding: '1rem 1.5rem',
+    textAlign: 'center',
+    minWidth: '200px'
+  })
+
+  return (
+    <div style={{
+      background: 'var(--bg-secondary)',
+      border: '1px solid var(--border-color)',
+      borderRadius: '16px',
+      padding: '1.5rem',
+      margin: '1.5rem 0'
+    }}>
+      <h4 style={{ margin: '0 0 1.5rem 0', color: 'var(--text-primary)', textAlign: 'center', fontSize: '1rem', fontWeight: 600 }}>
+        OP_NET Architecture
+      </h4>
+
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '0.5rem'
+      }}>
+        <div style={layerStyle('var(--btc-orange)', 'rgba(247, 147, 26, 0.1)')}>
+          <div style={{ fontWeight: 700, color: 'var(--btc-orange)', fontSize: '0.9rem' }}>Bitcoin L1</div>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '0.25rem' }}>Data Availability Layer</div>
+          <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>All state stored in OP_RETURN outputs</div>
+        </div>
+
+        <div style={{ color: 'var(--btc-orange)', fontSize: '1.25rem' }}>↕</div>
+
+        <div style={layerStyle('var(--defi-purple)', 'rgba(139, 92, 246, 0.1)')}>
+          <div style={{ fontWeight: 700, color: 'var(--defi-purple)', fontSize: '0.9rem' }}>OP_NET Nodes</div>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '0.25rem' }}>Execution Layer</div>
+          <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>WASM smart contract runtime</div>
+        </div>
+
+        <div style={{ color: 'var(--defi-purple)', fontSize: '1.25rem' }}>↕</div>
+
+        <div style={layerStyle('var(--success)', 'rgba(34, 197, 94, 0.1)')}>
+          <div style={{ fontWeight: 700, color: 'var(--success)', fontSize: '0.9rem' }}>State Consensus</div>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '0.25rem' }}>Deterministic State Root</div>
+          <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>Anyone can verify by replaying Bitcoin blocks</div>
+        </div>
+      </div>
+
+      <div style={{
+        marginTop: '1.25rem',
+        padding: '0.75rem 1rem',
+        background: 'var(--bg-tertiary)',
+        borderRadius: '8px',
+        fontSize: '0.8rem',
+        color: 'var(--text-secondary)',
+        textAlign: 'center'
+      }}>
+        <strong style={{ color: 'var(--btc-orange)' }}>Key insight:</strong> Bitcoin provides the data, OP_NET provides the compute.
+        No bridges. No wrapped tokens. Pure L1.
+      </div>
+    </div>
+  )
+}
+
+// 50/50 Queue Mechanism Diagram
+export function FiftyFiftyMechanism() {
+  return (
+    <div style={{
+      background: 'var(--bg-secondary)',
+      border: '1px solid var(--border-color)',
+      borderRadius: '16px',
+      padding: '1.5rem',
+      margin: '1.5rem 0'
+    }}>
+      <h4 style={{ margin: '0 0 1.5rem 0', color: 'var(--text-primary)', textAlign: 'center', fontSize: '1rem', fontWeight: 600 }}>
+        The 50/50 Queue Mechanism
+      </h4>
+
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, 1fr)',
+        gap: '1rem',
+        marginBottom: '1.5rem'
+      }}>
+        <div style={{
+          background: 'rgba(247, 147, 26, 0.1)',
+          border: '1px solid var(--btc-orange)',
+          borderRadius: '10px',
+          padding: '1rem',
+          textAlign: 'center'
+        }}>
+          <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>📥</div>
+          <div style={{ fontWeight: 700, color: 'var(--btc-orange)', fontSize: '0.85rem' }}>Step 1</div>
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.5rem' }}>
+            Seller joins queue with tokens
+          </div>
+        </div>
+
+        <div style={{
+          background: 'rgba(139, 92, 246, 0.1)',
+          border: '1px solid var(--defi-purple)',
+          borderRadius: '10px',
+          padding: '1rem',
+          textAlign: 'center'
+        }}>
+          <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>⚡</div>
+          <div style={{ fontWeight: 700, color: 'var(--defi-purple)', fontSize: '0.85rem' }}>Step 2</div>
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.5rem' }}>
+            50% impacts price immediately
+          </div>
+        </div>
+
+        <div style={{
+          background: 'rgba(34, 197, 94, 0.1)',
+          border: '1px solid var(--success)',
+          borderRadius: '10px',
+          padding: '1rem',
+          textAlign: 'center'
+        }}>
+          <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>⏳</div>
+          <div style={{ fontWeight: 700, color: 'var(--success)', fontSize: '0.85rem' }}>Step 3</div>
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.5rem' }}>
+            50% impacts when tokens start selling
+          </div>
+        </div>
+      </div>
+
+      <div style={{
+        background: 'var(--bg-tertiary)',
+        borderRadius: '10px',
+        padding: '1rem',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '2rem',
+        flexWrap: 'wrap'
+      }}>
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--btc-orange)' }}>50%</div>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Instant Impact</div>
+        </div>
+        <div style={{ fontSize: '1.5rem', color: 'var(--text-muted)' }}>+</div>
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--defi-purple)' }}>50%</div>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Delayed Impact</div>
+        </div>
+        <div style={{ fontSize: '1.5rem', color: 'var(--text-muted)' }}>=</div>
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--success)' }}>100%</div>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Gradual Price Discovery</div>
+        </div>
+      </div>
+
+      <div style={{
+        marginTop: '1rem',
+        fontSize: '0.8rem',
+        color: 'var(--text-tertiary)',
+        textAlign: 'center'
+      }}>
+        This prevents flash crashes from large sell orders hitting the market all at once.
+      </div>
+    </div>
+  )
+}
+
+// Two-Phase Commit Diagram
+export function TwoPhaseCommitDiagram() {
+  return (
+    <div style={{
+      background: 'var(--bg-secondary)',
+      border: '1px solid var(--border-color)',
+      borderRadius: '16px',
+      padding: '1.5rem',
+      margin: '1.5rem 0'
+    }}>
+      <h4 style={{ margin: '0 0 1.5rem 0', color: 'var(--text-primary)', textAlign: 'center', fontSize: '1rem', fontWeight: 600 }}>
+        Two-Phase Commit: Price Protection
+      </h4>
+
+      <div style={{
+        display: 'flex',
+        gap: '1rem',
+        marginBottom: '1rem',
+        flexWrap: 'wrap',
+        justifyContent: 'center'
+      }}>
+        <div style={{
+          flex: '1 1 180px',
+          background: 'rgba(247, 147, 26, 0.1)',
+          border: '2px solid var(--btc-orange)',
+          borderRadius: '12px',
+          padding: '1.25rem',
+          textAlign: 'center'
+        }}>
+          <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🔒</div>
+          <div style={{ fontWeight: 700, color: 'var(--btc-orange)', fontSize: '1rem', marginBottom: '0.5rem' }}>
+            Phase 1: Reserve
+          </div>
+          <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+            Lock in your price quote
+          </div>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>
+            Pay small reservation fee
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', color: 'var(--text-muted)', fontSize: '1.5rem' }}>
+          →
+        </div>
+
+        <div style={{
+          flex: '0 0 80px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: 'var(--text-muted)'
+        }}>
+          <div style={{ fontSize: '2rem' }}>⏱️</div>
+          <div style={{ fontSize: '0.75rem', marginTop: '0.5rem' }}>Wait</div>
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', color: 'var(--text-muted)', fontSize: '1.5rem' }}>
+          →
+        </div>
+
+        <div style={{
+          flex: '1 1 180px',
+          background: 'rgba(34, 197, 94, 0.1)',
+          border: '2px solid var(--success)',
+          borderRadius: '12px',
+          padding: '1.25rem',
+          textAlign: 'center'
+        }}>
+          <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>✅</div>
+          <div style={{ fontWeight: 700, color: 'var(--success)', fontSize: '1rem', marginBottom: '0.5rem' }}>
+            Phase 2: Execute
+          </div>
+          <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+            Complete at locked price
+          </div>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>
+            Even if market moved
+          </div>
+        </div>
+      </div>
+
+      <div style={{
+        background: 'rgba(34, 197, 94, 0.1)',
+        border: '1px solid var(--success)',
+        borderRadius: '8px',
+        padding: '0.75rem 1rem',
+        fontSize: '0.85rem',
+        color: 'var(--success)',
+        textAlign: 'center'
+      }}>
+        <strong>Result:</strong> No slippage, no front-running, guaranteed execution price
+      </div>
+    </div>
+  )
+}
+
+// Yield Farming Cycle Diagram
+export function YieldFarmingCycleDiagram() {
+  return (
+    <div style={{
+      background: 'var(--bg-secondary)',
+      border: '1px solid var(--border-color)',
+      borderRadius: '16px',
+      padding: '1.5rem',
+      margin: '1.5rem 0'
+    }}>
+      <h4 style={{ margin: '0 0 1.5rem 0', color: 'var(--text-primary)', textAlign: 'center', fontSize: '1rem', fontWeight: 600 }}>
+        The Yield Farming Cycle
+      </h4>
+
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '0.5rem',
+        flexWrap: 'wrap'
+      }}>
+        {[
+          { icon: '📥', label: 'STAKE', color: 'var(--btc-orange)' },
+          { icon: '💰', label: 'EARN', color: 'var(--success)' },
+          { icon: '🔄', label: 'COMPOUND', color: 'var(--defi-purple)' },
+          { icon: '📤', label: 'EXIT', color: 'var(--defi-pink)' }
+        ].map((step, i, arr) => (
+          <div key={step.label} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <div style={{
+              background: 'var(--bg-tertiary)',
+              border: '1px solid var(--border-color)',
+              borderRadius: '50%',
+              width: '80px',
+              height: '80px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              textAlign: 'center'
+            }}>
+              <div style={{ fontSize: '1.5rem' }}>{step.icon}</div>
+              <div style={{ fontSize: '0.65rem', color: step.color, fontWeight: 600, marginTop: '0.25rem' }}>{step.label}</div>
+            </div>
+            {i < arr.length - 1 && <div style={{ color: step.color, fontSize: '1.25rem' }}>→</div>}
+          </div>
+        ))}
+      </div>
+
+      <div style={{
+        marginTop: '1.5rem',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, 1fr)',
+        gap: '0.75rem',
+        fontSize: '0.7rem',
+        color: 'var(--text-secondary)'
+      }}>
+        <div style={{ textAlign: 'center' }}>Deposit LP tokens or BTC</div>
+        <div style={{ textAlign: 'center' }}>Accumulate rewards per block</div>
+        <div style={{ textAlign: 'center' }}>Reinvest for exponential growth</div>
+        <div style={{ textAlign: 'center' }}>Withdraw before emissions end</div>
+      </div>
+    </div>
+  )
+}
+
+// Reward Flow Diagram
+export function RewardFlowDiagram() {
+  return (
+    <div style={{
+      background: 'var(--bg-secondary)',
+      border: '1px solid var(--border-color)',
+      borderRadius: '16px',
+      padding: '1.5rem',
+      margin: '1.5rem 0'
+    }}>
+      <h4 style={{ margin: '0 0 1.5rem 0', color: 'var(--text-primary)', textAlign: 'center', fontSize: '1rem', fontWeight: 600 }}>
+        How Rewards Flow to You
+      </h4>
+
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '0.75rem'
+      }}>
+        <div style={{
+          background: 'rgba(247, 147, 26, 0.15)',
+          border: '2px solid var(--btc-orange)',
+          borderRadius: '12px',
+          padding: '1rem 2rem',
+          textAlign: 'center',
+          width: '100%',
+          maxWidth: '300px'
+        }}>
+          <div style={{ fontWeight: 700, color: 'var(--btc-orange)', fontSize: '1.1rem' }}>Total Emissions</div>
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>X tokens per block</div>
+        </div>
+
+        <div style={{ color: 'var(--btc-orange)', fontSize: '1.25rem' }}>↓</div>
+
+        <div style={{
+          display: 'flex',
+          gap: '1rem',
+          width: '100%',
+          justifyContent: 'center',
+          flexWrap: 'wrap'
+        }}>
+          {[{ name: 'Pool A', weight: 40 }, { name: 'Pool B', weight: 35 }, { name: 'Pool C', weight: 25 }].map((pool) => (
+            <div key={pool.name} style={{
+              background: 'var(--bg-tertiary)',
+              border: '1px solid var(--defi-purple)',
+              borderRadius: '8px',
+              padding: '0.75rem 1rem',
+              textAlign: 'center',
+              minWidth: '90px'
+            }}>
+              <div style={{ fontSize: '0.8rem', color: 'var(--defi-purple)', fontWeight: 600 }}>{pool.name}</div>
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>{pool.weight}% weight</div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ color: 'var(--defi-purple)', fontSize: '1.25rem' }}>↓</div>
+
+        <div style={{
+          background: 'var(--bg-tertiary)',
+          border: '1px solid var(--border-color)',
+          borderRadius: '10px',
+          padding: '1rem',
+          textAlign: 'center',
+          width: '100%',
+          maxWidth: '350px'
+        }}>
+          <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+            Split by your share of pool TVL
+          </div>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>
+            Your Stake ÷ Total Pool TVL = Your %
+          </div>
+        </div>
+
+        <div style={{ color: 'var(--success)', fontSize: '1.25rem' }}>↓</div>
+
+        <div style={{
+          background: 'rgba(34, 197, 94, 0.15)',
+          border: '2px solid var(--success)',
+          borderRadius: '12px',
+          padding: '1rem 2rem',
+          textAlign: 'center'
+        }}>
+          <div style={{ fontWeight: 700, color: 'var(--success)', fontSize: '1rem' }}>Your Rewards</div>
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Claimable per block</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// Entry Timing Diagram
+export function EntryTimingDiagram() {
+  const phases = [
+    { name: 'Launch', color: 'var(--btc-orange)', height: 90, label: 'FOMO Entry', desc: 'High risk, high reward' },
+    { name: 'Bonus', color: 'var(--success)', height: 100, label: 'OPTIMAL', desc: 'Best risk/reward' },
+    { name: 'Normal', color: 'var(--defi-purple)', height: 60, label: 'OK Entry', desc: 'Diminishing returns' },
+    { name: 'Late', color: 'var(--danger)', height: 25, label: 'POOR', desc: 'Scraps left' },
+  ]
+
+  return (
+    <div style={{
+      background: 'var(--bg-secondary)',
+      border: '1px solid var(--border-color)',
+      borderRadius: '16px',
+      padding: '1.5rem',
+      margin: '1.5rem 0'
+    }}>
+      <h4 style={{ margin: '0 0 1.5rem 0', color: 'var(--text-primary)', textAlign: 'center', fontSize: '1rem', fontWeight: 600 }}>
+        Entry Timing: When to Farm
+      </h4>
+
+      <div style={{
+        display: 'flex',
+        alignItems: 'flex-end',
+        justifyContent: 'space-around',
+        height: '150px',
+        borderBottom: '2px solid var(--border-color)',
+        marginBottom: '1rem',
+        paddingBottom: '0.5rem'
+      }}>
+        {phases.map((p) => (
+          <div key={p.name} style={{ textAlign: 'center', flex: 1 }}>
+            <div style={{
+              fontSize: '0.65rem',
+              color: p.color,
+              fontWeight: 700,
+              marginBottom: '0.25rem'
+            }}>
+              {p.label}
+            </div>
+            <div style={{
+              height: p.height,
+              width: '50px',
+              background: `linear-gradient(180deg, ${p.color} 0%, ${p.color}66 100%)`,
+              borderRadius: '6px 6px 0 0',
+              margin: '0 auto'
+            }} />
+          </div>
+        ))}
+      </div>
+
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-around',
+        fontSize: '0.75rem'
+      }}>
+        {phases.map((p) => (
+          <div key={p.name} style={{ textAlign: 'center', flex: 1 }}>
+            <div style={{ color: p.color, fontWeight: 600 }}>{p.name}</div>
+            <div style={{ color: 'var(--text-muted)', fontSize: '0.65rem' }}>{p.desc}</div>
+          </div>
+        ))}
+      </div>
+
+      <div style={{
+        marginTop: '1rem',
+        padding: '0.75rem 1rem',
+        background: 'rgba(34, 197, 94, 0.1)',
+        border: '1px solid var(--success)',
+        borderRadius: '8px',
+        fontSize: '0.8rem',
+        color: 'var(--success)',
+        textAlign: 'center'
+      }}>
+        <strong>Sweet spot:</strong> Enter during bonus period for maximum APY with established contracts
+      </div>
+    </div>
+  )
+}
+
+// LP vs Single-Sided Decision Diagram
+export function LPvsSingleSidedDiagram() {
+  return (
+    <div style={{
+      background: 'var(--bg-secondary)',
+      border: '1px solid var(--border-color)',
+      borderRadius: '16px',
+      padding: '1.5rem',
+      margin: '1.5rem 0'
+    }}>
+      <h4 style={{ margin: '0 0 1.5rem 0', color: 'var(--text-primary)', textAlign: 'center', fontSize: '1rem', fontWeight: 600 }}>
+        LP Staking vs Single-Sided: Decision Guide
+      </h4>
+
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+        gap: '1.5rem'
+      }}>
+        <div style={{
+          background: 'rgba(247, 147, 26, 0.05)',
+          border: '1px solid var(--btc-orange)',
+          borderRadius: '12px',
+          padding: '1.25rem'
+        }}>
+          <div style={{
+            textAlign: 'center',
+            color: 'var(--btc-orange)',
+            fontWeight: 700,
+            marginBottom: '1rem',
+            fontSize: '0.95rem'
+          }}>
+            LP STAKING
+          </div>
+
+          <div style={{ fontSize: '0.85rem', marginBottom: '1rem' }}>
+            <div style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>✓ Higher APY (2-3x typical)</div>
+            <div style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>✓ Earn trading fees + rewards</div>
+            <div style={{ color: 'var(--danger)', marginBottom: '0.5rem' }}>✗ Impermanent loss risk</div>
+            <div style={{ color: 'var(--danger)' }}>✗ Requires 2 assets</div>
+          </div>
+
+          <div style={{
+            background: 'var(--bg-tertiary)',
+            borderRadius: '8px',
+            padding: '0.75rem',
+            fontSize: '0.75rem',
+            color: 'var(--text-secondary)'
+          }}>
+            <strong>Best for:</strong> Bullish on both assets, want max yield
+          </div>
+        </div>
+
+        <div style={{
+          background: 'rgba(139, 92, 246, 0.05)',
+          border: '1px solid var(--defi-purple)',
+          borderRadius: '12px',
+          padding: '1.25rem'
+        }}>
+          <div style={{
+            textAlign: 'center',
+            color: 'var(--defi-purple)',
+            fontWeight: 700,
+            marginBottom: '1rem',
+            fontSize: '0.95rem'
+          }}>
+            SINGLE-SIDED (Proof of HODL)
+          </div>
+
+          <div style={{ fontSize: '0.85rem', marginBottom: '1rem' }}>
+            <div style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>✓ No impermanent loss</div>
+            <div style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>✓ Keep 100% BTC exposure</div>
+            <div style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>✓ Fully spendable anytime</div>
+            <div style={{ color: 'var(--danger)' }}>✗ Lower APY (typically)</div>
+          </div>
+
+          <div style={{
+            background: 'var(--bg-tertiary)',
+            borderRadius: '8px',
+            padding: '0.75rem',
+            fontSize: '0.75rem',
+            color: 'var(--text-secondary)'
+          }}>
+            <strong>Best for:</strong> BTC maxis, risk-averse, passive income
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// Token Deployment Decision Diagram
+export function TokenDeploymentDecisionDiagram() {
+  return (
+    <div style={{
+      background: 'var(--bg-secondary)',
+      border: '1px solid var(--border-color)',
+      borderRadius: '16px',
+      padding: '1.5rem',
+      margin: '1.5rem 0'
+    }}>
+      <h4 style={{ margin: '0 0 1.5rem 0', color: 'var(--text-primary)', textAlign: 'center', fontSize: '1rem', fontWeight: 600 }}>
+        Token Deployment: Which Path?
+      </h4>
+
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '1rem'
+      }}>
+        <div style={{
+          background: 'var(--bg-tertiary)',
+          border: '2px solid var(--btc-orange)',
+          borderRadius: '12px',
+          padding: '1rem 2rem',
+          textAlign: 'center'
+        }}>
+          <div style={{ fontWeight: 700, color: 'var(--btc-orange)' }}>What's your goal?</div>
+        </div>
+
+        <div style={{ display: 'flex', gap: '3rem' }}>
+          <div style={{ color: 'var(--text-muted)', fontSize: '1.25rem' }}>↙</div>
+          <div style={{ color: 'var(--text-muted)', fontSize: '1.25rem' }}>↘</div>
+        </div>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '1.5rem',
+          width: '100%'
+        }}>
+          <div style={{
+            background: 'rgba(139, 92, 246, 0.1)',
+            border: '1px solid var(--defi-purple)',
+            borderRadius: '12px',
+            padding: '1.25rem',
+            textAlign: 'center'
+          }}>
+            <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>🌱</div>
+            <div style={{ fontWeight: 700, color: 'var(--defi-purple)', marginBottom: '0.5rem' }}>
+              Bootstrap Liquidity
+            </div>
+            <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+              Token + Yield Farm
+            </div>
+            <ul style={{
+              fontSize: '0.75rem',
+              color: 'var(--text-muted)',
+              textAlign: 'left',
+              paddingLeft: '1rem',
+              margin: 0
+            }}>
+              <li>Incentivize early LPs</li>
+              <li>Build TVL fast</li>
+              <li>Create trading momentum</li>
+            </ul>
+          </div>
+
+          <div style={{
+            background: 'rgba(34, 197, 94, 0.1)',
+            border: '1px solid var(--success)',
+            borderRadius: '12px',
+            padding: '1.25rem',
+            textAlign: 'center'
+          }}>
+            <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>🎁</div>
+            <div style={{ fontWeight: 700, color: 'var(--success)', marginBottom: '0.5rem' }}>
+              Community Token
+            </div>
+            <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+              Simple distribution
+            </div>
+            <ul style={{
+              fontSize: '0.75rem',
+              color: 'var(--text-muted)',
+              textAlign: 'left',
+              paddingLeft: '1rem',
+              margin: 0
+            }}>
+              <li>Free mint / airdrop</li>
+              <li>Utility / governance</li>
+              <li>No farming needed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

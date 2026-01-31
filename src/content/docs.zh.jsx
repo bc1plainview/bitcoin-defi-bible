@@ -10,7 +10,15 @@ import {
   NativeSwapArchitectureDiagram,
   MasterChefForkExplosion,
   ProofOfHODLComparison,
-  MOTOFeeFlowDiagram
+  MOTOFeeFlowDiagram,
+  OPNETArchitectureDiagram,
+  FiftyFiftyMechanism,
+  TwoPhaseCommitDiagram,
+  YieldFarmingCycleDiagram,
+  RewardFlowDiagram,
+  EntryTimingDiagram,
+  LPvsSingleSidedDiagram,
+  TokenDeploymentDecisionDiagram
 } from '../components/Charts'
 
 // 图片占位符组件
@@ -463,11 +471,7 @@ export const docsContentZh = {
           每个参与者必须得出完全相同的结果。
         </p>
 
-        <ImagePlaceholder
-          type="diagram"
-          description="OP_NET 架构图：比特币 L1（数据层）→ OP_NET 节点（执行）→ 状态共识"
-          aspectRatio="16/9"
-        />
+        <OPNETArchitectureDiagram />
 
         <p>
           可以这样理解：比特币交易可以在其输出中包含任意数据。
