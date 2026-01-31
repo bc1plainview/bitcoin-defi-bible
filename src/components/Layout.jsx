@@ -83,8 +83,8 @@ export default function Layout() {
 
         <div className="header-center">
           <div className="header-badge">
-            <img src="/opnet-logo.svg" alt="OP_NET" style={{ height: '16px' }} />
             <span>POWERED BY</span>
+            <img src="/opnet-logo.svg" alt="OP_NET" style={{ height: '16px' }} />
           </div>
         </div>
 
