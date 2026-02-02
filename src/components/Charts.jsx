@@ -696,7 +696,7 @@ export function OPNETArchitectureDiagram() {
         <div style={layerStyle('var(--btc-orange)', 'rgba(247, 147, 26, 0.1)')}>
           <div style={{ fontWeight: 700, color: 'var(--btc-orange)', fontSize: '0.9rem' }}>Bitcoin L1</div>
           <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '0.25rem' }}>Data Availability Layer</div>
-          <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>All state stored in OP_RETURN outputs</div>
+          <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>Contract calls embedded in transactions</div>
         </div>
 
         <div style={{ color: 'var(--btc-orange)', fontSize: '1.25rem' }}>↕</div>

@@ -47,12 +47,12 @@ const quizQuestions = [
     question: 'How does OP_NET enable smart contracts on Bitcoin?',
     options: [
       'By using a sidechain with its own token',
-      'By storing state in OP_RETURN outputs and executing via WASM runtime',
+      'As a consensus layer — contract calls embedded in transactions, WASM execution with deterministic state',
       'By wrapping BTC and bridging to Ethereum',
       'By modifying Bitcoin\'s consensus rules'
     ],
     correct: 1,
-    explanation: 'OP_NET uses Bitcoin as the data availability layer (storing state in OP_RETURN outputs) while running a WASM execution layer. No bridges, no wrapped tokens, no consensus changes — pure L1.'
+    explanation: 'OP_NET is a consensus layer for Bitcoin L1. Contract calls are embedded in Bitcoin transactions, executed via WASM runtime with deterministic state. No bridges, no wrapped tokens, no consensus changes — pure L1.'
   },
   {
     category: 'OP_NET',

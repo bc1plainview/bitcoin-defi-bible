@@ -516,10 +516,10 @@ export const docsContent = {
         <OPNETArchitectureDiagram />
 
         <p>
-          Think of it like this: Bitcoin transactions can include arbitrary data in their
-          outputs. OP_NET uses this to embed smart contract calls and state updates.
-          The Bitcoin blockchain becomes the data availability layer, while OP_NET provides
-          the execution environment.
+          Think of it like this: OP_NET embeds smart contract calls directly in Bitcoin
+          transactions. The Bitcoin blockchain becomes the data availability layer, while
+          OP_NET nodes provide the execution environment — running WASM contracts and
+          reaching deterministic consensus on state.
         </p>
 
         <h3>Key Properties</h3>
