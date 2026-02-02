@@ -113,16 +113,14 @@ export const docsContent = {
     content: (
       <>
         <p>
-          Welcome to <strong>The Bitcoin DeFi Bible</strong> — your comprehensive guide to
-          understanding and participating in native Bitcoin DeFi on OP_NET.
+          Welcome to <strong>The Bitcoin DeFi Bible</strong>, your guide to native Bitcoin DeFi on OP_NET.
         </p>
 
         <div className="callout info">
           <div className="callout-title">What This Guide Is</div>
           <p style={{ marginBottom: 0 }}>
-            This is a resource for <strong>users</strong>, not developers. You don't need to
-            know how to code. You need to understand how DeFi games work, how to play them,
-            and — if you choose — how to create them.
+            This is for <strong>users</strong>, not developers. You don't need to know how to code.
+            You need to understand how DeFi games work, how to play them, and how to create them.
           </p>
         </div>
 
@@ -154,11 +152,10 @@ export const docsContent = {
         </p>
 
         <div className="callout tip">
-          <div className="callout-title">Everything From DeFi Summer — Now on Bitcoin</div>
+          <div className="callout-title">DeFi Summer is Now on Bitcoin</div>
           <p style={{ marginBottom: 0 }}>
             MasterChef yield farms. AMM liquidity pools. LP staking. Token launches. Fee-sharing staking.
-            The entire DeFi Summer playbook is now live on Bitcoin Layer 1. Same mechanics.
-            Better chain. This is a big deal.
+            The entire DeFi Summer playbook is now live on Bitcoin Layer 1. Same mechanics. Better chain.
           </p>
         </div>
 
@@ -168,9 +165,9 @@ export const docsContent = {
         </p>
         <ul>
           <li><strong>The SlowFi Thesis:</strong> Why exit friction makes DeFi games sustainable, and why Bitcoin is the optimal environment</li>
-          <li><strong>How OP_NET Works:</strong> The technology that enables smart contracts on Bitcoin L1 without bridges or wrapped tokens</li>
-          <li><strong>NativeSwap Mechanics:</strong> How Bitcoin's first native DEX works — P2P BTC settlement with algorithmic price discovery</li>
-          <li><strong>Proof of HODL:</strong> How to earn yield on Bitcoin without giving up custody — and why this is revolutionary</li>
+          <li><strong>How OP_NET Works:</strong> Smart contracts on Bitcoin L1 without bridges or wrapped tokens</li>
+          <li><strong>NativeSwap Mechanics:</strong> How Bitcoin's first native DEX works with P2P BTC settlement</li>
+          <li><strong>Proof of HODL:</strong> Earning yield on Bitcoin without giving up custody</li>
           <li><strong>Playing the Games:</strong> Strategies for yield farming, LP provision, and MOTO staking</li>
           <li><strong>Creating the Games:</strong> How to deploy your own tokens and yield farms</li>
         </ul>
@@ -210,13 +207,12 @@ export const docsContent = {
       <>
         <p>
           DeFi Summer 2020 happened on a slow, expensive chain. That wasn't despite
-          Ethereum's limitations — <strong>it was because of them</strong>.
+          Ethereum's limitations. <strong>It was because of them.</strong>
         </p>
 
         <h2>Understanding the DeFi Game</h2>
         <p>
-          Before we explain SlowFi, you need to understand what DeFi protocols actually are.
-          Strip away the marketing and you'll see a simple mechanic:
+          DeFi protocols are simple once you see through the marketing:
         </p>
         <p>
           <strong>DeFi protocols are reflexive games where capital inflows create yields
@@ -228,18 +224,18 @@ export const docsContent = {
           The APY stays high, attracting more capital. The flywheel spins.
         </p>
         <p>
-          This isn't sustainable forever — eventually emissions run out or demand saturates.
+          This isn't sustainable forever. Eventually emissions run out or demand saturates.
           But the question isn't whether these games end. It's <strong>how long they run
           before they end</strong>. A game that runs 6-12 months can create massive wealth
           for early participants. A game that collapses in 2 weeks creates nothing but losses.
         </p>
 
         <div className="callout info">
-          <div className="callout-title">The Core Insight</div>
+          <div className="callout-title">Exit Friction</div>
           <p style={{ marginBottom: 0 }}>
-            The secret to making DeFi games run longer isn't better tokenomics or novel
-            mechanisms. <strong>It's exit friction.</strong> When it takes longer for money
-            to leave than to enter, protocols compound upward for months instead of days.
+            The secret to DeFi games lasting longer isn't better tokenomics.
+            <strong> It's exit friction.</strong> When money takes longer to leave than to enter,
+            protocols compound upward for months instead of days.
           </p>
         </div>
 
@@ -329,7 +325,7 @@ export const docsContent = {
         </ul>
         <p>
           Traditional finance has always understood this. Buying physical gold, closing on
-          real estate, wire transfers — they all take days. These aren't inefficiencies.
+          real estate, wire transfers. They all take days. These aren't inefficiencies.
           They're features that create stability and allow markets to absorb volatility
           without instant collapse.
         </p>
@@ -339,10 +335,10 @@ export const docsContent = {
         </p>
 
         <div className="callout tip">
-          <div className="callout-title">The Bottom Line</div>
+          <div className="callout-title">Bitcoin = Longer Games</div>
           <p style={{ marginBottom: 0 }}>
             The same LP staking games that ran for 6-8 months on 2020 Ethereum could run
-            for 12-18 months on Bitcoin. The mechanics are identical. The environment is better.
+            for 12-18 months on Bitcoin. Same mechanics. Better environment.
           </p>
         </div>
       </>
@@ -382,14 +378,14 @@ export const docsContent = {
 
         <h3>2. The Fee Wall</h3>
         <p>
-          When demand for Bitcoin block space increases, fees don't just rise — they
+          When demand for Bitcoin block space increases, fees don't just rise. They
           become <strong>prohibitively expensive</strong>. During peak periods, transaction
           fees regularly exceed $50-100.
         </p>
 
         <ImagePlaceholder
           type="image"
-          description="Bitcoin mempool visualization during high-fee periods — showing transaction backlog and fee spikes"
+          description="Bitcoin mempool visualization during high-fee periods, showing transaction backlog and fee spikes"
           aspectRatio="16/9"
         />
 
@@ -409,7 +405,7 @@ export const docsContent = {
         </p>
         <p>
           This isn't theoretical. It's how Bitcoin's fee market has always worked.
-          The fee wall creates "sticky capital" — not because users are long-term oriented,
+          The fee wall creates "sticky capital", not because users are long-term oriented,
           but because they're economically rational.
         </p>
 
@@ -469,8 +465,8 @@ export const docsContent = {
         </p>
         <p>
           Early farmers in Ethereum's DeFi Summer captured generational wealth. The Sushiswap
-          vampire attack, OlympusDAO's (3,3) meme, Yearn's vaults — those who understood the
-          mechanics early and positioned accordingly did extraordinarily well.
+          vampire attack, OlympusDAO's (3,3) meme, Yearn's vaults. Those who understood the
+          mechanics early and positioned accordingly did extremely well.
         </p>
         <p>
           The same window is opening on Bitcoin, but with better fundamentals:
@@ -507,8 +503,8 @@ export const docsContent = {
 
         <h2>The OP_NET Solution</h2>
         <p>
-          OP_NET is a <strong>consensus layer</strong> — the first of its kind on Bitcoin,
-          enabling fully expressive smart contracts directly on Layer 1 without modifying
+          OP_NET is a <strong>consensus layer</strong>, the first of its kind on Bitcoin.
+          It enables fully expressive smart contracts directly on Layer 1 without modifying
           or forking Bitcoin's base protocol. Unlike metaprotocols (BRC-20, Runes, Alkanes)
           where indexers can show divergent results, OP_NET provides cryptographic proof of
           correct execution where every participant must arrive at exactly the same result.
@@ -517,10 +513,9 @@ export const docsContent = {
         <OPNETArchitectureDiagram />
 
         <p>
-          Think of it like this: OP_NET embeds smart contract calls directly in Bitcoin
-          transactions. The Bitcoin blockchain becomes the data availability layer, while
-          OP_NET nodes provide the execution environment — running WASM contracts and
-          reaching deterministic consensus on state.
+          OP_NET embeds smart contract calls directly in Bitcoin transactions. The Bitcoin
+          blockchain becomes the data availability layer, while OP_NET nodes provide the
+          execution environment, running WASM contracts and reaching deterministic consensus on state.
         </p>
 
         <h3>Key Properties</h3>
@@ -546,13 +541,13 @@ export const docsContent = {
           </li>
         </ul>
         <p>
-          These standards enable composability — tokens can interact with DEXs, yield farms,
+          These standards enable composability: tokens can interact with DEXs, yield farms,
           and future protocols in predictable ways.
         </p>
 
         <h2>The Epoch System</h2>
         <p>
-          OP_NET organizes Bitcoin blocks into <strong>epochs</strong> — groups of exactly
+          OP_NET organizes Bitcoin blocks into <strong>epochs</strong>: groups of exactly
           5 consecutive Bitcoin blocks (approximately 50 minutes). This provides:
         </p>
         <ul>
@@ -574,7 +569,7 @@ export const docsContent = {
         </ul>
         <p>
           All of this while your Bitcoin stays on Bitcoin, subject to Bitcoin's security
-          model and — critically — Bitcoin's exit friction.
+          model and Bitcoin's exit friction.
         </p>
 
         <h2>Getting Set Up</h2>
@@ -584,7 +579,7 @@ export const docsContent = {
 
         <ImagePlaceholder
           type="screenshot"
-          description="OP_WALLET browser extension — showing wallet interface with BTC balance and network selector"
+          description="OP_WALLET browser extension showing wallet interface with BTC balance and network selector"
           aspectRatio="4/3"
         />
 
@@ -642,16 +637,14 @@ export const docsContent = {
     content: (
       <>
         <p>
-          NativeSwap is Motoswap's core innovation — the AMM that makes native Bitcoin
-          DeFi possible. Think of it as <strong>Uniswap V3-style single-sided liquidity,
-          adapted for Bitcoin's unique constraints</strong>.
+          NativeSwap is the AMM that makes native Bitcoin DeFi possible. It's <strong>Uniswap V3-style
+          single-sided liquidity, adapted for Bitcoin's constraints</strong>.
         </p>
         <p>
           Like modern AMMs, NativeSwap uses algorithmic price discovery via the constant
-          product formula. But it's architected specifically for Bitcoin: OP-20 tokens are
-          held by the smart contract (like any DEX), while BTC is <strong>P2P routed through
-          the contract</strong> — verified and enforced but never custodied. This is how you
-          build a real DEX on Bitcoin L1.
+          product formula. But it's built for Bitcoin: OP-20 tokens are held by the smart
+          contract (like any DEX), while BTC is <strong>P2P routed through the contract</strong>,
+          verified and enforced but never custodied.
         </p>
 
         <h2>Why Bitcoin Trading Is Broken</h2>
@@ -662,7 +655,7 @@ export const docsContent = {
         </p>
         <p>
           <strong>PSBTs (Partially Signed Bitcoin Transactions)</strong> are Bitcoin's
-          native method for multi-party transactions. Here's how PSBT trading works:
+          native method for multi-party transactions:
         </p>
 
         <PSBTTradingFlowDiagram />
@@ -675,9 +668,9 @@ export const docsContent = {
           <li><strong>Marketplace broadcasts:</strong> The complete transaction goes on-chain</li>
         </ol>
 
-        <h3>Why PSBT Trading Is Horrible</h3>
+        <h3>Why PSBT Trading Sucks</h3>
         <p>
-          This sounds reasonable until you examine the problems:
+          Sounds reasonable until you look at the problems:
         </p>
 
         <div className="callout warning">
@@ -737,13 +730,13 @@ export const docsContent = {
           <tbody>
             <tr>
               <td>Price Discovery</td>
-              <td>None — arbitrary seller prices</td>
+              <td>None, arbitrary seller prices</td>
               <td>Algorithmic via constant product formula</td>
             </tr>
             <tr>
               <td>Custody</td>
               <td>Centralized marketplace</td>
-              <td>Never — BTC flows directly P2P</td>
+              <td>Never, BTC flows directly P2P</td>
             </tr>
             <tr>
               <td>Liquidity</td>
@@ -763,10 +756,10 @@ export const docsContent = {
           </tbody>
         </table>
 
-        <h2>What NativeSwap Actually Is</h2>
+        <h2>What NativeSwap Is</h2>
         <p>
-          NativeSwap is best understood as a <strong>single-sided liquidity AMM</strong> — similar
-          to concentrated liquidity in Uniswap V3, but designed for Bitcoin's constraints.
+          NativeSwap is a <strong>single-sided liquidity AMM</strong>, similar to concentrated
+          liquidity in Uniswap V3, but designed for Bitcoin's constraints.
         </p>
 
         <NativeSwapArchitectureDiagram />
@@ -782,15 +775,15 @@ export const docsContent = {
           <tbody>
             <tr>
               <td>Constant Product (k = T × B)</td>
-              <td>AMM pricing — algorithmic price discovery like Uniswap</td>
+              <td>AMM pricing, algorithmic price discovery like Uniswap</td>
             </tr>
             <tr>
               <td>Queue System</td>
-              <td>Single-sided liquidity — sellers provide tokens, buyers bring BTC</td>
+              <td>Single-sided liquidity, sellers provide tokens, buyers bring BTC</td>
             </tr>
             <tr>
               <td>P2P Settlement</td>
-              <td>Bitcoin-native — BTC flows directly between traders with contract enforcement</td>
+              <td>Bitcoin-native, BTC flows directly between traders with contract enforcement</td>
             </tr>
           </tbody>
         </table>
@@ -811,10 +804,10 @@ export const docsContent = {
           <li><strong>Buy pressure</strong> (BTC coming in) → price goes up</li>
         </ul>
         <p>
-          The math is borrowed from Uniswap V2, but applied to a fundamentally different
-          architecture. In Uniswap, k increases over time because fees accrue to liquidity
-          providers. <strong>In NativeSwap, k remains constant</strong> — there are no
-          liquidity providers, no shared pool, no fee accrual.
+          The math is borrowed from Uniswap V2, but applied to a different architecture.
+          In Uniswap, k increases over time because fees accrue to liquidity providers.
+          <strong>In NativeSwap, k remains constant</strong> because there are no liquidity
+          providers, no shared pool, no fee accrual.
         </p>
 
         <div className="callout info">
@@ -829,19 +822,16 @@ export const docsContent = {
 
         <h2>Verification, Not Custody</h2>
         <p>
-          This is the key insight that makes NativeSwap possible on Bitcoin:
-        </p>
-        <p>
-          <strong>The contract's role is verification, not custody.</strong>
+          <strong>The contract verifies but never custodies.</strong>
         </p>
         <p>
           The contract confirms that Bitcoin outputs in swap transactions match reservation
-          requirements — correct amounts, correct addresses. It never controls or holds Bitcoin.
+          requirements: correct amounts, correct addresses. It never controls or holds Bitcoin.
           BTC flows directly from buyers to sellers.
         </p>
         <p>
-          This is fundamentally different from Ethereum DeFi where contracts custody both assets.
-          NativeSwap is a <strong>calculator and referee, not a vault</strong>.
+          This is different from Ethereum DeFi where contracts custody both assets. NativeSwap
+          is a calculator and referee, not a vault.
         </p>
 
         <h2>The Seller Queue</h2>
@@ -855,7 +845,7 @@ export const docsContent = {
           <li>The contract calculates the price using the constant product formula</li>
           <li>It iterates through the seller queue, taking tokens from each seller in order</li>
           <li>The buyer's BTC is split proportionally among sellers who fill the order</li>
-          <li>Everything happens atomically — all sellers get paid or nothing happens</li>
+          <li>Everything happens atomically: all sellers get paid or nothing happens</li>
         </ol>
         <p>
           NativeSwap can coordinate <strong>up to 200 different sellers</strong> in a single
@@ -864,7 +854,7 @@ export const docsContent = {
 
         <h3>The 50/50 Queue Protection</h3>
         <p>
-          When a seller lists tokens, something clever happens:
+          When a seller lists tokens:
         </p>
         <ul>
           <li><strong>50%</strong> of their listing immediately affects virtual reserves (and price)</li>
@@ -881,10 +871,9 @@ export const docsContent = {
 
         <h2>The Two-Phase Commit Protocol</h2>
         <p>
-          Here's a problem: Bitcoin transactions are irreversible. If you send BTC to buy
-          tokens but the price changes before your transaction confirms, you can't get
-          that BTC back. On Ethereum, the transaction would simply fail and return your
-          ETH. On Bitcoin, you've lost your money.
+          Bitcoin transactions are irreversible. If you send BTC to buy tokens but the price
+          changes before your transaction confirms, you can't get that BTC back. On Ethereum,
+          the transaction would fail and return your ETH. On Bitcoin, you've lost your money.
         </p>
 
         <TwoPhaseCommitDiagram />
@@ -906,7 +895,7 @@ export const docsContent = {
         <ul>
           <li>You send the quoted BTC amount to complete the swap</li>
           <li>The system generates transactions paying each seller their portion</li>
-          <li>Your price is guaranteed — it was locked in Phase 1</li>
+          <li>Your price is guaranteed because it was locked in Phase 1</li>
           <li>Market movements during the wait don't affect you</li>
         </ul>
 
@@ -1051,13 +1040,12 @@ export const docsContent = {
         </table>
 
         <div className="callout tip">
-          <div className="callout-title">The Bottom Line</div>
+          <div className="callout-title">Summary</div>
           <p style={{ marginBottom: 0 }}>
             NativeSwap is a <strong>Bitcoin-native AMM with P2P settlement</strong>.
-            The constant product formula provides price discovery. The queue system provides
-            fair execution with single-sided liquidity. The verification model provides trustlessness.
-            OP-20 tokens are held by the contract; BTC flows directly between traders with
-            the contract enforcing correct execution. This is how you build a real DEX on Bitcoin.
+            Constant product formula for price discovery. Queue system for fair execution.
+            Verification model for trustlessness. OP-20 tokens held by contract, BTC flows
+            directly between traders.
           </p>
         </div>
 
@@ -1082,7 +1070,7 @@ export const docsContent = {
               <td>Custody</td>
               <td>Centralized marketplace</td>
               <td>Bridge custodian</td>
-              <td>None — P2P</td>
+              <td>None, P2P</td>
             </tr>
             <tr>
               <td>Price Discovery</td>
@@ -1165,13 +1153,12 @@ export const docsContent = {
 
         <h2>The PSBT Death Spiral</h2>
         <p>
-          Here's what killed them: <strong>PSBT trading</strong>.
+          What killed them: <strong>PSBT trading</strong>.
         </p>
         <p>
-          BRC-20 and Runes tokens trade on PSBT (Partially Signed Bitcoin Transaction)
-          marketplaces — Magic Eden, UniSat, OKX. These are <strong>pure order book
-          systems</strong>. A seller lists tokens at a price. A buyer either takes the
-          listing or doesn't. There is no AMM. No liquidity pool. No automated market making.
+          BRC-20 and Runes tokens trade on PSBT marketplaces like Magic Eden, UniSat, OKX.
+          These are <strong>pure order book systems</strong>. A seller lists tokens at a price.
+          A buyer either takes it or doesn't. No AMM. No liquidity pool. No automated market making.
         </p>
         <p>
           This creates a fatal problem:
@@ -1192,7 +1179,7 @@ export const docsContent = {
           <li>Token launches, free mint creates distribution</li>
           <li>Early excitement drives buy orders on PSBT marketplaces</li>
           <li>Price rises as buyers compete for listings</li>
-          <li>Token hits peak — whale decides to take profit</li>
+          <li>Token hits peak, whale decides to take profit</li>
           <li>Whale lists large sell order, undercutting existing sellers</li>
           <li>Buyers see the dump, pull their bids</li>
           <li><strong>Suddenly there are ZERO buy orders</strong></li>
@@ -1247,8 +1234,8 @@ export const docsContent = {
         </table>
         <p>
           <strong>This is why every BRC-20 and Runes token eventually dies.</strong> The
-          trading mechanism guarantees it. When sentiment turns, liquidity doesn't just
-          decrease — it vanishes entirely.
+          trading mechanism guarantees it. When sentiment turns, liquidity doesn't decrease.
+          It vanishes entirely.
         </p>
 
         <h2>The Arbitrage Solution</h2>
@@ -1257,7 +1244,7 @@ export const docsContent = {
           <strong> permanent liquidity through arbitrage</strong>.
         </p>
         <p>
-          Here's how it works. Imagine a token called EXAMPLE that has two pools:
+          Imagine a token called EXAMPLE with two pools:
         </p>
         <ul>
           <li>EXAMPLE-MOTO pool on Motoswap</li>
@@ -1282,9 +1269,8 @@ export const docsContent = {
           <div className="callout-title">Free Money on the Table</div>
           <p style={{ marginBottom: 0 }}>
             Arbitrage is <strong>literally free money</strong> sitting on the table.
-            There will ALWAYS be someone — a bot, a trader, anyone — willing to grab
-            that free money. This means the pools will ALWAYS be balanced. Liquidity
-            can NEVER dry up like it does on PSBT marketplaces.
+            There will always be someone (a bot, a trader) willing to grab it. The pools
+            will always be balanced. Liquidity can never dry up like on PSBT marketplaces.
           </p>
         </div>
 
@@ -1302,8 +1288,8 @@ export const docsContent = {
 
         <h2>The Fake Stablecoin Problem</h2>
         <p>
-          BRC-20 and Runes have "stablecoins" — tokens that claim to track USD. But
-          here's the thing: <strong>they're not actually stable</strong>.
+          BRC-20 and Runes have "stablecoins" that claim to track USD.
+          <strong> They're not actually stable.</strong>
         </p>
         <p>
           On a PSBT marketplace, you price tokens <em>in satoshis</em>. When you list
@@ -1324,7 +1310,7 @@ export const docsContent = {
           <div className="callout-title">BRC-20 "Stablecoins" Are Broken</div>
           <p style={{ marginBottom: 0 }}>
             If BTC drops 20% during a market crash, your BRC-20 "USDT" doesn't stay at
-            $1 — it crashes with BTC. You had stablecoin exposure in name only. The
+            $1. It crashes with BTC. You had stablecoin exposure in name only. The
             PSBT pricing mechanism makes real stablecoins impossible.
           </p>
         </div>
@@ -1332,7 +1318,7 @@ export const docsContent = {
         <h2>Multiple Ways to Get OP-20 Tokens</h2>
         <p>
           The Motoswap Launchpad gives token deployers <strong>multiple distribution
-          mechanisms</strong> — not just free mint, but a complete toolkit:
+          mechanisms</strong>, not just free mint:
         </p>
 
         <table>
@@ -1383,11 +1369,11 @@ export const docsContent = {
           fast? Weight LP mining heavily. Want to attract Bitcoin holders? Use Proof of HODL.
         </p>
 
-        <h2>The Bottom Line</h2>
+        <h2>Summary</h2>
         <p>
-          BRC-20 and Runes tokens had the right idea (free mints, Bitcoin-native) but
-          the wrong trading mechanism (PSBT marketplaces). When buy pressure stopped,
-          liquidity instantly died, and holders were left with unsellable bags.
+          BRC-20 and Runes had the right idea (free mints, Bitcoin-native) but the wrong
+          trading mechanism (PSBT marketplaces). When buy pressure stopped, liquidity
+          instantly died, and holders were left with unsellable bags.
         </p>
         <p>
           OP-20 tokens solve this with AMM liquidity and arbitrage. Multiple trading
@@ -1414,9 +1400,9 @@ export const docsContent = {
     content: (
       <>
         <p>
-          Motoswap is the first fully decentralized exchange on Bitcoin Layer 1. It's
-          not just a DEX — it's a complete DeFi ecosystem built on OP_NET, bringing
-          everything from DeFi Summer 2020 to Bitcoin.
+          Motoswap is the first fully decentralized exchange on Bitcoin Layer 1. It's a
+          complete DeFi ecosystem built on OP_NET, bringing everything from DeFi Summer
+          2020 to Bitcoin.
         </p>
         <p>
           <a href="https://motoswap.org" target="_blank" rel="noopener noreferrer">motoswap.org</a>
@@ -1444,15 +1430,14 @@ export const docsContent = {
 
         <h3>NativeSwap Pools (BTC ↔ Token)</h3>
         <p>
-          These enable trading native Bitcoin for tokens — something no other Bitcoin DEX
-          can do trustlessly. The full mechanics are covered in the next section, but here's
-          the key difference:
+          These enable trading native Bitcoin for tokens. No other Bitcoin DEX can do this
+          trustlessly. Key differences:
         </p>
         <ul>
           <li>Virtual reserve accounting</li>
           <li>Seller queue system</li>
           <li>Two-phase commit for price protection</li>
-          <li>BTC never touches a contract — flows directly between traders</li>
+          <li>BTC never touches a contract, flows directly between traders</li>
         </ul>
         <p>
           Use NativeSwap pools to trade between native Bitcoin and any OP-20 token.
@@ -1471,7 +1456,7 @@ export const docsContent = {
 
         <h2>Fee Structure</h2>
         <p>
-          Every swap on Motoswap generates fees. Here's exactly where they go:
+          Every swap on Motoswap generates fees:
         </p>
 
         <h3>OP-20 Swaps (Token ↔ Token)</h3>
@@ -1487,7 +1472,7 @@ export const docsContent = {
             <tr>
               <td>0.3%</td>
               <td>Liquidity Providers</td>
-              <td>Same as Uniswap — rewards LP providers</td>
+              <td>Rewards LP providers</td>
             </tr>
             <tr>
               <td>0.2%</td>
@@ -1521,8 +1506,8 @@ export const docsContent = {
         </table>
 
         <p>
-          <strong>This means MOTO stakers earn from every single trade on the platform</strong> —
-          both OP-20 pools and NativeSwap pools. More trading volume = more rewards.
+          <strong>MOTO stakers earn from every single trade on the platform</strong>, both
+          OP-20 pools and NativeSwap pools. More trading volume = more rewards.
         </p>
 
         <h2>Providing Liquidity</h2>
@@ -1542,7 +1527,7 @@ export const docsContent = {
 
         <h3>For NativeSwap Pools:</h3>
         <p>
-          NativeSwap works differently because BTC isn't held in a pool — it flows
+          NativeSwap works differently because BTC isn't held in a pool. It flows
           directly between buyers and sellers.
         </p>
         <ul>
@@ -1601,7 +1586,7 @@ export const docsContent = {
         <ol>
           <li>Go to Swap, select BTC and the token you want</li>
           <li>Enter the amount of BTC to spend</li>
-          <li>Click Swap — this creates a <strong>reservation</strong></li>
+          <li>Click Swap to create a <strong>reservation</strong></li>
           <li>Your price is now locked for 5 blocks</li>
           <li>Confirm the execution transaction to complete the swap</li>
           <li>BTC goes directly to sellers; you receive tokens</li>
@@ -1613,7 +1598,7 @@ export const docsContent = {
           <li>Enter the amount to sell</li>
           <li>You join the seller queue at the current oracle price</li>
           <li>When a buyer arrives, you receive BTC proportional to your queue position</li>
-          <li>This happens atomically — you don't need to be online</li>
+          <li>This happens atomically, you don't need to be online</li>
         </ol>
 
         <h3>Token-to-Token (OP-20 Pools)</h3>
@@ -1643,8 +1628,7 @@ export const docsContent = {
       <>
         <p>
           For the <strong>first time ever</strong>, you can have real stablecoins on Bitcoin
-          Layer 1 — with an AMM to trustlessly swap between BTC and USD-pegged assets.
-          This is a massive game changer that solves one of Bitcoin DeFi's biggest missing pieces.
+          Layer 1 with an AMM to trustlessly swap between BTC and USD-pegged assets.
         </p>
 
         <div className="callout info">
@@ -1700,16 +1684,15 @@ export const docsContent = {
         <div className="callout warning">
           <div className="callout-title">BRC-20 "Stablecoins" Are Fake</div>
           <p style={{ marginBottom: 0 }}>
-            A stablecoin that moves with Bitcoin isn't a stablecoin — it's just BTC with
+            A stablecoin that moves with Bitcoin isn't a stablecoin. It's just BTC with
             extra steps. You can't hedge BTC exposure with an asset denominated in BTC.
-            The PSBT pricing mechanism makes real USD stability impossible.
           </p>
         </div>
 
         <h2>The Solution: OP-20S</h2>
         <p>
           OP-20S is a stablecoin extension standard for OP-20 tokens on NativeSwap.
-          It enables <strong>peg-aware pricing</strong> — the AMM knows the target USD
+          It enables <strong>peg-aware pricing</strong>: the AMM knows the target USD
           value and prices accordingly.
         </p>
 
@@ -1723,14 +1706,14 @@ export const docsContent = {
           <li><strong>pegUpdatedAt():</strong> When the peg was last updated</li>
         </ul>
         <p>
-          NativeSwap detects these tokens and applies <strong>StableSwap mathematics</strong> —
+          NativeSwap detects these tokens and applies <strong>StableSwap mathematics</strong>,
           optimized AMM curves that minimize slippage around the peg price.
         </p>
 
         <h3>StableSwap Pricing</h3>
         <p>
-          Regular AMMs use the constant product formula (x × y = k). This works great for
-          volatile pairs, but it's inefficient for stablecoins — you get unnecessary
+          Regular AMMs use the constant product formula (x × y = k). This works for
+          volatile pairs, but it's inefficient for stablecoins. You get unnecessary
           slippage when trading assets that should be worth the same thing.
         </p>
         <p>
@@ -1743,13 +1726,12 @@ export const docsContent = {
           <li><strong>Low amplification:</strong> More like a regular AMM, allows larger price swings</li>
         </ul>
         <p>
-          This is the same math that powers Curve Finance — the dominant stablecoin DEX
-          on Ethereum. Now it's available on Bitcoin L1.
+          Same math that powers Curve Finance. Now it's available on Bitcoin L1.
         </p>
 
-        <h2>The Game Changer</h2>
+        <h2>What OP-20S Enables</h2>
         <p>
-          With OP-20S, you can:
+          With OP-20S:
         </p>
 
         <table>
@@ -1812,7 +1794,7 @@ export const docsContent = {
           <li><strong>Algorithmic:</strong> Supply adjustments based on demand (risky but possible)</li>
         </ul>
         <p>
-          The OP-20S standard doesn't dictate the backing — it provides the <em>interface</em>
+          The OP-20S standard doesn't dictate the backing. It provides the <em>interface</em>
           that lets NativeSwap apply proper stablecoin pricing regardless of how the
           issuer maintains the peg.
         </p>
@@ -1836,10 +1818,8 @@ export const docsContent = {
         <div className="callout tip">
           <div className="callout-title">What This Unlocks</div>
           <p style={{ marginBottom: 0 }}>
-            Real stablecoins on Bitcoin L1 complete the DeFi stack. You can now:
-            farm yields, take profits in USD, hedge positions, and build complex
-            financial instruments — all without leaving Bitcoin. The missing piece
-            is finally in place.
+            Real stablecoins on Bitcoin L1 complete the DeFi stack. Farm yields, take
+            profits in USD, hedge positions, build lending protocols. All without leaving Bitcoin.
           </p>
         </div>
 
@@ -1861,9 +1841,8 @@ export const docsContent = {
     content: (
       <>
         <p>
-          MotoChef is the engine that powers liquidity mining on Bitcoin. It's a direct fork of
-          SushiSwap's MasterChef contracts — the same code that fueled DeFi Summer 2020 and
-          created billions in value. <strong>That entire game is now playable on Bitcoin Layer 1.</strong>
+          MotoChef is a direct fork of SushiSwap's MasterChef contracts. The same code that
+          fueled DeFi Summer 2020. <strong>That entire game is now playable on Bitcoin Layer 1.</strong>
         </p>
 
         <div className="callout info">
@@ -1878,8 +1857,8 @@ export const docsContent = {
 
         <h2>The MasterChef Revolution (2020)</h2>
         <p>
-          To understand MotoChef, you need to understand the absolute madness of what happened
-          in August 2020. Not just SushiSwap — <strong>everything that came after</strong>.
+          To understand MotoChef, you need to understand what happened in August 2020.
+          Not just SushiSwap, <strong>everything that came after</strong>.
         </p>
 
         <h3>The Code That Changed Everything</h3>
@@ -1903,11 +1882,11 @@ export const docsContent = {
           It started with SUSHI. Then came the deluge:
         </p>
         <ul>
-          <li><strong>YAM</strong> — Launched August 11, 2020. $600M TVL in 24 hours.</li>
-          <li><strong>PICKLE</strong> — MasterChef fork focused on stablecoin yields.</li>
-          <li><strong>KIMCHI</strong> — Korean-themed fork. $500M TVL at peak.</li>
-          <li><strong>SPAGHETTI</strong> — Yes, really. It had TVL too.</li>
-          <li><strong>HOTDOG</strong> — Went from $4,000 to $0.004 in one day. People still farmed it.</li>
+          <li><strong>YAM</strong>: Launched August 11, 2020. $600M TVL in 24 hours.</li>
+          <li><strong>PICKLE</strong>: MasterChef fork focused on stablecoin yields.</li>
+          <li><strong>KIMCHI</strong>: Korean-themed fork. $500M TVL at peak.</li>
+          <li><strong>SPAGHETTI</strong>: Yes, really. It had TVL too.</li>
+          <li><strong>HOTDOG</strong>: Went from $4,000 to $0.004 in one day. People still farmed it.</li>
           <li><strong>PIZZA</strong>, <strong>BURGER</strong>, <strong>TACO</strong>...</li>
         </ul>
         <p>
@@ -1932,7 +1911,7 @@ export const docsContent = {
           <li><strong>Hundreds</strong> of MasterChef forks deployed</li>
           <li><strong>Uniswap + SushiSwap</strong> alone held $5B+ combined TVL</li>
           <li><strong>Gas fees</strong> hit $100+ per transaction during peak farming</li>
-          <li><strong>Every fork</strong> — even the obvious scams — attracted millions</li>
+          <li><strong>Every fork</strong>, even the obvious scams, attracted millions</li>
         </ul>
         <p>
           The SushiSwap vampire attack ($1.14B in 48 hours) was just the opening act. What
@@ -1943,10 +1922,10 @@ export const docsContent = {
         <div className="callout info">
           <div className="callout-title">Why Did It Work?</div>
           <p style={{ marginBottom: 0 }}>
-            The MasterChef contract created a <strong>coordination mechanism</strong>. Farmers
-            knew other farmers would come. TVL begets TVL. High APY attracts capital, which
-            creates liquidity, which enables trading, which creates fees, which justifies
-            the APY. The reflexivity was self-fulfilling — until it wasn't.
+            MasterChef created a <strong>coordination mechanism</strong>. Farmers knew other
+            farmers would come. TVL begets TVL. High APY attracts capital, which creates liquidity,
+            which enables trading, which creates fees, which justifies the APY. Self-fulfilling
+            reflexivity until it wasn't.
           </p>
         </div>
 
@@ -1959,10 +1938,10 @@ export const docsContent = {
           Today, every major DeFi protocol uses MasterChef mechanics:
         </p>
         <ul>
-          <li><strong>Curve</strong> — Gauge system is MasterChef with extra steps</li>
-          <li><strong>PancakeSwap</strong> — Direct MasterChef fork on BSC</li>
-          <li><strong>TraderJoe</strong> — MasterChef on Avalanche</li>
-          <li><strong>Every L2</strong> — Running MasterChef forks for liquidity mining</li>
+          <li><strong>Curve</strong>: Gauge system is MasterChef with extra steps</li>
+          <li><strong>PancakeSwap</strong>: Direct MasterChef fork on BSC</li>
+          <li><strong>TraderJoe</strong>: MasterChef on Avalanche</li>
+          <li><strong>Every L2</strong>: Running MasterChef forks for liquidity mining</li>
         </ul>
         <p>
           The contract that SushiSwap wrote became <strong>infrastructure</strong>. It's the
@@ -1998,7 +1977,7 @@ export const docsContent = {
 
         <h2>The DeFi Summer Playbook</h2>
         <p>
-          Here's what the successful DeFi Summer farmers understood:
+          What successful DeFi Summer farmers understood:
         </p>
 
         <h3>1. Early Entry is Everything</h3>
@@ -2010,8 +1989,8 @@ export const docsContent = {
 
         <h3>2. Bonus Periods Create Urgency</h3>
         <p>
-          Smart deployers launch with 5x or 10x emission multipliers for the first week. This
-          creates genuine urgency — if you're not in during the bonus period, you're already
+          Smart deployers launch with 5x or 10x emission multipliers for the first week.
+          If you're not in during the bonus period, you're already
           behind. FOMO is a feature, not a bug.
         </p>
 
@@ -2051,7 +2030,7 @@ export const docsContent = {
         <p>
           On Ethereum, you couldn't earn yield on ETH itself without wrapping or staking it
           somewhere custodial. MotoChef lets you stake native BTC while keeping it fully
-          spendable in your wallet. The smart contract tracks your UTXO — as long as it
+          spendable in your wallet. The smart contract tracks your UTXO. As long as it
           exists, you earn rewards. This is genuinely novel.
         </p>
 
@@ -2061,7 +2040,7 @@ export const docsContent = {
         </p>
 
         <div className="callout tip">
-          <div className="callout-title">The Full DeFi Summer Stack — Now on Bitcoin L1</div>
+          <div className="callout-title">The Full DeFi Summer Stack on Bitcoin L1</div>
           <p>
             Every game that created wealth in 2020 is now playable on Bitcoin:
           </p>
@@ -2076,15 +2055,15 @@ export const docsContent = {
         </div>
 
         <p>
-          The infrastructure for a Bitcoin DeFi Summer exists. The mechanics are proven —
-          they worked in 2020. The environment is better — Bitcoin's 10-minute blocks create
+          The infrastructure for a Bitcoin DeFi Summer exists. The mechanics are proven.
+          They worked in 2020. The environment is better. Bitcoin's 10-minute blocks create
           natural exit friction that sustains reflexive games longer.
         </p>
 
         <h2>The Opportunity Window</h2>
         <p>
           In August 2020, most people dismissed SushiSwap as a "scam fork" or "ponzi." They
-          were technically correct — and completely wrong about the opportunity. The farmers
+          were technically correct, and completely wrong about the opportunity. The farmers
           who understood the game mechanics captured enormous value regardless of whether
           SushiSwap was "legitimate."
         </p>
@@ -2126,7 +2105,7 @@ export const docsContent = {
     content: (
       <>
         <p>
-          Proof of HODL is MotoChef's revolutionary approach to Bitcoin staking — the
+          Proof of HODL is the
           first mechanism that lets you earn yield on your BTC without locking it, without
           delegating it, and without any custodial risk whatsoever.
         </p>
@@ -2141,7 +2120,7 @@ export const docsContent = {
 
         <h2>The $5 Billion Problem</h2>
         <p>
-          Over 57,000 BTC — approximately $5 billion — sits locked in Babylon's staking
+          Over 57,000 BTC (approximately $5 billion) sits locked in Babylon's staking
           protocol. Babylon dominates the "Bitcoin staking" narrative, but let's examine
           what it actually offers:
         </p>
@@ -2158,7 +2137,7 @@ export const docsContent = {
           your Bitcoin. You can't use it as collateral. You're trusting third parties.
         </p>
         <p>
-          And your Bitcoin isn't actually <em>doing</em> anything — it's not providing
+          And your Bitcoin isn't actually <em>doing</em> anything. It's not providing
           liquidity, enabling trades, or collateralizing loans. It's sitting in time-locked
           UTXOs, generating "economic security" for PoS chains you've never used.
         </p>
@@ -2217,14 +2196,14 @@ export const docsContent = {
         </p>
         <p>
           Every Bitcoin transaction creates UTXOs (Unspent Transaction Outputs). Each UTXO
-          has a unique identifier — a hash of the transaction that created it plus its
+          has a unique identifier: a hash of the transaction that created it plus its
           position in that transaction's outputs. This hash is deterministic and publicly
           verifiable on the Bitcoin blockchain.
         </p>
         <p>
           When you "stake" via Proof of HODL, you're essentially minting a specific UTXO
           and registering its hash with the smart contract. The contract doesn't hold your
-          Bitcoin — it just knows which UTXO to watch.
+          Bitcoin. It just knows which UTXO to watch.
         </p>
         <p>
           As long as that UTXO exists (hasn't been spent), you're staked. The moment it's
@@ -2345,8 +2324,8 @@ export const docsContent = {
           <div className="callout-title">The Philosophy</div>
           <p style={{ marginBottom: 0 }}>
             This is what "not your keys, not your coins" looks like in a yield-generating
-            context. You hold your Bitcoin — in your wallet, under your control, spendable
-            at any moment — and you earn yield for holding it. The smart contract watches
+            You hold your Bitcoin in your wallet, under your control, spendable
+            at any moment, and you earn yield for holding it. The smart contract watches
             your UTXO. You keep your keys.
           </p>
         </div>
@@ -2361,7 +2340,7 @@ export const docsContent = {
     content: (
       <>
         <p>
-          $MOTO is Motoswap's native token. It's not a governance token — <strong>it's a
+          $MOTO is Motoswap's native token. It's not a governance token. <strong>It's a
           revenue-sharing token</strong>. When you stake MOTO, you earn a cut of every
           single swap that happens on the platform. That's the point.
         </p>
@@ -2422,7 +2401,7 @@ export const docsContent = {
         </table>
 
         <p>
-          <strong>This means MOTO stakers earn fees from literally every trade on Motoswap</strong> —
+          <strong>This means MOTO stakers earn fees from literally every trade on Motoswap:</strong>
           both OP-20 pools and NativeSwap pools. The more trading activity on the platform,
           the more rewards flow to stakers.
         </p>
@@ -2461,7 +2440,7 @@ export const docsContent = {
           <div className="callout-title">Critical: Claiming Resets the Timer</div>
           <p style={{ marginBottom: 0 }}>
             <strong>Every time you claim rewards, your 2,000 block timer resets to zero.</strong>
-            This is not a bug — it's intentional. If you claim at block 1,900, your penalty
+            This is intentional. If you claim at block 1,900, your penalty
             goes back to 20%. You must wait another 2,000 blocks to reach 0% penalty again.
           </p>
         </div>
@@ -2543,7 +2522,7 @@ export const docsContent = {
         <h3>The "Regular Income" Approach</h3>
         <p>
           Claim rewards on a regular schedule (weekly, monthly). Accept that each claim
-          resets your timer. Plan to never unstake — treat MOTO staking as a permanent
+          resets your timer. Plan to never unstake. Treat MOTO staking as a permanent
           position.
         </p>
         <p>
@@ -2630,8 +2609,8 @@ export const docsContent = {
     content: (
       <>
         <p>
-          Yield farming is the core game of DeFi. Understanding how it works — mechanically,
-          economically, and strategically — is essential for success.
+          Yield farming is the core game of DeFi. Understanding how it works mechanically,
+          economically, and strategically is essential for success.
         </p>
 
         <h2>What Yield Farming Actually Is</h2>
@@ -2645,7 +2624,7 @@ export const docsContent = {
           "Deposit your assets here, and we'll pay you in our token."
         </p>
         <p>
-          The payment comes from <strong>token emissions</strong> — new tokens minted and
+          The payment comes from <strong>token emissions</strong>: new tokens minted and
           distributed to farmers according to rules set by the deployer. This is the same
           model that powered Sushiswap, Yearn, and essentially every DeFi protocol from
           2020-2021.
@@ -2664,7 +2643,7 @@ export const docsContent = {
 
         <h3>Yield Per Block</h3>
         <p>
-          Every farm has a <strong>yield per block</strong> setting — the total number of
+          Every farm has a <strong>yield per block</strong> setting: the total number of
           tokens distributed each Bitcoin block across all pools. With ~144 blocks per day,
           you can calculate daily emissions:
         </p>
@@ -2722,7 +2701,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
         <h3>Yield Token Pool</h3>
         <p>
           Stake the farm's yield token to earn more of the same token. This allows compounding
-          — you stake your rewards to earn more rewards.
+          (you stake your rewards to earn more rewards).
         </p>
 
         <h3>Single-Sided Token Pools</h3>
@@ -2743,7 +2722,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
 
         <h2>The Bonus Period</h2>
         <p>
-          Most farms launch with a <strong>bonus multiplier</strong> — a period where
+          Most farms launch with a <strong>bonus multiplier</strong>: a period where
           emissions are 2x, 5x, or even higher than normal.
         </p>
         <p>
@@ -2986,7 +2965,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
           <li>Stake rewards (1 tx)</li>
         </ol>
         <p>
-          This is why single-sided is often better for smaller farmers — the compounding
+          This is why single-sided is often better for smaller farmers. The compounding
           friction is lower.
         </p>
 
@@ -3006,7 +2985,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
         <h3>Exit Signals</h3>
         <ul>
           <li><strong>Bonus period ending:</strong> Many farmers exit when the bonus drops. This creates sell pressure. Consider exiting before they do.</li>
-          <li><strong>TVL dropping:</strong> If TVL is declining while emissions continue, remaining farmers get bigger shares — but it signals fading confidence.</li>
+          <li><strong>TVL dropping:</strong> If TVL is declining while emissions continue, remaining farmers get bigger shares, but it signals fading confidence.</li>
           <li><strong>Token price declining faster than you're earning:</strong> Run the real math. If APY is 100% but token is down 60% this week, you're losing money.</li>
           <li><strong>Emissions nearing end:</strong> When the farm's token allocation is almost depleted, there's often a rush for exits.</li>
         </ul>
@@ -3133,7 +3112,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
         <p>
           <strong>Why this exists:</strong> New tokens have a chicken-and-egg problem. Nobody
           will provide liquidity for a token nobody owns. Nobody will buy a token with no
-          liquidity. Yield farming solves this — you pay people (in tokens) to provide
+          liquidity. Yield farming solves this: you pay people (in tokens) to provide
           the liquidity that makes your token tradeable.
         </p>
         <p>
@@ -3149,11 +3128,11 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
         <h3>Option 2: Simple OP-20 Token</h3>
         <p>
           This is a basic token deployment without a yield farm attached. You control the
-          distribution yourself — through pre-mint and optional free mint.
+          distribution yourself through pre-mint and optional free mint.
         </p>
         <p>
           <strong>Why this exists:</strong> Not every token needs yield farming. Sometimes
-          you just need a token for a specific purpose — a community token, a utility token,
+          you just need a token for a specific purpose: a community token, a utility token,
           a meme, or a token where you'll handle distribution differently.
         </p>
         <p>
@@ -3175,7 +3154,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
         <h3>Total Supply</h3>
         <p>
           The maximum number of tokens that can ever exist. This number is psychological
-          as much as technical — it affects how people perceive your token.
+          as much as technical. It affects how people perceive your token.
         </p>
         <p>
           <strong>Why it matters:</strong>
@@ -3236,7 +3215,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
         <h3>Farm Allocation (Yield-Bearing Tokens Only)</h3>
         <p>
           The remaining supply after pre-mint and free mint goes to yield farm emissions.
-          This is typically the vast majority — 80-95% of total supply.
+          This is typically the vast majority (80-95% of total supply).
         </p>
         <p>
           <strong>Why it matters:</strong> This is what you're paying people to provide
@@ -3313,7 +3292,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
         </table>
         <p>
           <strong>Logic:</strong> Small pre-mint for team/liquidity. Majority goes to free
-          mint for maximum distribution. No farm because distribution IS the game — people
+          mint for maximum distribution. No farm because distribution IS the game. People
           race to mint, creating organic demand.
         </p>
 
@@ -3346,7 +3325,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
         </table>
         <p>
           <strong>Logic:</strong> Full control. You distribute through your own mechanisms
-          — airdrops, rewards in your app, sales, etc. No randomness from free mint.
+          (airdrops, rewards in your app, sales, etc). No randomness from free mint.
         </p>
 
         <h2>Token Parameters</h2>
@@ -3376,7 +3355,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
 
         <ImagePlaceholder
           type="screenshot"
-          description="Simple token deployment interface — name, symbol, supply, pre-mint, free mint options"
+          description="Simple token deployment interface: name, symbol, supply, pre-mint, free mint options"
           aspectRatio="16/9"
         />
 
@@ -3399,7 +3378,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
               <li>Set Free Mint Per Transaction limit</li>
             </ul>
           </li>
-          <li>Review everything — <strong>parameters are permanent</strong></li>
+          <li>Review everything. <strong>Parameters are permanent.</strong></li>
           <li>Click Deploy and confirm in your wallet</li>
           <li>Wait for Bitcoin confirmation (~10 min)</li>
           <li><strong>Save your token contract address</strong></li>
@@ -3416,7 +3395,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
           <div className="callout-title">Everything is Permanent</div>
           <p style={{ marginBottom: 0 }}>
             Token parameters cannot be changed after deployment. Name, symbol, decimals,
-            total supply, free mint settings — all permanent. Triple-check everything.
+            total supply, free mint settings. All permanent. Triple-check everything.
             A typo in your token name lives forever on Bitcoin.
           </p>
         </div>
@@ -3426,9 +3405,9 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
           Once your simple token is deployed:
         </p>
         <ol>
-          <li><strong>Create a NativeSwap pool</strong> — So users can trade BTC for your token</li>
-          <li><strong>Seed liquidity</strong> — Deposit your pre-minted tokens to make trading possible</li>
-          <li><strong>Announce</strong> — Let people know about the free mint (if enabled)</li>
+          <li><strong>Create a NativeSwap pool</strong> so users can trade BTC for your token</li>
+          <li><strong>Seed liquidity</strong> by depositing your pre-minted tokens to make trading possible</li>
+          <li><strong>Announce</strong> to let people know about the free mint (if enabled)</li>
         </ol>
         <p>
           For yield-bearing tokens, see the next section for the complete deployment flow.
@@ -3445,7 +3424,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
       <>
         <p>
           You've deployed a token. Now you need to bootstrap liquidity. This section
-          covers deploying a MotoChef yield farm — the game that attracts capital.
+          covers deploying a MotoChef yield farm, the game that attracts capital.
         </p>
 
         <h2>Prerequisites</h2>
@@ -3462,10 +3441,10 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
           This matters. You must follow this sequence:
         </p>
         <ol>
-          <li><strong>Deploy token</strong> (with pre-mint for liquidity) — wait for confirmation</li>
-          <li><strong>Create NativeSwap pool</strong> — requires token to exist</li>
-          <li><strong>Create OP-20 pools</strong> (optional) — requires token + paired token</li>
-          <li><strong>Deploy yield farm</strong> — requires LP addresses from step 2-3</li>
+          <li><strong>Deploy token</strong> (with pre-mint for liquidity), wait for confirmation</li>
+          <li><strong>Create NativeSwap pool</strong> (requires token to exist)</li>
+          <li><strong>Create OP-20 pools</strong> (optional, requires token + paired token)</li>
+          <li><strong>Deploy yield farm</strong> (requires LP addresses from step 2-3)</li>
         </ol>
         <p>
           Bitcoin blocks are ~10 minutes. Each on-chain action requires confirmation.
@@ -3513,7 +3492,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
         </p>
         <p>
           A 5x multiplier means emissions are 5x normal during the bonus period. This
-          solves the cold-start problem — nobody wants to be first in an empty farm.
+          solves the cold-start problem. Nobody wants to be first in an empty farm.
         </p>
 
         <h4>Bonus Period End Block</h4>
@@ -3607,7 +3586,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
 
         <h2>Bitcoin Pool Fee</h2>
         <p>
-          The Bitcoin Pool is special — it's the only pool where you (the deployer) earn fees.
+          The Bitcoin Pool is special. It's the only pool where you (the deployer) earn fees.
         </p>
         <p>
           When users stake BTC with a 1% fee:
@@ -3617,7 +3596,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
           <li>0.01 BTC goes to your BTC Fee Recipient address</li>
         </ul>
         <p>
-          This is your protocol revenue. Set it reasonably — too high discourages stakers.
+          This is your protocol revenue. Set it reasonably; too high discourages stakers.
         </p>
 
         <h2>Admin Configuration</h2>
@@ -3642,7 +3621,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
 
         <ImagePlaceholder
           type="screenshot"
-          description="MotoChef farm deployment interface — showing yield config, bonus settings, pool weights, and admin options"
+          description="MotoChef farm deployment interface showing yield config, bonus settings, pool weights, and admin options"
           aspectRatio="16/9"
         />
 
@@ -3698,7 +3677,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
         <p>
           DeFi is unforgiving. There's no customer support, no chargebacks, no FDIC
           insurance. If you make a mistake or get scammed, your funds are gone forever.
-          Security isn't optional — it's survival.
+          Security isn't optional. It's survival.
         </p>
 
         <h2>Wallet Security</h2>
@@ -3735,10 +3714,10 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
           Always review transaction details before signing:
         </p>
         <ul>
-          <li>Contract address — is it the real protocol?</li>
-          <li>Amount — is it what you intended?</li>
-          <li>Function being called — does it match your action?</li>
-          <li>Fees — are they reasonable?</li>
+          <li>Contract address: is it the real protocol?</li>
+          <li>Amount: is it what you intended?</li>
+          <li>Function being called: does it match your action?</li>
+          <li>Fees: are they reasonable?</li>
         </ul>
 
         <h3>Approval Hygiene</h3>
@@ -3746,7 +3725,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
           Token approvals grant contracts permission to move your tokens. Be careful with:
         </p>
         <ul>
-          <li><strong>Unlimited approvals:</strong> Some dApps request infinite spending permission. This is risky — a compromised contract can drain everything.</li>
+          <li><strong>Unlimited approvals:</strong> Some dApps request infinite spending permission. This is risky. A compromised contract can drain everything.</li>
           <li><strong>Revoke unused approvals:</strong> If you're done with a protocol, revoke its approvals.</li>
         </ul>
 
@@ -3754,8 +3733,8 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
 
         <h3>Start Small</h3>
         <p>
-          Test every new protocol with a small amount first. Verify the full flow —
-          stake, harvest, unstake — works before committing significant capital.
+          Test every new protocol with a small amount first. Verify the full flow
+          (stake, harvest, unstake) works before committing significant capital.
         </p>
 
         <h3>Understand What You're Using</h3>
@@ -3838,7 +3817,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
 
         <h2>OPSEC Best Practices</h2>
         <ul>
-          <li><strong>Don't share wallet addresses publicly.</strong> Blockchain is transparent — anyone can see your positions.</li>
+          <li><strong>Don't share wallet addresses publicly.</strong> Blockchain is transparent, and anyone can see your positions.</li>
           <li><strong>Use a VPN</strong> when interacting with DeFi if privacy is important.</li>
           <li><strong>Be careful what you share on social media.</strong> Broadcasting your DeFi wins makes you a target.</li>
           <li><strong>Never click links in DMs or emails.</strong> Always navigate directly to sites.</li>
@@ -3847,7 +3826,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
         <div className="callout warning">
           <div className="callout-title">The Final Rule</div>
           <p style={{ marginBottom: 0 }}>
-            Never risk more than you can afford to lose. Not just emotionally — literally.
+            Never risk more than you can afford to lose. Not just emotionally, literally.
             If losing this money would affect your life, don't put it in DeFi. Start small,
             learn the mechanics, and scale up only when you understand what you're doing.
           </p>
