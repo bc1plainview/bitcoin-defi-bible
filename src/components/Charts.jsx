@@ -1358,3 +1358,89 @@ export function TokenDeploymentDecisionDiagram() {
     </div>
   )
 }
+
+// PSBT Trading Flow Diagram
+export function PSBTTradingFlowDiagram() {
+  const stepStyle = (color) => ({
+    background: 'var(--bg-tertiary)',
+    border: `2px solid ${color}`,
+    borderRadius: '10px',
+    padding: '1rem',
+    textAlign: 'center',
+    flex: '1 1 140px',
+    minWidth: '140px'
+  })
+
+  return (
+    <div style={{
+      background: 'var(--bg-secondary)',
+      border: '1px solid var(--border-color)',
+      borderRadius: '16px',
+      padding: '1.5rem',
+      margin: '1.5rem 0'
+    }}>
+      <h4 style={{ margin: '0 0 1.5rem 0', color: 'var(--text-primary)', textAlign: 'center', fontSize: '1rem', fontWeight: 600 }}>
+        How PSBT Trading Works
+      </h4>
+
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '0.5rem',
+        flexWrap: 'wrap',
+        marginBottom: '1.5rem'
+      }}>
+        <div style={stepStyle('var(--btc-orange)')}>
+          <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>✍️</div>
+          <div style={{ fontWeight: 700, color: 'var(--btc-orange)', fontSize: '0.8rem' }}>1. Seller Signs</div>
+          <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+            Partial transaction:<br/>"Send tokens if I get X BTC"
+          </div>
+        </div>
+
+        <div style={{ color: 'var(--text-muted)', fontSize: '1.25rem' }}>→</div>
+
+        <div style={stepStyle('var(--danger)')}>
+          <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>🏢</div>
+          <div style={{ fontWeight: 700, color: 'var(--danger)', fontSize: '0.8rem' }}>2. Marketplace</div>
+          <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+            Centralized server<br/>holds the PSBT
+          </div>
+        </div>
+
+        <div style={{ color: 'var(--text-muted)', fontSize: '1.25rem' }}>→</div>
+
+        <div style={stepStyle('var(--defi-purple)')}>
+          <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>✍️</div>
+          <div style={{ fontWeight: 700, color: 'var(--defi-purple)', fontSize: '0.8rem' }}>3. Buyer Signs</div>
+          <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+            Completes tx<br/>with BTC inputs
+          </div>
+        </div>
+
+        <div style={{ color: 'var(--text-muted)', fontSize: '1.25rem' }}>→</div>
+
+        <div style={stepStyle('var(--danger)')}>
+          <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>📡</div>
+          <div style={{ fontWeight: 700, color: 'var(--danger)', fontSize: '0.8rem' }}>4. Broadcast</div>
+          <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+            Marketplace<br/>submits to chain
+          </div>
+        </div>
+      </div>
+
+      <div style={{
+        background: 'rgba(239, 68, 68, 0.1)',
+        border: '1px solid var(--danger)',
+        borderRadius: '8px',
+        padding: '0.75rem 1rem',
+        fontSize: '0.8rem',
+        color: 'var(--danger)',
+        textAlign: 'center'
+      }}>
+        <strong>Problem:</strong> Trust required at every step. Centralized server controls order matching, can front-run, censor, or go offline.
+      </div>
+    </div>
+  )
+}

@@ -274,15 +274,15 @@ const quizQuestions = [
   },
   {
     category: '$MOTO Token',
-    question: 'What happens if you unstake MOTO before 2,000 blocks (~2 weeks)?',
+    question: 'What happens if you unstake MOTO early (before the staking timer completes)?',
     options: [
       'Nothing, you receive full amount',
-      'You pay up to 20% slashing penalty',
+      'You pay an early exit penalty (slashing)',
       'Your MOTO is burned',
       'You receive bonus rewards'
     ],
     correct: 1,
-    explanation: 'MOTO staking has an early exit penalty. Unstaking before 2,000 blocks incurs a slashing penalty up to 20%. This discourages short-term speculation and rewards long-term stakers.'
+    explanation: 'MOTO staking has an early exit penalty. Unstaking before the timer completes incurs a slashing penalty. This discourages short-term speculation and rewards long-term stakers. Check the current staking contract for exact penalty rates.'
   },
 
   // Farming Strategies
