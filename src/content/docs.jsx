@@ -2449,29 +2449,20 @@ export const docsContent = {
 
 {/* Slashing mechanism explained in text and tables below */}
 
-        <div className="callout info">
-          <div className="callout-title">Note: Parameters May Vary</div>
-          <p style={{ marginBottom: 0 }}>
-            The specific values below (timer length, penalty percentages) are based on launch parameters
-            and may be adjusted by governance. Always check the current staking contract for exact values
-            before making decisions.
-          </p>
-        </div>
-
         <h3>The Rules</h3>
         <ul>
-          <li>When you stake MOTO, a <strong>timer</strong> starts (approximately 2,000 blocks / ~14 days at launch)</li>
-          <li>If you unstake before the timer completes, you pay a penalty on your staked MOTO</li>
-          <li>Penalty starts at the <strong>maximum rate</strong> and decreases over time</li>
-          <li>After the timer completes with no claims, the penalty reaches 0%</li>
+          <li>When you stake MOTO, a <strong>2,000 block timer</strong> (~14 days) starts</li>
+          <li>If you unstake before 2,000 blocks, you pay a penalty on your staked MOTO</li>
+          <li>Penalty starts at <strong>20%</strong> and decreases by 1% every 100 blocks</li>
+          <li>After 2,000 blocks with no claims, the penalty reaches 0%</li>
         </ul>
 
         <div className="callout warning">
           <div className="callout-title">Critical: Claiming Resets the Timer</div>
           <p style={{ marginBottom: 0 }}>
-            <strong>Every time you claim rewards, your staking timer resets to zero.</strong>
-            This is not a bug — it's intentional. If you claim near the end of the timer, your penalty
-            goes back to maximum. You must wait the full timer duration again to reach 0% penalty.
+            <strong>Every time you claim rewards, your 2,000 block timer resets to zero.</strong>
+            This is not a bug — it's intentional. If you claim at block 1,900, your penalty
+            goes back to 20%. You must wait another 2,000 blocks to reach 0% penalty again.
           </p>
         </div>
 
@@ -2481,52 +2472,49 @@ export const docsContent = {
         </p>
         <ol>
           <li>Stake MOTO</li>
-          <li>Wait for timer to complete, reaching 0% penalty</li>
+          <li>Wait 2,000 blocks to reach 0% penalty</li>
           <li>Claim rewards daily forever with no penalty risk</li>
           <li>Unstake the moment something looks bad</li>
         </ol>
         <p>
           Without the reset, stakers could farm rewards indefinitely while maintaining
           an instant exit option. The timer reset ensures that <strong>every claim is
-          a commitment to stay for another full timer period</strong>. This aligns staker incentives
+          a commitment to stay for another ~2 weeks</strong>. This aligns staker incentives
           with protocol health.
         </p>
 
-        <h3>Penalty Schedule (Illustrative)</h3>
-        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
-          Example based on launch parameters — verify current values in the staking contract:
-        </p>
+        <h3>Penalty Schedule</h3>
         <table>
           <thead>
             <tr>
-              <th>Timer Progress</th>
+              <th>Blocks Since Last Stake/Claim</th>
               <th>Approximate Time</th>
               <th>Unstaking Penalty</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>0%</td>
+              <td>0</td>
               <td>Just staked/claimed</td>
-              <td>Maximum (e.g., 20%)</td>
+              <td>20%</td>
             </tr>
             <tr>
-              <td>25%</td>
-              <td>~3-4 days</td>
-              <td>~15%</td>
+              <td>500</td>
+              <td>~3.5 days</td>
+              <td>15%</td>
             </tr>
             <tr>
-              <td>50%</td>
+              <td>1,000</td>
               <td>~7 days</td>
-              <td>~10%</td>
+              <td>10%</td>
             </tr>
             <tr>
-              <td>75%</td>
-              <td>~10-11 days</td>
-              <td>~5%</td>
+              <td>1,500</td>
+              <td>~10.5 days</td>
+              <td>5%</td>
             </tr>
             <tr>
-              <td>100%</td>
+              <td>2,000+</td>
               <td>~14+ days</td>
               <td>0%</td>
             </tr>
@@ -3803,8 +3791,8 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
 
         <h3>Slashing Penalty</h3>
         <p>
-          Unstaking MOTO before the staking timer completes incurs an early exit penalty.
-          Always check your current penalty in the staking interface before unstaking.
+          Unstaking MOTO before 2,000 blocks (~2 weeks) incurs a penalty up to 20%.
+          Always check your current penalty before unstaking.
         </p>
 
         <h2>Common Scams</h2>

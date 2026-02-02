@@ -1,0 +1,72 @@
+# opnet TypeScript Configuration
+
+## tsconfig.base.json
+```json
+{
+    "compilerOptions": {
+        "declaration": true,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "suppressImplicitAnyIndexErrors": false,
+        "preserveConstEnums": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "sourceMap": false,
+        "moduleDetection": "force",
+        "experimentalDecorators": true,
+        "lib": [
+            "es6",
+            "es2020",
+            "es2021",
+            "es2022",
+            "esnext",
+            "webworker",
+            "dom",
+            "scripthost"
+        ],
+        "strict": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "strictBindCallApply": true,
+        "strictPropertyInitialization": true,
+        "alwaysStrict": true,
+        "moduleResolution": "node",
+        "allowJs": true,
+        "incremental": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/*",
+        "src/**/*.js",
+        "src/*.ts",
+        "src/*.js",
+        "src/*.cjs"
+    ]
+}
+```
+
+## tsconfig.json
+```json
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "module": "ESNext",
+        "target": "ESNext",
+        "declaration": true,
+        "outDir": "./build",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "include": [
+        "src/**/*.ts",
+        "test/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
+```

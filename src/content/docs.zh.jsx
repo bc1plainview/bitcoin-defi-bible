@@ -1462,28 +1462,20 @@ export const docsContentZh = {
           玩弄系统。<strong>这是质押前最重要的理解事项。</strong>
         </p>
 
-        <div className="callout info">
-          <div className="callout-title">注意：参数可能变化</div>
-          <p style={{ marginBottom: 0 }}>
-            以下具体数值（计时器长度、惩罚百分比）基于启动参数，
-            可能会被治理调整。在做决定前，请始终检查当前质押合约的确切数值。
-          </p>
-        </div>
-
         <h3>规则</h3>
         <ul>
-          <li>当您质押 MOTO 时，<strong>计时器</strong>开始（启动时约 2,000 区块 / ~14 天）</li>
-          <li>如果您在计时器完成前解质押，您要为质押的 MOTO 支付惩罚</li>
-          <li>惩罚从<strong>最大值</strong>开始，随时间减少</li>
-          <li>计时器完成后没有领取，惩罚达到 0%</li>
+          <li>当您质押 MOTO 时，<strong>2,000 区块计时器</strong>（约 14 天）开始</li>
+          <li>如果您在 2,000 区块之前解质押，您要为质押的 MOTO 支付惩罚</li>
+          <li>惩罚从<strong>20%</strong>开始，每 100 个区块减少 1%</li>
+          <li>2,000 区块后没有领取，惩罚达到 0%</li>
         </ul>
 
         <div className="callout warning">
           <div className="callout-title">关键：领取重置计时器</div>
           <p style={{ marginBottom: 0 }}>
-            <strong>每次您领取奖励，您的质押计时器重置为零。</strong>
-            这不是 bug——这是有意的。如果您在计时器即将结束时领取，您的惩罚
-            回到最大值。您必须再等完整的计时器周期才能再次达到 0% 惩罚。
+            <strong>每次您领取奖励，您的 2,000 区块计时器重置为零。</strong>
+            这不是 bug——这是有意的。如果您在第 1,900 区块领取，您的惩罚
+            回到 20%。您必须再等 2,000 区块才能再次达到 0% 惩罚。
           </p>
         </div>
       </>
