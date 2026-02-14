@@ -77,7 +77,7 @@ export default function Layout() {
           <img src="/bitcoin-logo.svg" alt="Bitcoin" />
           <div className="logo-text">
             <span className="logo-main">THE BITCOIN DEFI BIBLE</span>
-            <span className="logo-sub">SLOWFI ON OP_NET</span>
+            <span className="logo-sub">SLOWFI ON BITCOIN</span>
           </div>
         </Link>
 

@@ -59,12 +59,12 @@ const quizQuestions = [
     question: 'What is the OP-20 token standard?',
     options: [
       'A wrapped Bitcoin token on Ethereum',
-      'Bitcoin\'s native token standard on OP_NET (like ERC-20 on Ethereum)',
+      'Bitcoin\'s native token standard (like ERC-20 on Ethereum)',
       'A stablecoin protocol',
       'A type of NFT'
     ],
     correct: 1,
-    explanation: 'OP-20 is the fungible token standard on OP_NET, equivalent to ERC-20 on Ethereum. It enables tokens with full smart contract functionality on Bitcoin L1.'
+    explanation: 'OP-20 is the fungible token standard on Bitcoin L1, equivalent to ERC-20 on Ethereum. It enables tokens with full smart contract functionality, powered by OP_NET.'
   },
 
   // Bitcoin Token Wars
@@ -163,12 +163,12 @@ const quizQuestions = [
     question: 'What is Motoswap?',
     options: [
       'A centralized exchange for Bitcoin',
-      'The first native DEX on Bitcoin L1, built on OP_NET',
+      'The first native DEX on Bitcoin L1, powered by OP_NET',
       'A Bitcoin mining pool',
       'A Layer 2 scaling solution'
     ],
     correct: 1,
-    explanation: 'Motoswap is the first native decentralized exchange on Bitcoin L1, built on OP_NET. It combines AMM liquidity pools, NativeSwap for BTC trading, and MotoChef for yield farming.'
+    explanation: 'Motoswap is the first native decentralized exchange on Bitcoin L1, powered by OP_NET. It combines AMM liquidity pools, NativeSwap for BTC trading, and MotoChef for yield farming.'
   },
   {
     category: 'Motoswap',
@@ -266,7 +266,7 @@ const quizQuestions = [
     options: [
       'Governance voting only',
       'Staking for a share of all protocol swap fees',
-      'Paying for gas on OP_NET',
+      'Paying for gas on Bitcoin L1',
       'NFT purchases'
     ],
     correct: 1,

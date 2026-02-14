@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════════════════════════════════════
 // THE BITCOIN DEFI BIBLE - DOCUMENTATION CONTENT
-// Your cypherpunk guide to SlowFi on OP_NET
+// Your cypherpunk guide to SlowFi on Bitcoin
 // ═══════════════════════════════════════════════════════════════════════════
 
 import {
@@ -77,7 +77,7 @@ export const docsContent = {
     content: (
       <>
         <p>
-          Welcome to <strong>The Bitcoin DeFi Bible</strong>, your guide to native Bitcoin DeFi on OP_NET.
+          Welcome to <strong>The Bitcoin DeFi Bible</strong>, your guide to native Bitcoin DeFi, powered by OP_NET.
         </p>
 
         <div className="callout info">
@@ -1414,7 +1414,7 @@ export const docsContent = {
       <>
         <p>
           Motoswap is the first fully decentralized exchange on Bitcoin Layer 1. It's a
-          complete DeFi ecosystem built on OP_NET, bringing everything from DeFi Summer
+          complete DeFi ecosystem on Bitcoin Layer 1, powered by OP_NET, bringing everything from DeFi Summer
           2020 to Bitcoin.
         </p>
         <p>
@@ -3375,7 +3375,7 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
         <h3>Token Symbol</h3>
         <p>
           The ticker (e.g., "PILL"). Keep it 3-5 characters. Check that it doesn't
-          conflict with existing tokens on OP_NET.
+          conflict with existing tokens on Bitcoin L1.
         </p>
 
         <h3>Decimals</h3>

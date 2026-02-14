@@ -233,7 +233,7 @@ export default function Home() {
         fontSize: '0.85rem'
       }}>
         <p style={{ marginBottom: '0.5rem' }}>
-          {t('The Bitcoin DeFi Bible | Your guide to SlowFi on OP_NET', '比特币 DeFi 圣经 | 您的 OP_NET SlowFi 指南')}
+          {t('The Bitcoin DeFi Bible | Your guide to SlowFi on Bitcoin', '比特币 DeFi 圣经 | 您的比特币 SlowFi 指南')}
         </p>
         <p style={{ marginBottom: 0 }}>
           <a href="https://motoswap.org" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-tertiary)' }}>Motoswap</a>

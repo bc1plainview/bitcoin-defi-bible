@@ -20,10 +20,10 @@
   <text x="600" y="260" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#ffffff" text-anchor="middle">THE BITCOIN DEFI BIBLE</text>
 
   <!-- Subtitle -->
-  <text x="600" y="340" font-family="Arial, sans-serif" font-size="36" fill="#f7931a" text-anchor="middle">SlowFi Season on OP_NET</text>
+  <text x="600" y="340" font-family="Arial, sans-serif" font-size="36" fill="#f7931a" text-anchor="middle">SlowFi Season on Bitcoin</text>
 
   <!-- Description -->
-  <text x="600" y="420" font-family="Arial, sans-serif" font-size="24" fill="#888888" text-anchor="middle">DeFi Summer 2020 mechanics — now on Bitcoin L1</text>
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="24" fill="#888888" text-anchor="middle">DeFi Summer 2020 mechanics, powered by OP_NET</text>
 
   <!-- URL -->
   <text x="600" y="560" font-family="monospace" font-size="28" fill="#666666" text-anchor="middle">defibible.org</text>
