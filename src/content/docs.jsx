@@ -873,6 +873,54 @@ export const docsContent = {
           <li><strong>Protects from manipulation:</strong> Price changes after reservation don't affect you</li>
         </ul>
 
+        <h2>NativeSwap in Action</h2>
+        <p>
+          Here's the complete flow for swapping BTC for tokens on NativeSwap:
+        </p>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', margin: '2rem 0' }}>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>Step 1:</strong> Select Tokens — Choose what you're selling and buying, enter amount</p>
+            <img
+              src="/nativeswap-1.png"
+              alt="NativeSwap step 1: Select tokens and amounts — selling 0.1 rBTC for MOTO"
+              style={{ maxWidth: '480px', width: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>Step 2:</strong> Reserve Swap — Review amounts, choose reorganization protection, see fees</p>
+            <img
+              src="/nativeswap-2.png"
+              alt="NativeSwap step 2: Reserve swap — review sell/buy amounts, reorganization protection blocks, estimated fees"
+              style={{ maxWidth: '480px', width: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>Step 3:</strong> Execute Swap — Review simulation result, check reservation expiration, confirm</p>
+            <img
+              src="/nativeswap-3.png"
+              alt="NativeSwap step 3: Swap tokens — simulation result, reservation expiration, order recipients, final confirmation"
+              style={{ maxWidth: '480px', width: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>Step 4:</strong> Monitor — Watch the transaction confirm on Bitcoin</p>
+            <img
+              src="/nativeswap-4.png"
+              alt="NativeSwap step 4: Monitoring transaction — simulation checks, mempool status, auto-protection"
+              style={{ maxWidth: '480px', width: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>Step 5:</strong> Done — Swap completed, view on Mempool or OP_SCAN</p>
+            <img
+              src="/nativeswap-5.png"
+              alt="NativeSwap step 5: Transaction successful — swap completed, view on Mempool or OP_SCAN"
+              style={{ maxWidth: '480px', width: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+        </div>
+
         <h2>Queue Priority and Slashing</h2>
         <p>
           NativeSwap maintains two queues for sellers:

@@ -1156,6 +1156,54 @@ export const docsContentZh = {
 
         <AMMCurveDiagram />
 
+        <h2>NativeSwap 使用流程</h2>
+        <p>
+          以下是在 NativeSwap 上用 BTC 交换代币的完整流程：
+        </p>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', margin: '2rem 0' }}>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>第 1 步：</strong>选择代币 — 选择卖出和买入的代币，输入金额</p>
+            <img
+              src="/nativeswap-1.png"
+              alt="NativeSwap 第 1 步：选择代币和金额"
+              style={{ maxWidth: '480px', width: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>第 2 步：</strong>预留交换 — 查看金额、选择重组保护、查看费用</p>
+            <img
+              src="/nativeswap-2.png"
+              alt="NativeSwap 第 2 步：预留交换 — 查看金额和费用"
+              style={{ maxWidth: '480px', width: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>第 3 步：</strong>执行交换 — 查看模拟结果、预留到期时间，确认</p>
+            <img
+              src="/nativeswap-3.png"
+              alt="NativeSwap 第 3 步：执行交换 — 模拟结果和确认"
+              style={{ maxWidth: '480px', width: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>第 4 步：</strong>监控 — 观察交易在比特币上确认</p>
+            <img
+              src="/nativeswap-4.png"
+              alt="NativeSwap 第 4 步：监控交易确认"
+              style={{ maxWidth: '480px', width: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>第 5 步：</strong>完成 — 交换成功，可在 Mempool 或 OP_SCAN 上查看</p>
+            <img
+              src="/nativeswap-5.png"
+              alt="NativeSwap 第 5 步：交易成功"
+              style={{ maxWidth: '480px', width: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+        </div>
+
         <div className="callout tip">
           <div className="callout-title">底线</div>
           <p style={{ marginBottom: 0 }}>
