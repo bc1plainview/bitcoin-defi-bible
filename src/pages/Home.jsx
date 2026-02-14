@@ -170,8 +170,8 @@ export default function Home() {
           </h2>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
             {t(
-              'Think you understand SlowFi? Take the quiz to test your knowledge of Bitcoin DeFi, OP_NET, yield farming strategies, and security.',
-              '觉得自己理解 SlowFi 了吗？参加测验，测试您对比特币 DeFi、OP_NET、流动性挖矿策略和安全性的了解。'
+              'Think you understand SlowFi? Take the quiz to test your knowledge of Bitcoin DeFi, OP_NET, yield farming strategies, and token deployment.',
+              '觉得自己理解 SlowFi 了吗？参加测验，测试您对比特币 DeFi、OP_NET、流动性挖矿策略和代币部署的了解。'
             )}
           </p>
           <Link to="/quiz" className="btn btn-primary">

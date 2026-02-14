@@ -349,43 +349,6 @@ const quizQuestions = [
     explanation: 'Pre-mint is the amount of tokens allocated to the deployer at launch. This is used for team allocation, initial liquidity, marketing, etc. Transparent pre-mint disclosures build trust.'
   },
 
-  // Security
-  {
-    category: 'Security',
-    question: 'What\'s the most important security practice for significant Bitcoin holdings?',
-    options: [
-      'Store seed phrase in cloud storage for backup',
-      'Use a hardware wallet and keep seed phrase offline on paper/metal',
-      'Share your wallet address publicly so others can verify',
-      'Keep all funds in one hot wallet for convenience'
-    ],
-    correct: 1,
-    explanation: 'Hardware wallets keep private keys offline. Even if your computer is compromised, attackers can\'t access keys on the device. Never store seed phrases digitally — paper or metal only.'
-  },
-  {
-    category: 'Security',
-    question: 'Someone DMs you offering "support" for a Motoswap issue. What should you do?',
-    options: [
-      'Share your seed phrase so they can help',
-      'Click their link to connect your wallet',
-      'Ignore completely — legitimate protocols never DM first',
-      'Send them a small test transaction'
-    ],
-    correct: 2,
-    explanation: 'No legitimate protocol will ever DM you first. Anyone claiming to be "support" in your DMs is a scammer trying to steal your seed phrase or get you to connect to a malicious site.'
-  },
-  {
-    category: 'Security',
-    question: 'A new farm is offering 1,000,000% APY. This is most likely:',
-    options: [
-      'An amazing opportunity to get rich quick',
-      'Sustainable due to innovative tokenomics',
-      'Either a scam or will crash rapidly — not sustainable',
-      'Normal for early-stage DeFi'
-    ],
-    correct: 2,
-    explanation: 'Unsustainably high APYs mean the token will crash (emissions > demand) or it\'s a scam. Evaluate farms based on realistic assumptions. If it seems too good to be true, it is.'
-  }
 ]
 
 // Shuffle array helper
@@ -469,7 +432,7 @@ export default function Quiz() {
           <h1>{t('Bitcoin DeFi Knowledge Quiz', '比特币 DeFi 知识测验')}</h1>
           <p className="quiz-description">
             {t(
-              'Test your understanding of SlowFi, OP_NET, NativeSwap, Proof of HODL, yield farming strategies, and security best practices.',
+              'Test your understanding of SlowFi, OP_NET, NativeSwap, Proof of HODL, yield farming strategies, and token deployment.',
               '测试您对 SlowFi、OP_NET、NativeSwap、持有证明、流动性挖矿策略和安全最佳实践的理解。'
             )}
           </p>
@@ -492,7 +455,7 @@ export default function Quiz() {
           <div className="quiz-categories">
             <h3>{t('Topics Covered', '涵盖主题')}</h3>
             <div className="category-tags">
-              {['SlowFi Thesis', 'OP_NET', 'Bitcoin Token Wars', 'NativeSwap', 'OP-20S Stablecoins', 'Motoswap', 'Yield Farming', 'Proof of HODL', '$MOTO Token', 'Strategies', 'Security', 'Creating'].map(cat => (
+              {['SlowFi Thesis', 'OP_NET', 'Bitcoin Token Wars', 'NativeSwap', 'OP-20S Stablecoins', 'Motoswap', 'Yield Farming', 'Proof of HODL', '$MOTO Token', 'Strategies', 'Creating'].map(cat => (
                 <span key={cat} className="category-tag">{cat}</span>
               ))}
             </div>

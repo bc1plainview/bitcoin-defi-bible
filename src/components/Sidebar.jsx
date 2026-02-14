@@ -19,7 +19,6 @@ const icons = {
   strategy: '13',
   deploy: '14',
   farms: '15',
-  security: '16',
 }
 
 const navigationEn = [
@@ -62,13 +61,6 @@ const navigationEn = [
       { name: 'Deploying Yield Farms', slug: 'deploying-farms', icon: icons.farms },
     ]
   },
-  {
-    title: 'Reference',
-    id: 'reference',
-    links: [
-      { name: 'Security', slug: 'security', icon: icons.security },
-    ]
-  }
 ]
 
 const navigationZh = [
@@ -111,13 +103,6 @@ const navigationZh = [
       { name: '部署收益农场', slug: 'deploying-farms', icon: icons.farms },
     ]
   },
-  {
-    title: '参考资料',
-    id: 'reference',
-    links: [
-      { name: '安全性', slug: 'security', icon: icons.security },
-    ]
-  }
 ]
 
 // Count total pages

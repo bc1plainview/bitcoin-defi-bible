@@ -1654,7 +1654,7 @@ export const docsContentZh = {
   'deploying-farms': {
     title: '部署收益农场',
     prev: { slug: 'deploying-tokens', title: '部署代币' },
-    next: { slug: 'security', title: '安全' },
+    next: null,
     content: (
       <>
         <p>
@@ -1743,73 +1743,4 @@ export const docsContentZh = {
     )
   },
 
-  'security': {
-    title: '安全',
-    prev: { slug: 'deploying-farms', title: '部署收益农场' },
-    next: null,
-    content: (
-      <>
-        <p>
-          DeFi 是无情的。没有客服，没有退款，没有 FDIC
-          保险。如果您犯了错误或被骗，您的资金永远消失了。
-          安全不是可选的——它是生存。
-        </p>
-
-        <h2>钱包安全</h2>
-
-        <h3>对于重要持仓使用硬件钱包</h3>
-        <p>
-          硬件钱包（Ledger、Trezor）将您的私钥保持离线。即使您的
-          计算机被入侵，攻击者也无法访问存储在设备上的密钥。
-        </p>
-
-        <h3>助记词安全</h3>
-        <ul>
-          <li><strong>永远不要分享您的助记词。</strong>没有合法服务会要求它。</li>
-          <li><strong>永远不要以数字方式存储它。</strong>没有照片，没有云存储，没有文本文件。</li>
-          <li><strong>写在纸上</strong>并存放在安全的地方。</li>
-          <li><strong>考虑金属备份</strong>以防火/水。</li>
-        </ul>
-
-        <h2>常见骗局</h2>
-
-        <h3>"支持"私信</h3>
-        <p>
-          没有合法协议会首先私信您。任何在您私信中声称是"支持"
-          的人都是骗子。他们想要您的助记词或想让您连接到
-          恶意网站。
-        </p>
-
-        <h3>假网站</h3>
-        <p>
-          骗子创建具有略微不同 URL 的相似网站（motoswap.io
-          而不是 motoswap.org 等）。在连接钱包之前始终验证 URL。
-        </p>
-        <p>
-          <strong>真实网站：</strong>
-        </p>
-        <ul>
-          <li>motoswap.org</li>
-          <li>opnet.org</li>
-        </ul>
-
-        <div className="callout warning">
-          <div className="callout-title">最终规则</div>
-          <p style={{ marginBottom: 0 }}>
-            永远不要冒险超过您能承受损失的金额。不仅仅是情感上——literally。
-            如果失去这笔钱会影响您的生活，不要把它放在 DeFi 中。从小额开始，
-            学习机制，只有在您理解自己在做什么时才扩大规模。
-          </p>
-        </div>
-
-        <h2>资源</h2>
-        <ul>
-          <li><strong>Motoswap：</strong> <a href="https://motoswap.org" target="_blank" rel="noopener noreferrer">motoswap.org</a></li>
-          <li><strong>OP_NET 文档：</strong> <a href="https://docs.opnet.org" target="_blank" rel="noopener noreferrer">docs.opnet.org</a></li>
-          <li><strong>Twitter：</strong> <a href="https://twitter.com/opnetbtc" target="_blank" rel="noopener noreferrer">@opnetbtc</a>、<a href="https://twitter.com/MotoswapBTC" target="_blank" rel="noopener noreferrer">@MotoswapBTC</a></li>
-          <li><strong>GitHub：</strong> <a href="https://github.com/btc-vision" target="_blank" rel="noopener noreferrer">github.com/btc-vision</a></li>
-        </ul>
-      </>
-    )
-  }
 }
