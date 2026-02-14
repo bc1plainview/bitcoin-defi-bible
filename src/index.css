@@ -551,23 +551,6 @@ pre code {
   color: var(--success);
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   COMPONENTS - IMAGE PLACEHOLDERS
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.image-placeholder {
-  position: relative;
-  overflow: hidden;
-  border: 2px dashed var(--border-hover);
-  background: var(--bg-secondary);
-  border-radius: 12px;
-  transition: all var(--transition-base);
-}
-
-.image-placeholder:hover {
-  border-color: var(--btc-orange);
-  box-shadow: var(--shadow-glow);
-}
 
 /* ═══════════════════════════════════════════════════════════════════════════
    COMPONENTS - CARDS

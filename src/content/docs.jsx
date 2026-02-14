@@ -28,48 +28,6 @@ import {
   CompoundingFlowDiagram
 } from '../components/Charts'
 
-// Placeholder component for images/GIFs that need to be added
-const ImagePlaceholder = ({ description, type = 'image', aspectRatio = '16/9' }) => (
-  <div className="image-placeholder" style={{
-    background: 'linear-gradient(135deg, var(--bg-code) 0%, var(--bg-secondary) 100%)',
-    border: '2px dashed var(--btc-orange)',
-    borderRadius: '8px',
-    padding: '2rem',
-    margin: '1.5rem 0',
-    textAlign: 'center',
-    aspectRatio: aspectRatio,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    minHeight: '200px'
-  }}>
-    <div style={{
-      fontSize: '2rem',
-      marginBottom: '0.5rem',
-      opacity: 0.7
-    }}>
-      {type === 'gif' ? '🎬' : type === 'diagram' ? '📊' : type === 'screenshot' ? '📸' : '🖼️'}
-    </div>
-    <div style={{
-      color: 'var(--btc-orange)',
-      fontFamily: 'var(--font-mono)',
-      fontSize: '0.75rem',
-      textTransform: 'uppercase',
-      letterSpacing: '0.1em',
-      marginBottom: '0.5rem'
-    }}>
-      [{type.toUpperCase()} NEEDED]
-    </div>
-    <div style={{
-      color: 'var(--text-secondary)',
-      fontSize: '0.9rem',
-      maxWidth: '400px'
-    }}>
-      {description}
-    </div>
-  </div>
-)
 
 // ASCII Diagram component for text-based diagrams
 const ASCIIDiagram = ({ title, children }) => (
@@ -3384,11 +3342,13 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
 
         <h2>Deploying a Simple OP-20 Token</h2>
 
-        <ImagePlaceholder
-          type="screenshot"
-          description="Simple token deployment interface: name, symbol, supply, pre-mint, free mint options"
-          aspectRatio="16/9"
-        />
+        <div style={{ textAlign: 'center', margin: '1.5rem 0' }}>
+          <img
+            src="/token-deploy.png"
+            alt="Deploy Standard Token interface: name, symbol, supply, decimals, pre-mint configuration and deployment preview"
+            style={{ maxWidth: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+          />
+        </div>
 
         <ol>
           <li>Go to <a href="https://motoswap.org/deploy/token" target="_blank" rel="noopener noreferrer">motoswap.org/deploy/token</a></li>
@@ -3650,11 +3610,40 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
 
         <h2>Step-by-Step Deployment</h2>
 
-        <ImagePlaceholder
-          type="screenshot"
-          description="MotoChef farm deployment interface showing yield config, bonus settings, pool weights, and admin options"
-          aspectRatio="16/9"
-        />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', margin: '2rem 0' }}>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>Step 1:</strong> Basics — Farm name and banner</p>
+            <img
+              src="/farm-setup-1.png"
+              alt="Deploy Yield Farm step 1: Basics — enter farm name and banner URL"
+              style={{ maxWidth: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>Step 2:</strong> Farm Settings — Yield token, emissions, bonus multiplier, and pool configuration</p>
+            <img
+              src="/farm-setup-2.png"
+              alt="Deploy Yield Farm step 2: Farm Settings — yield token, yield per block, bonus multiplier, and yield pools"
+              style={{ maxWidth: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>Step 3:</strong> Addresses — Admin and fee recipient</p>
+            <img
+              src="/farm-setup-3.png"
+              alt="Deploy Yield Farm step 3: Addresses — admin address and fee recipient address"
+              style={{ maxWidth: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>Step 4:</strong> Review — Verify all settings before deploying</p>
+            <img
+              src="/farm-setup-4.png"
+              alt="Deploy Yield Farm step 4: Review — final review of all farm settings before deployment"
+              style={{ maxWidth: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+        </div>
 
         <ol>
           <li>Go to <a href="https://motoswap.org/deploy" target="_blank" rel="noopener noreferrer">motoswap.org/deploy</a></li>

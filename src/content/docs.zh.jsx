@@ -27,48 +27,6 @@ import {
   CompoundingFlowDiagram
 } from '../components/Charts'
 
-// 图片占位符组件
-const ImagePlaceholder = ({ description, type = 'image', aspectRatio = '16/9' }) => (
-  <div className="image-placeholder" style={{
-    background: 'linear-gradient(135deg, var(--bg-code) 0%, var(--bg-secondary) 100%)',
-    border: '2px dashed var(--btc-orange)',
-    borderRadius: '8px',
-    padding: '2rem',
-    margin: '1.5rem 0',
-    textAlign: 'center',
-    aspectRatio: aspectRatio,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    minHeight: '200px'
-  }}>
-    <div style={{
-      fontSize: '2rem',
-      marginBottom: '0.5rem',
-      opacity: 0.7
-    }}>
-      {type === 'gif' ? '🎬' : type === 'diagram' ? '📊' : type === 'screenshot' ? '📸' : '🖼️'}
-    </div>
-    <div style={{
-      color: 'var(--btc-orange)',
-      fontFamily: 'var(--font-mono)',
-      fontSize: '0.75rem',
-      textTransform: 'uppercase',
-      letterSpacing: '0.1em',
-      marginBottom: '0.5rem'
-    }}>
-      [需要{type === 'gif' ? '动图' : type === 'diagram' ? '图表' : type === 'screenshot' ? '截图' : '图片'}]
-    </div>
-    <div style={{
-      color: 'var(--text-secondary)',
-      fontSize: '0.9rem',
-      maxWidth: '400px'
-    }}>
-      {description}
-    </div>
-  </div>
-)
 
 export const docsContentZh = {
   // ─────────────────────────────────────────────────────────────────────────
@@ -1658,6 +1616,14 @@ export const docsContentZh = {
 
         <TokenSupplyDiagram />
 
+        <div style={{ textAlign: 'center', margin: '1.5rem 0' }}>
+          <img
+            src="/token-deploy.png"
+            alt="部署标准代币界面：名称、符号、供应量、小数位、预铸配置和部署预览"
+            style={{ maxWidth: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+          />
+        </div>
+
         <h2>两种类型的代币</h2>
 
         <h3>选项 1：收益代币（代币 + 农场）</h3>
@@ -1715,6 +1681,41 @@ export const docsContentZh = {
           <li><strong>创建 OP-20 池</strong>（可选）——需要代币 + 配对代币</li>
           <li><strong>部署收益农场</strong>——需要步骤 2-3 的 LP 地址</li>
         </ol>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', margin: '2rem 0' }}>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>第 1 步：</strong>基本信息 — 农场名称和横幅</p>
+            <img
+              src="/farm-setup-1.png"
+              alt="部署收益农场第 1 步：基本信息 — 输入农场名称和横幅 URL"
+              style={{ maxWidth: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>第 2 步：</strong>农场设置 — 收益代币、排放、奖励乘数和池配置</p>
+            <img
+              src="/farm-setup-2.png"
+              alt="部署收益农场第 2 步：农场设置 — 收益代币、每区块收益、奖励乘数和收益池"
+              style={{ maxWidth: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>第 3 步：</strong>地址 — 管理员和费用接收方</p>
+            <img
+              src="/farm-setup-3.png"
+              alt="部署收益农场第 3 步：地址 — 管理员地址和费用接收方地址"
+              style={{ maxWidth: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}><strong>第 4 步：</strong>审核 — 部署前验证所有设置</p>
+            <img
+              src="/farm-setup-4.png"
+              alt="部署收益农场第 4 步：审核 — 部署前最终审核所有农场设置"
+              style={{ maxWidth: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+        </div>
 
         <h2>农场配置</h2>
 
