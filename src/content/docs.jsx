@@ -107,19 +107,16 @@ export const docsContent = {
           </tbody>
         </table>
 
-        <h2>How You Make Money</h2>
+        <h2>What You Can Do</h2>
         <ol>
-          <li><strong>Provide liquidity</strong> on Motoswap (pair two tokens in a pool), earn swap fees</li>
-          <li><strong>Stake LP tokens</strong> in MotoChef farms, earn $MOTO on top of fees</li>
-          <li><strong>Stake $MOTO</strong> to earn a cut of all protocol fees</li>
+          <li><strong>Swap tokens</strong> on Motoswap, or use NativeSwap to trade real BTC for tokens</li>
+          <li><strong>Provide liquidity</strong> to Motoswap pools (pair two tokens), earn swap fees</li>
+          <li><strong>Farm yield</strong> by staking LP tokens in MotoChef farms, earn $MOTO on top of fees</li>
+          <li><strong>Stake $MOTO</strong> to earn a cut of all protocol swap fees</li>
           <li><strong>Proof of HODL</strong> to earn yield just by holding BTC in your wallet</li>
+          <li><strong>Mint your own token</strong> and deploy it on Bitcoin L1</li>
+          <li><strong>Create yield farms</strong> for your token to bootstrap liquidity and build a community</li>
         </ol>
-
-        <h2>How You Deploy</h2>
-        <p>
-          You can launch your own OP-20 token and create yield farms for it, all from the browser
-          using OP_WALLET. No coding required. The guide covers the exact steps.
-        </p>
 
         <h2>Why This Matters</h2>
         <p>

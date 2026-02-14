@@ -69,19 +69,16 @@ export const docsContentZh = {
           </tbody>
         </table>
 
-        <h2>如何赚钱</h2>
+        <h2>您可以做什么</h2>
         <ol>
-          <li><strong>提供流动性</strong>——在 Motoswap 上配对两种代币，赚取交换费</li>
-          <li><strong>质押 LP 代币</strong>到 MotoChef 农场，在费用之上赚取 $MOTO</li>
-          <li><strong>质押 $MOTO</strong> 以获得所有协议费用的份额</li>
+          <li><strong>交换代币</strong>——在 Motoswap 上交换，或使用 NativeSwap 用真实 BTC 交易代币</li>
+          <li><strong>提供流动性</strong>——在 Motoswap 池中配对两种代币，赚取交换费</li>
+          <li><strong>流动性挖矿</strong>——将 LP 代币质押到 MotoChef 农场，在费用之上赚取 $MOTO</li>
+          <li><strong>质押 $MOTO</strong>——获得所有协议交换费用的份额</li>
           <li><strong>持有证明</strong>——仅通过在钱包中持有 BTC 即可赚取收益</li>
+          <li><strong>铸造自己的代币</strong>——在比特币 L1 上部署</li>
+          <li><strong>创建收益农场</strong>——为您的代币引导流动性并建立社区</li>
         </ol>
-
-        <h2>如何部署</h2>
-        <p>
-          您可以使用 OP_WALLET 从浏览器启动自己的 OP-20 代币并为其创建收益农场。
-          无需编程。本指南涵盖了确切的步骤。
-        </p>
 
         <h2>为什么重要</h2>
         <p>
