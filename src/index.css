@@ -784,6 +784,47 @@ tbody tr:hover {
   flex-wrap: wrap;
 }
 
+/* Quick nav chips below hero CTA */
+.hero-quick-nav {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.hero-quick-nav-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.hero-quick-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.quick-nav-chip {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.quick-nav-chip:hover {
+  color: var(--btc-orange);
+  border-color: var(--btc-orange);
+  background: var(--btc-orange-dim);
+}
+
 .hero-stats {
   display: flex;
   gap: 3rem;

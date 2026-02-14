@@ -25,9 +25,30 @@ export default function Home() {
           <Link to="/docs/introduction" className="btn btn-primary">
             {t('Start Reading', '开始阅读')}
           </Link>
-          <Link to="/docs/proof-of-hodl" className="btn btn-secondary">
-            {t('Proof of HODL', '持有证明')}
-          </Link>
+        </div>
+
+        <div className="hero-quick-nav">
+          <p className="hero-quick-nav-label">{t('Jump to a topic', '跳转到主题')}</p>
+          <div className="hero-quick-nav-links">
+            <Link to="/docs/what-is-slowfi" className="quick-nav-chip">
+              {t('SlowFi Thesis', 'SlowFi 理论')}
+            </Link>
+            <Link to="/docs/motoswap" className="quick-nav-chip">
+              {t('Motoswap', 'Motoswap')}
+            </Link>
+            <Link to="/docs/nativeswap" className="quick-nav-chip">
+              NativeSwap
+            </Link>
+            <Link to="/docs/proof-of-hodl" className="quick-nav-chip">
+              {t('Proof of HODL', '持有证明')}
+            </Link>
+            <Link to="/docs/yield-farming" className="quick-nav-chip">
+              {t('Yield Farming', '流动性挖矿')}
+            </Link>
+            <Link to="/docs/deploying-tokens" className="quick-nav-chip">
+              {t('Deploy Tokens', '部署代币')}
+            </Link>
+          </div>
         </div>
       </section>
 
