@@ -16,8 +16,8 @@ export default function Home() {
         <p className="hero-subtitle">{t('SlowFi Season Has Arrived', 'SlowFi 时代已经到来')}</p>
         <p className="hero-tagline">
           {t(
-            <>Your guide to <code>OP_NET</code>, <code>Motoswap</code>, and native Bitcoin yield. DeFi Summer 2020 mechanics — now on Bitcoin L1.</>,
-            <>您的 <code>OP_NET</code>、<code>Motoswap</code> 和原生比特币收益指南。2020 DeFi Summer 的机制——现在在比特币 L1 上。</>
+            <>Your guide to <code>OP_NET</code>, <code>Motoswap</code>, and native Bitcoin yield. DeFi Summer 2020 mechanics, now on Bitcoin L1.</>,
+            <>您的 <code>OP_NET</code>、<code>Motoswap</code> 和原生比特币收益指南。2020 DeFi Summer 的机制，现在在比特币 L1 上。</>
           )}
         </p>
 
@@ -33,7 +33,7 @@ export default function Home() {
 
       <section className="features-section">
         <h2 style={{ textAlign: 'center', borderBottom: 'none', marginBottom: '2rem' }}>
-          {t('The DeFi Summer Playbook — Now on Bitcoin', 'DeFi Summer 攻略——现在在比特币上')}
+          {t('The DeFi Summer Playbook, Now on Bitcoin', 'DeFi Summer 攻略，现在在比特币上')}
         </h2>
         <p style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 2.5rem', color: 'var(--text-secondary)' }}>
           {t(
@@ -77,8 +77,8 @@ export default function Home() {
             <h3>{t('MasterChef on Bitcoin', '比特币上的 MasterChef')}</h3>
             <p>
               {t(
-                "SushiSwap's MasterChef contracts — the engine of DeFi Summer 2020 — now on Bitcoin L1.",
-                'SushiSwap 的 MasterChef 合约——2020 DeFi Summer 的引擎——现在在比特币 L1 上。'
+                "SushiSwap's MasterChef contracts, the engine of DeFi Summer 2020, now on Bitcoin L1.",
+                'SushiSwap 的 MasterChef 合约，2020 DeFi Summer 的引擎，现在在比特币 L1 上。'
               )}
             </p>
           </div>
@@ -147,8 +147,8 @@ export default function Home() {
         </blockquote>
         <p style={{ color: 'var(--text-tertiary)', maxWidth: '550px', margin: '0 auto' }}>
           {t(
-            <>Bitcoin DeFi isn't DeFi on Bitcoin — it's <strong style={{ color: 'var(--btc-orange)' }}>Bitcoin's DeFi</strong>. Built different. Built to last.</>,
-            <>比特币 DeFi 不是比特币上的 DeFi——它是<strong style={{ color: 'var(--btc-orange)' }}>比特币的 DeFi</strong>。与众不同。经久耐用。</>
+            <>Bitcoin DeFi isn't DeFi on Bitcoin. It's <strong style={{ color: 'var(--btc-orange)' }}>Bitcoin's DeFi</strong>. Built different. Built to last.</>,
+            <>比特币 DeFi 不是比特币上的 DeFi。它是<strong style={{ color: 'var(--btc-orange)' }}>比特币的 DeFi</strong>。与众不同。经久耐用。</>
           )}
         </p>
       </section>
@@ -212,7 +212,7 @@ export default function Home() {
         fontSize: '0.85rem'
       }}>
         <p style={{ marginBottom: '0.5rem' }}>
-          {t('The Bitcoin DeFi Bible — Your guide to SlowFi on OP_NET', '比特币 DeFi 圣经——您的 OP_NET SlowFi 指南')}
+          {t('The Bitcoin DeFi Bible | Your guide to SlowFi on OP_NET', '比特币 DeFi 圣经 | 您的 OP_NET SlowFi 指南')}
         </p>
         <p style={{ marginBottom: 0 }}>
           <a href="https://motoswap.org" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-tertiary)' }}>Motoswap</a>

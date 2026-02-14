@@ -463,7 +463,7 @@ export const docsContent = {
 
         <h2>The OP_NET Solution</h2>
         <p>
-          OP_NET is a <strong>consensus layer</strong>, the first of its kind on Bitcoin.
+          OP_NET is a <strong>consensus protocol</strong>, the first of its kind on Bitcoin.
           It enables fully expressive smart contracts directly on Layer 1 without modifying
           or forking Bitcoin's base protocol. Unlike metaprotocols (BRC-20, Runes, Alkanes)
           where indexers can show divergent results, OP_NET provides cryptographic proof of
@@ -1129,8 +1129,8 @@ export const docsContent = {
         <p>
           Before OP_NET, Bitcoin had tokens. BRC-20 and Runes exploded in popularity,
           creating billions in trading volume. Then they collapsed. Understanding
-          <strong> why they pumped and why they failed</strong> is essential for
-          understanding why OP-20 tokens are fundamentally different.
+          <strong> why they pumped and why they failed</strong> explains
+          why OP-20 tokens are fundamentally different.
         </p>
 
         <h2>The Free Mint Revolution</h2>

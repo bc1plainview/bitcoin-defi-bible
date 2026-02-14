@@ -26,7 +26,7 @@ const quizQuestions = [
       'They have higher TVL than Ethereum'
     ],
     correct: 1,
-    explanation: 'Fast chains have low exit friction — when sentiment turns, everyone can exit simultaneously, causing rapid protocol collapse. This is why fast chains become memecoin casinos instead of sustaining DeFi seasons.'
+    explanation: 'Fast chains have low exit friction. When sentiment turns, everyone can exit simultaneously, causing rapid protocol collapse. This is why fast chains become memecoin casinos instead of sustaining DeFi seasons.'
   },
   {
     category: 'SlowFi Thesis',
@@ -38,7 +38,7 @@ const quizQuestions = [
       'Too slow for any practical use'
     ],
     correct: 2,
-    explanation: 'Bitcoin\'s 10-minute blocks create the ultimate exit friction. This makes it potentially the best chain for sustained DeFi seasons — even better than Ethereum in 2020.'
+    explanation: 'Bitcoin\'s 10-minute blocks create the ultimate exit friction. This makes it potentially the best chain for sustained DeFi seasons, even better than Ethereum in 2020.'
   },
 
   // OP_NET
@@ -47,12 +47,12 @@ const quizQuestions = [
     question: 'How does OP_NET enable smart contracts on Bitcoin?',
     options: [
       'By using a sidechain with its own token',
-      'As a consensus layer — contract calls embedded in transactions, WASM execution with deterministic state',
+      'As a consensus protocol: contract calls embedded in transactions, WASM execution with deterministic state',
       'By wrapping BTC and bridging to Ethereum',
       'By modifying Bitcoin\'s consensus rules'
     ],
     correct: 1,
-    explanation: 'OP_NET is a consensus layer for Bitcoin L1. Contract calls are embedded in Bitcoin transactions, executed via WASM runtime with deterministic state. No bridges, no wrapped tokens, no consensus changes — pure L1.'
+    explanation: 'OP_NET is a consensus protocol for Bitcoin L1. Contract calls are embedded in Bitcoin transactions, executed via WASM runtime with deterministic state. No bridges, no wrapped tokens, no consensus changes. Pure L1.'
   },
   {
     category: 'OP_NET',
@@ -73,7 +73,7 @@ const quizQuestions = [
     question: 'Why do BRC-20 and Runes tokens suffer from "liquidity death spirals"?',
     options: [
       'Because Bitcoin blocks are too slow',
-      'Because PSBT trading has no AMM — when buy pressure stops, there\'s no bid',
+      'Because PSBT trading has no AMM. When buy pressure stops, there\'s no bid',
       'Because they use too much block space',
       'Because miners don\'t support them'
     ],
@@ -100,7 +100,7 @@ const quizQuestions = [
     options: [
       'BTC is wrapped into an OP-20 token first',
       'BTC is held in a multisig wallet',
-      'BTC is P2P routed through the contract — verified but never custodied',
+      'BTC is P2P routed through the contract, verified but never custodied',
       'BTC is bridged to a sidechain'
     ],
     correct: 2,
@@ -128,7 +128,7 @@ const quizQuestions = [
       'Token approval requirements'
     ],
     correct: 2,
-    explanation: 'Bitcoin transactions are irreversible. Two-phase commit lets you lock in a price (Phase 1: Reserve), then execute at that price later (Phase 2: Execute) — even if the market moved. No slippage, no front-running.'
+    explanation: 'Bitcoin transactions are irreversible. Two-phase commit lets you lock in a price (Phase 1: Reserve), then execute at that price later (Phase 2: Execute), even if the market moved. No slippage, no front-running.'
   },
 
   // OP-20S Stablecoins
@@ -154,7 +154,7 @@ const quizQuestions = [
       'Because USD stablecoins don\'t exist'
     ],
     correct: 0,
-    explanation: 'Bitcoin has no oracle — it doesn\'t know external prices. A "1 USD" stablecoin on NativeSwap is actually priced in satoshis. If BTC moves 10%, your "stablecoin" listing moves 10% in USD terms.'
+    explanation: 'Bitcoin has no oracle. It doesn\'t know external prices. A "1 USD" stablecoin on NativeSwap is actually priced in satoshis. If BTC moves 10%, your "stablecoin" listing moves 10% in USD terms.'
   },
 
   // Motoswap
@@ -194,7 +194,7 @@ const quizQuestions = [
       'Curve\'s StableSwap'
     ],
     correct: 2,
-    explanation: 'MotoChef is a fork of SushiSwap\'s MasterChef — the ~200 lines of Solidity that powered DeFi Summer 2020. Same proven mechanics, now on Bitcoin L1.'
+    explanation: 'MotoChef is a fork of SushiSwap\'s MasterChef, the ~200 lines of Solidity that powered DeFi Summer 2020. Same proven mechanics, now on Bitcoin L1.'
   },
   {
     category: 'Yield Farming',
@@ -213,7 +213,7 @@ const quizQuestions = [
     question: 'When is the optimal time to enter a yield farm?',
     options: [
       'As late as possible to avoid risk',
-      'During the bonus period — high rewards, established contracts',
+      'During the bonus period, when rewards are high and contracts are established',
       'Only after the farm ends',
       'It doesn\'t matter when you enter'
     ],
@@ -256,7 +256,7 @@ const quizQuestions = [
       'Babylon is on Bitcoin L1 while Proof of HODL is on Ethereum'
     ],
     correct: 1,
-    explanation: 'Babylon locks your BTC for up to 15 months with a 7-day minimum unbonding. Proof of HODL has zero lock period — your BTC is spendable at any time while still earning yield.'
+    explanation: 'Babylon locks your BTC for up to 15 months with a 7-day minimum unbonding. Proof of HODL has zero lock period. Your BTC is spendable at any time while still earning yield.'
   },
 
   // $MOTO Token
@@ -270,7 +270,7 @@ const quizQuestions = [
       'NFT purchases'
     ],
     correct: 1,
-    explanation: '$MOTO is a fee-sharing token. Stake MOTO to earn a proportional share of swap fees from all Motoswap trading — both OP-20 swaps (0.2%) and NativeSwap trades (0.2%).'
+    explanation: '$MOTO is a fee-sharing token. Stake MOTO to earn a proportional share of swap fees from all Motoswap trading: OP-20 swaps (0.2%) and NativeSwap trades (0.2%).'
   },
   {
     category: '$MOTO Token',
@@ -316,7 +316,7 @@ const quizQuestions = [
     options: [
       'Hold until APY reaches zero',
       'Exit immediately at the first sign of price decline',
-      'Exit when risk/reward no longer favors staying — before emissions end or TVL dilutes returns',
+      'Exit when risk/reward no longer favors staying, before emissions end or TVL dilutes returns',
       'Never exit, just keep compounding forever'
     ],
     correct: 2,

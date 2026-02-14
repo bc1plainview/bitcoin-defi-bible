@@ -424,7 +424,7 @@ export const docsContentZh = {
 
         <h2>OP_NET 解决方案</h2>
         <p>
-          OP_NET 是一个<strong>共识层</strong>——比特币上的首创，
+          OP_NET 是一个<strong>共识协议</strong>，比特币上的首创，
           直接在一层上启用完全表达性的智能合约，而无需修改
           或分叉比特币的基础协议。与元协议（BRC-20、Runes、Alkanes）
           不同，索引器可能显示不同的结果，OP_NET 提供正确执行的加密证明，
