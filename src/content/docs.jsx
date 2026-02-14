@@ -68,11 +68,83 @@ const ASCIIDiagram = ({ title, children }) => (
 
 export const docsContent = {
   // ─────────────────────────────────────────────────────────────────────────
+  // TLDR
+  // ─────────────────────────────────────────────────────────────────────────
+  'tldr': {
+    title: 'TLDR',
+    prev: null,
+    next: { slug: 'introduction', title: 'Introduction' },
+    content: (
+      <>
+        <p>
+          Don't have time to read the whole thing? Here's Bitcoin DeFi in 5 minutes.
+        </p>
+
+        <h2>The Big Idea</h2>
+        <p>
+          DeFi Summer 2020 made people rich on Ethereum, a slow and expensive chain.
+          Every fast chain since (Solana, BSC, Base) failed to sustain a real DeFi season.
+          Turns out <strong>slowness is the feature, not the bug</strong>. When it's hard to exit,
+          liquidity stays, TVL compounds, and protocols have time to grow.
+        </p>
+        <p>
+          Bitcoin's 10-minute blocks take this to the extreme. That's the <strong>SlowFi thesis</strong>.
+        </p>
+
+        <h2>The Stack</h2>
+        <table>
+          <thead>
+            <tr><th>What</th><th>What It Does</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>OP_NET</strong></td><td>Smart contract protocol that runs on Bitcoin L1. No bridges, no wrapped tokens, no L2.</td></tr>
+            <tr><td><strong>OP-20</strong></td><td>Token standard on Bitcoin (like ERC-20 on Ethereum).</td></tr>
+            <tr><td><strong>Motoswap</strong></td><td>The DEX. Automated market maker with liquidity pools. Swap tokens here.</td></tr>
+            <tr><td><strong>NativeSwap</strong></td><td>Swap actual BTC for tokens without wrapping it. Two-phase commit: reserve, then execute.</td></tr>
+            <tr><td><strong>MotoChef</strong></td><td>Yield farming engine. Stake LP tokens, earn $MOTO rewards. Fork of SushiSwap's MasterChef.</td></tr>
+            <tr><td><strong>Proof of HODL</strong></td><td>Earn yield on your BTC without locking it. Bitcoin stays in your wallet, spendable anytime.</td></tr>
+            <tr><td><strong>$MOTO</strong></td><td>Protocol token. Stake it for a share of all swap fees across Motoswap.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>How You Make Money</h2>
+        <ol>
+          <li><strong>Provide liquidity</strong> on Motoswap (pair two tokens in a pool), earn swap fees</li>
+          <li><strong>Stake LP tokens</strong> in MotoChef farms, earn $MOTO on top of fees</li>
+          <li><strong>Stake $MOTO</strong> to earn a cut of all protocol fees</li>
+          <li><strong>Proof of HODL</strong> to earn yield just by holding BTC in your wallet</li>
+        </ol>
+
+        <h2>How You Deploy</h2>
+        <p>
+          You can launch your own OP-20 token and create yield farms for it, all from the browser
+          using OP_WALLET. No coding required. The guide covers the exact steps.
+        </p>
+
+        <h2>Why This Matters</h2>
+        <p>
+          This is DeFi Summer mechanics on the most liquid, most trusted chain in crypto.
+          Bitcoin holders have never had native yield options. Now they do. The infrastructure
+          is live and the games are starting.
+        </p>
+
+        <div className="callout info">
+          <div className="callout-title">Want the full picture?</div>
+          <p style={{ marginBottom: 0 }}>
+            The rest of this guide covers every mechanic in detail, with strategies,
+            walkthroughs, and step-by-step screenshots. Start with the Introduction.
+          </p>
+        </div>
+      </>
+    )
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
   // GETTING STARTED
   // ─────────────────────────────────────────────────────────────────────────
   'introduction': {
     title: 'Introduction',
-    prev: null,
+    prev: { slug: 'tldr', title: 'TLDR' },
     next: { slug: 'what-is-slowfi', title: 'The SlowFi Thesis' },
     content: (
       <>

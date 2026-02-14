@@ -30,6 +30,9 @@ export default function Home() {
         <div className="hero-quick-nav">
           <p className="hero-quick-nav-label">{t('Jump to a topic', '跳转到主题')}</p>
           <div className="hero-quick-nav-links">
+            <Link to="/docs/tldr" className="quick-nav-chip">
+              TLDR
+            </Link>
             <Link to="/docs/what-is-slowfi" className="quick-nav-chip">
               {t('SlowFi Thesis', 'SlowFi 理论')}
             </Link>

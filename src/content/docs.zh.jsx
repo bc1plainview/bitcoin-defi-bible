@@ -30,11 +30,83 @@ import {
 
 export const docsContentZh = {
   // ─────────────────────────────────────────────────────────────────────────
+  // 摘要
+  // ─────────────────────────────────────────────────────────────────────────
+  'tldr': {
+    title: '摘要',
+    prev: null,
+    next: { slug: 'introduction', title: '简介' },
+    content: (
+      <>
+        <p>
+          没时间阅读全文？以下是 5 分钟了解比特币 DeFi。
+        </p>
+
+        <h2>核心理念</h2>
+        <p>
+          2020 年的 DeFi Summer 让人们在以太坊上致富，而以太坊是一条缓慢且昂贵的链。
+          此后每条快速链（Solana、BSC、Base）都未能维持真正的 DeFi 季节。
+          事实证明，<strong>缓慢是特性，而非缺陷</strong>。当退出困难时，
+          流动性会留下，TVL 会复利增长，协议有时间成长。
+        </p>
+        <p>
+          比特币的 10 分钟出块时间将这一点发挥到了极致。这就是 <strong>SlowFi 理论</strong>。
+        </p>
+
+        <h2>技术栈</h2>
+        <table>
+          <thead>
+            <tr><th>名称</th><th>功能</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>OP_NET</strong></td><td>运行在比特币 L1 上的智能合约协议。没有跨链桥，没有包装代币，没有 L2。</td></tr>
+            <tr><td><strong>OP-20</strong></td><td>比特币上的代币标准（类似以太坊上的 ERC-20）。</td></tr>
+            <tr><td><strong>Motoswap</strong></td><td>去中心化交易所。自动做市商，带有流动性池。在这里交换代币。</td></tr>
+            <tr><td><strong>NativeSwap</strong></td><td>无需包装即可将真实 BTC 换成代币。两阶段提交：预留，然后执行。</td></tr>
+            <tr><td><strong>MotoChef</strong></td><td>流动性挖矿引擎。质押 LP 代币，赚取 $MOTO 奖励。SushiSwap MasterChef 的分叉。</td></tr>
+            <tr><td><strong>持有证明</strong></td><td>无需锁定即可获得 BTC 收益。比特币保留在您的钱包中，随时可用。</td></tr>
+            <tr><td><strong>$MOTO</strong></td><td>协议代币。质押它以获得 Motoswap 上所有交换费用的份额。</td></tr>
+          </tbody>
+        </table>
+
+        <h2>如何赚钱</h2>
+        <ol>
+          <li><strong>提供流动性</strong>——在 Motoswap 上配对两种代币，赚取交换费</li>
+          <li><strong>质押 LP 代币</strong>到 MotoChef 农场，在费用之上赚取 $MOTO</li>
+          <li><strong>质押 $MOTO</strong> 以获得所有协议费用的份额</li>
+          <li><strong>持有证明</strong>——仅通过在钱包中持有 BTC 即可赚取收益</li>
+        </ol>
+
+        <h2>如何部署</h2>
+        <p>
+          您可以使用 OP_WALLET 从浏览器启动自己的 OP-20 代币并为其创建收益农场。
+          无需编程。本指南涵盖了确切的步骤。
+        </p>
+
+        <h2>为什么重要</h2>
+        <p>
+          这是在加密货币中流动性最强、最受信赖的链上运行的 DeFi Summer 机制。
+          比特币持有者从未拥有过原生收益选择。现在他们有了。基础设施已上线，
+          游戏正在开始。
+        </p>
+
+        <div className="callout info">
+          <div className="callout-title">想要完整了解？</div>
+          <p style={{ marginBottom: 0 }}>
+            本指南的其余部分详细介绍了每个机制，包括策略、教程和分步截图。
+            从简介开始阅读。
+          </p>
+        </div>
+      </>
+    )
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
   // 入门指南
   // ─────────────────────────────────────────────────────────────────────────
   'introduction': {
     title: '简介',
-    prev: null,
+    prev: { slug: 'tldr', title: '摘要' },
     next: { slug: 'what-is-slowfi', title: 'SlowFi 理论' },
     content: (
       <>

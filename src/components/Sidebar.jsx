@@ -4,6 +4,7 @@ import { useLanguage, LANGUAGES } from '../context/LanguageContext'
 
 // Icons as simple components
 const icons = {
+  tldr: 'TL',
   intro: '01',
   slowfi: '02',
   bitcoin: '03',
@@ -26,6 +27,7 @@ const navigationEn = [
     title: 'Getting Started',
     id: 'getting-started',
     links: [
+      { name: 'TLDR', slug: 'tldr', icon: icons.tldr },
       { name: 'Introduction', slug: 'introduction', icon: icons.intro },
       { name: 'The SlowFi Thesis', slug: 'what-is-slowfi', icon: icons.slowfi },
       { name: 'Why Bitcoin?', slug: 'why-bitcoin-defi', icon: icons.bitcoin },
@@ -68,6 +70,7 @@ const navigationZh = [
     title: '入门指南',
     id: 'getting-started',
     links: [
+      { name: '摘要', slug: 'tldr', icon: icons.tldr },
       { name: '简介', slug: 'introduction', icon: icons.intro },
       { name: 'SlowFi 理论', slug: 'what-is-slowfi', icon: icons.slowfi },
       { name: '为什么选择比特币？', slug: 'why-bitcoin-defi', icon: icons.bitcoin },
