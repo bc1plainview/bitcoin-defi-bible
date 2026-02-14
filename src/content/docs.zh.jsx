@@ -18,7 +18,8 @@ import {
   RewardFlowDiagram,
   EntryTimingDiagram,
   LPvsSingleSidedDiagram,
-  TokenDeploymentDecisionDiagram
+  TokenDeploymentDecisionDiagram,
+  BitcoinMempoolVisualization
 } from '../components/Charts'
 
 // 图片占位符组件
@@ -344,11 +345,7 @@ export const docsContentZh = {
           费用经常超过50-100美元。
         </p>
 
-        <ImagePlaceholder
-          type="image"
-          description="高费用期间的比特币内存池可视化——显示交易积压和费用飙升"
-          aspectRatio="16/9"
-        />
+        <BitcoinMempoolVisualization />
 
         <p>
           这通过纯粹的经济学创造了一个自然的退出屏障：

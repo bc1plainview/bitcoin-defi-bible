@@ -19,7 +19,8 @@ import {
   EntryTimingDiagram,
   LPvsSingleSidedDiagram,
   TokenDeploymentDecisionDiagram,
-  PSBTTradingFlowDiagram
+  PSBTTradingFlowDiagram,
+  BitcoinMempoolVisualization
 } from '../components/Charts'
 
 // Placeholder component for images/GIFs that need to be added
@@ -383,11 +384,7 @@ export const docsContent = {
           fees regularly exceed $50-100.
         </p>
 
-        <ImagePlaceholder
-          type="image"
-          description="Bitcoin mempool visualization during high-fee periods, showing transaction backlog and fee spikes"
-          aspectRatio="16/9"
-        />
+        <BitcoinMempoolVisualization />
 
         <p>
           This creates a natural exit barrier through pure economics:

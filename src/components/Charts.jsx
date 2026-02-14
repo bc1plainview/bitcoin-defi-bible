@@ -1444,3 +1444,234 @@ export function PSBTTradingFlowDiagram() {
     </div>
   )
 }
+
+// Bitcoin Mempool Visualization - Fee Wall Concept
+export function BitcoinMempoolVisualization() {
+  // Simulated mempool fee bands (sat/vB ranges and their relative sizes in MB)
+  const feeBands = [
+    { range: '200+', sats: 200, size: 1.2, color: '#ef4444', label: 'Urgent' },
+    { range: '100-200', sats: 150, size: 2.8, color: '#f97316', label: 'High' },
+    { range: '50-100', sats: 75, size: 5.4, color: '#eab308', label: 'Medium' },
+    { range: '20-50', sats: 35, size: 8.1, color: '#f7931a', label: 'Standard' },
+    { range: '10-20', sats: 15, size: 12.6, color: '#a16207', label: 'Low' },
+    { range: '5-10', sats: 7, size: 18.3, color: '#78716c', label: 'Economy' },
+    { range: '1-5', sats: 3, size: 24.0, color: '#57534e', label: 'Stuck' },
+  ]
+
+  const maxSize = 24
+  const chartWidth = 220
+
+  // Simulated blocks being mined
+  const blocks = [
+    { label: 'Next Block', fee: '~180 sat/vB', fill: 0.97 },
+    { label: '+1 Block', fee: '~95 sat/vB', fill: 0.92 },
+    { label: '+2 Block', fee: '~52 sat/vB', fill: 0.85 },
+  ]
+
+  return (
+    <div style={{
+      background: 'var(--bg-secondary)',
+      border: '1px solid var(--border-color)',
+      borderRadius: '16px',
+      padding: '1.5rem',
+      margin: '1.5rem 0'
+    }}>
+      <h4 style={{ margin: '0 0 0.25rem 0', color: 'var(--text-primary)', textAlign: 'center', fontSize: '1rem', fontWeight: 600 }}>
+        Bitcoin Mempool During High-Fee Periods
+      </h4>
+      <div style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
+        Unconfirmed transactions competing for limited block space
+      </div>
+
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: '1.5rem',
+        marginBottom: '1.25rem'
+      }}>
+        {/* Left: Mempool depth visualization */}
+        <div>
+          <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '0.75rem', textAlign: 'center' }}>
+            Mempool Depth by Fee Rate
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+            {feeBands.map((band) => {
+              const width = (band.size / maxSize) * 100
+              return (
+                <div key={band.range} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <div style={{
+                    width: '52px',
+                    fontSize: '0.65rem',
+                    color: 'var(--text-muted)',
+                    textAlign: 'right',
+                    fontFamily: 'var(--font-mono)',
+                    flexShrink: 0
+                  }}>
+                    {band.range}
+                  </div>
+                  <div style={{ flex: 1, position: 'relative', height: '22px' }}>
+                    <div style={{
+                      position: 'absolute',
+                      left: 0,
+                      top: 0,
+                      width: `${width}%`,
+                      height: '100%',
+                      background: `linear-gradient(90deg, ${band.color} 0%, ${band.color}88 100%)`,
+                      borderRadius: '0 4px 4px 0',
+                      transition: 'width 0.5s ease',
+                      display: 'flex',
+                      alignItems: 'center',
+                      paddingLeft: '6px'
+                    }}>
+                      <span style={{
+                        fontSize: '0.6rem',
+                        color: '#fff',
+                        fontWeight: 600,
+                        whiteSpace: 'nowrap',
+                        textShadow: '0 1px 2px rgba(0,0,0,0.5)'
+                      }}>
+                        {band.size} MB
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            marginTop: '6px',
+            fontSize: '0.6rem',
+            color: 'var(--text-muted)'
+          }}>
+            <span>sat/vB</span>
+            <span>Transaction Volume →</span>
+          </div>
+        </div>
+
+        {/* Right: Block queue + fee stats */}
+        <div>
+          <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '0.75rem', textAlign: 'center' }}>
+            Block Queue
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            {blocks.map((block, i) => (
+              <div key={block.label} style={{
+                background: 'var(--bg-tertiary)',
+                border: `1px solid ${i === 0 ? 'var(--btc-orange)' : 'var(--border-color)'}`,
+                borderRadius: '8px',
+                padding: '0.625rem 0.75rem',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                {/* Fill bar background */}
+                <div style={{
+                  position: 'absolute',
+                  left: 0,
+                  top: 0,
+                  width: `${block.fill * 100}%`,
+                  height: '100%',
+                  background: i === 0
+                    ? 'rgba(247, 147, 26, 0.08)'
+                    : 'rgba(120, 113, 108, 0.06)',
+                  borderRight: `2px solid ${i === 0 ? 'rgba(247, 147, 26, 0.3)' : 'rgba(120, 113, 108, 0.15)'}`
+                }} />
+                <div style={{ position: 'relative', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div>
+                    <div style={{
+                      fontSize: '0.8rem',
+                      fontWeight: 600,
+                      color: i === 0 ? 'var(--btc-orange)' : 'var(--text-secondary)'
+                    }}>
+                      {block.label}
+                    </div>
+                    <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: '2px' }}>
+                      Min fee: {block.fee}
+                    </div>
+                  </div>
+                  <div style={{
+                    fontSize: '0.75rem',
+                    fontFamily: 'var(--font-mono)',
+                    color: i === 0 ? 'var(--btc-orange)' : 'var(--text-tertiary)',
+                    fontWeight: 600
+                  }}>
+                    {Math.round(block.fill * 100)}% full
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Congestion indicator */}
+          <div style={{
+            marginTop: '0.75rem',
+            background: 'rgba(239, 68, 68, 0.08)',
+            border: '1px solid rgba(239, 68, 68, 0.25)',
+            borderRadius: '8px',
+            padding: '0.625rem 0.75rem',
+            textAlign: 'center'
+          }}>
+            <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--danger)' }}>
+              72.4 MB unconfirmed
+            </div>
+            <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: '2px' }}>
+              ~72 blocks to clear at current rate
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Fee impact callout */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, 1fr)',
+        gap: '0.75rem',
+        marginBottom: '1.25rem'
+      }}>
+        <div style={{
+          background: 'rgba(239, 68, 68, 0.08)',
+          border: '1px solid rgba(239, 68, 68, 0.2)',
+          borderRadius: '8px',
+          padding: '0.75rem',
+          textAlign: 'center'
+        }}>
+          <div style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--danger)', fontFamily: 'var(--font-mono)' }}>$82</div>
+          <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>Avg fee (fast)</div>
+        </div>
+        <div style={{
+          background: 'rgba(247, 147, 26, 0.08)',
+          border: '1px solid rgba(247, 147, 26, 0.2)',
+          borderRadius: '8px',
+          padding: '0.75rem',
+          textAlign: 'center'
+        }}>
+          <div style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--btc-orange)', fontFamily: 'var(--font-mono)' }}>$34</div>
+          <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>Avg fee (standard)</div>
+        </div>
+        <div style={{
+          background: 'rgba(120, 113, 108, 0.08)',
+          border: '1px solid rgba(120, 113, 108, 0.2)',
+          borderRadius: '8px',
+          padding: '0.75rem',
+          textAlign: 'center'
+        }}>
+          <div style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>$9</div>
+          <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>Avg fee (economy)</div>
+        </div>
+      </div>
+
+      <div style={{
+        padding: '0.875rem 1rem',
+        background: 'var(--bg-tertiary)',
+        borderRadius: '8px',
+        fontSize: '0.8rem',
+        color: 'var(--text-secondary)',
+        textAlign: 'center'
+      }}>
+        <strong style={{ color: 'var(--btc-orange)' }}>This is the fee wall.</strong> When 72 MB of transactions compete for 4 MB/hr of block space,
+        fees spike and exiting DeFi positions becomes economically irrational.
+      </div>
+    </div>
+  )
+}
