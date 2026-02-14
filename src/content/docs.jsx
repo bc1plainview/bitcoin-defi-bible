@@ -20,7 +20,12 @@ import {
   LPvsSingleSidedDiagram,
   TokenDeploymentDecisionDiagram,
   PSBTTradingFlowDiagram,
-  BitcoinMempoolVisualization
+  BitcoinMempoolVisualization,
+  AMMCurveDiagram,
+  ImpermanentLossDiagram,
+  TokenSupplyDiagram,
+  StableSwapCurveDiagram,
+  CompoundingFlowDiagram
 } from '../components/Charts'
 
 // Placeholder component for images/GIFs that need to be added
@@ -788,6 +793,9 @@ export const docsContent = {
         </table>
 
         <h2>AMM Price Discovery</h2>
+
+        <AMMCurveDiagram />
+
         <p>
           NativeSwap uses the constant product formula for <strong>algorithmic price discovery</strong>:
         </p>
@@ -1575,6 +1583,8 @@ export const docsContent = {
           </p>
         </div>
 
+        <ImpermanentLossDiagram />
+
         <h2>Swapping Tokens</h2>
 
         <div style={{ textAlign: 'center', margin: '2rem 0' }}>
@@ -1731,6 +1741,8 @@ export const docsContent = {
         <p>
           Same math that powers Curve Finance. Now it's available on Bitcoin L1.
         </p>
+
+        <StableSwapCurveDiagram />
 
         <h2>What OP-20S Enables</h2>
         <p>
@@ -2983,6 +2995,8 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
           friction is lower.
         </p>
 
+        <CompoundingFlowDiagram />
+
         <h2>When to Exit</h2>
         <p>
           This is where most people get rekt. They farm successfully, accumulate a bag,
@@ -3160,6 +3174,9 @@ Your daily rewards = 2,880,000 × 5% = 144,000 tokens
         </ul>
 
         <h2>Supply Planning: The WHY Behind the Numbers</h2>
+
+        <TokenSupplyDiagram />
+
         <p>
           Token parameters are <strong>permanent</strong>. You cannot change them after
           deployment. Understanding why each parameter exists helps you make better decisions.

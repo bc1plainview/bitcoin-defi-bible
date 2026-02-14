@@ -19,7 +19,12 @@ import {
   EntryTimingDiagram,
   LPvsSingleSidedDiagram,
   TokenDeploymentDecisionDiagram,
-  BitcoinMempoolVisualization
+  BitcoinMempoolVisualization,
+  AMMCurveDiagram,
+  ImpermanentLossDiagram,
+  TokenSupplyDiagram,
+  StableSwapCurveDiagram,
+  CompoundingFlowDiagram
 } from '../components/Charts'
 
 // 图片占位符组件
@@ -1059,6 +1064,8 @@ export const docsContentZh = {
           </p>
         </div>
 
+        <ImpermanentLossDiagram />
+
         <h2>交换代币</h2>
 
         <div style={{ textAlign: 'center', margin: '2rem 0' }}>
@@ -1189,6 +1196,8 @@ export const docsContentZh = {
           </tbody>
         </table>
 
+        <AMMCurveDiagram />
+
         <div className="callout tip">
           <div className="callout-title">底线</div>
           <p style={{ marginBottom: 0 }}>
@@ -1267,6 +1276,8 @@ export const docsContentZh = {
           NativeSwap 检测这些代币并应用<strong>StableSwap 数学</strong>——
           优化的 AMM 曲线，最小化锚定价格附近的滑点。
         </p>
+
+        <StableSwapCurveDiagram />
 
         <div className="callout tip">
           <div className="callout-title">这解锁了什么</div>
@@ -1573,6 +1584,8 @@ export const docsContentZh = {
           <li>您使用稳定币对或相关资产</li>
         </ul>
 
+        <CompoundingFlowDiagram />
+
         <h2>何时退出</h2>
         <p>
           这是大多数人被搞的地方。他们成功农耕，积累了一袋，
@@ -1642,6 +1655,8 @@ export const docsContentZh = {
             </tr>
           </tbody>
         </table>
+
+        <TokenSupplyDiagram />
 
         <h2>两种类型的代币</h2>
 
