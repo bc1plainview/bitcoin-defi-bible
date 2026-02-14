@@ -535,11 +535,13 @@ export const docsContentZh = {
           要与 OP_NET 协议交互，您需要：
         </p>
 
-        <ImagePlaceholder
-          type="screenshot"
-          description="OP_WALLET 浏览器扩展——显示钱包界面、BTC 余额和网络选择器"
-          aspectRatio="4/3"
-        />
+        <div style={{ textAlign: 'center', margin: '2rem 0' }}>
+          <img
+            src="/op-wallet-screenshot.png"
+            alt="OP_WALLET 浏览器扩展——显示钱包界面、BTC 余额和网络选择器"
+            style={{ maxWidth: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+          />
+        </div>
 
         <h3>1. OP_WALLET</h3>
         <p>
@@ -888,11 +890,13 @@ export const docsContentZh = {
           <a href="https://motoswap.org" target="_blank" rel="noopener noreferrer">motoswap.org</a>
         </p>
 
-        <ImagePlaceholder
-          type="screenshot"
-          description="Motoswap 主界面显示交换、池、农场导航"
-          aspectRatio="16/9"
-        />
+        <div style={{ textAlign: 'center', margin: '2rem 0' }}>
+          <img
+            src="/motoswap-main.png"
+            alt="Motoswap 主界面显示交换、池、农场导航"
+            style={{ maxWidth: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+          />
+        </div>
 
         <h2>Motoswap 技术栈</h2>
         <p>
@@ -1057,11 +1061,13 @@ export const docsContentZh = {
 
         <h2>交换代币</h2>
 
-        <ImagePlaceholder
-          type="screenshot"
-          description="Motoswap 交换界面显示 BTC → 代币交换的预约状态和价格报价"
-          aspectRatio="16/9"
-        />
+        <div style={{ textAlign: 'center', margin: '2rem 0' }}>
+          <img
+            src="/motoswap-swap.png"
+            alt="Motoswap 交换界面显示代币交换的价格报价和价格影响"
+            style={{ maxWidth: '480px', width: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+          />
+        </div>
 
         <h3>用 BTC 购买代币（NativeSwap）</h3>
         <ol>

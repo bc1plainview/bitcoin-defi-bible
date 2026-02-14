@@ -574,11 +574,13 @@ export const docsContent = {
           To interact with OP_NET protocols, you need:
         </p>
 
-        <ImagePlaceholder
-          type="screenshot"
-          description="OP_WALLET browser extension showing wallet interface with BTC balance and network selector"
-          aspectRatio="4/3"
-        />
+        <div style={{ textAlign: 'center', margin: '2rem 0' }}>
+          <img
+            src="/op-wallet-screenshot.png"
+            alt="OP_WALLET browser extension showing wallet interface with BTC balance and network selector"
+            style={{ maxWidth: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+          />
+        </div>
 
         <h3>1. OP_WALLET</h3>
         <p>
@@ -1405,11 +1407,13 @@ export const docsContent = {
           <a href="https://motoswap.org" target="_blank" rel="noopener noreferrer">motoswap.org</a>
         </p>
 
-        <ImagePlaceholder
-          type="screenshot"
-          description="Motoswap main interface showing swap, pools, farms navigation"
-          aspectRatio="16/9"
-        />
+        <div style={{ textAlign: 'center', margin: '2rem 0' }}>
+          <img
+            src="/motoswap-main.png"
+            alt="Motoswap main interface showing swap, pools, farms navigation"
+            style={{ maxWidth: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+          />
+        </div>
 
         <h2>The Motoswap Stack</h2>
         <p>
@@ -1573,11 +1577,13 @@ export const docsContent = {
 
         <h2>Swapping Tokens</h2>
 
-        <ImagePlaceholder
-          type="screenshot"
-          description="Motoswap swap interface showing BTC → Token swap with reservation status and price quote"
-          aspectRatio="16/9"
-        />
+        <div style={{ textAlign: 'center', margin: '2rem 0' }}>
+          <img
+            src="/motoswap-swap.png"
+            alt="Motoswap swap interface showing token swap with price quote and price impact"
+            style={{ maxWidth: '480px', width: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+          />
+        </div>
 
         <h3>Buying Tokens with BTC (NativeSwap)</h3>
         <ol>
@@ -2072,11 +2078,22 @@ export const docsContent = {
           History doesn't repeat, but it rhymes. The mechanics haven't changed. Only the chain.
         </p>
 
-        <ImagePlaceholder
-          type="screenshot"
-          description="MotoChef interface showing active farms, APYs, and staking options"
-          aspectRatio="16/9"
-        />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', margin: '2rem 0' }}>
+          <div style={{ textAlign: 'center' }}>
+            <img
+              src="/farm-overview-1.png"
+              alt="MotoChef farm list showing active farms with TVL, rewards per block, and pool counts"
+              style={{ maxWidth: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <img
+              src="/farm-overview-2.png"
+              alt="MotoChef individual farm showing staking pools, APYs, and TVL for each pool"
+              style={{ maxWidth: '100%', borderRadius: '16px', border: '1px solid var(--border-color)' }}
+            />
+          </div>
+        </div>
 
         <h2>How to Participate</h2>
         <p>
