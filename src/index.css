@@ -1273,6 +1273,10 @@ tbody tr:nth-child(even) {
     --header-height: 96px;
   }
 
+  .header-inner {
+    height: 56px;
+  }
+
   .mobile-menu-btn {
     display: flex;
     margin-right: 0.75rem;
@@ -1290,6 +1294,11 @@ tbody tr:nth-child(even) {
 
   .sidebar.open {
     transform: translateX(0);
+  }
+
+  .sidebar-nav a {
+    padding: 0.6rem 0.75rem;
+    min-height: 40px;
   }
 
   .sidebar-overlay {
@@ -1319,8 +1328,8 @@ tbody tr:nth-child(even) {
   .header-mobile-nav {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
-    padding: 0.35rem 1rem;
+    gap: 0.15rem;
+    padding: 0 0.75rem;
     overflow-x: auto;
     border-top: 1px solid rgba(255, 255, 255, 0.04);
     -webkit-overflow-scrolling: touch;
@@ -1333,14 +1342,17 @@ tbody tr:nth-child(even) {
 
   .header-mobile-link {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 600;
     color: var(--text-tertiary);
     text-decoration: none;
-    padding: 0.3rem 0.6rem;
+    padding: 0.5rem 0.75rem;
     border-radius: 6px;
     white-space: nowrap;
     transition: all 0.15s ease;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
   }
 
   .header-mobile-link:hover {
@@ -1427,6 +1439,44 @@ tbody tr:nth-child(even) {
   .feature-card {
     padding: 1.5rem;
   }
+
+  /* Hero orbs - reduce on mobile */
+  .hero-orb-1 { width: 300px; height: 300px; }
+  .hero-orb-2 { width: 250px; height: 250px; }
+  .hero-orb-3 { width: 200px; height: 200px; }
+
+  /* Hero stats */
+  .hero-stats {
+    gap: 1.5rem;
+  }
+
+  .hero-stat-value {
+    font-size: 1.5rem;
+  }
+
+  /* Home sections */
+  .home-section {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .home-section-card {
+    padding: 1.5rem;
+  }
+
+  .home-quote {
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+
+  .home-footer {
+    padding: 2rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* Keyboard hint - irrelevant on touch */
+  .keyboard-hint {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1469,6 +1519,42 @@ tbody tr:nth-child(even) {
 
   td, th {
     min-width: 100px;
+  }
+
+  /* Hero orbs - even smaller */
+  .hero-orb-1 { width: 200px; height: 200px; }
+  .hero-orb-2 { width: 180px; height: 180px; }
+  .hero-orb-3 { width: 150px; height: 150px; }
+
+  .hero-stats {
+    gap: 1rem;
+  }
+
+  .hero-stat-value {
+    font-size: 1.25rem;
+  }
+
+  .home-section {
+    padding: 2rem 1rem;
+  }
+
+  .home-quote {
+    font-size: 0.9rem;
+  }
+
+  .home-footer p {
+    font-size: 0.75rem;
+  }
+
+  /* Quick nav chips - tighter on small screens */
+  .quick-nav-chip {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 0.4rem 1rem;
   }
 }
 
@@ -1538,6 +1624,7 @@ tbody tr:nth-child(even) {
 .home-section {
   position: relative;
   z-index: 2;
+  padding: 4rem 2rem;
 }
 
 .home-section-dark {

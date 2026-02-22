@@ -68,7 +68,7 @@ export default function DocsPage() {
       </nav>
 
       {/* Keyboard hint */}
-      <div style={{
+      <div className="keyboard-hint" style={{
         textAlign: 'center',
         marginTop: '2rem',
         padding: '1rem',

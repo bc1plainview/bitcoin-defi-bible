@@ -111,7 +111,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-section home-section-dark" style={{ padding: '4rem 2rem' }}>
+      <section className="home-section home-section-dark">
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ textAlign: 'center', borderBottom: 'none', marginBottom: '2.5rem', fontSize: 'clamp(1.5rem, 3vw, 1.75rem)' }}>
             {t("What You'll Learn", '您将学到什么')}
@@ -145,7 +145,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-section" style={{ maxWidth: '800px', margin: '0 auto', padding: '4rem 2rem', textAlign: 'center' }}>
+      <section className="home-section" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
         <blockquote className="home-quote">
           {t(
             '"DeFi Summer 2020 proved that reflexive games work on slow, expensive chains. Every fast chain since has failed to sustain a DeFi season. Bitcoin takes this to the extreme."',
@@ -160,7 +160,7 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="home-section home-section-dark" style={{ padding: '4rem 2rem' }}>
+      <section className="home-section home-section-dark">
         <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
           <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📝</div>
           <h2 style={{ borderBottom: 'none', marginBottom: '0.75rem' }}>
@@ -178,7 +178,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-section" style={{ padding: '4rem 2rem', textAlign: 'center' }}>
+      <section className="home-section" style={{ textAlign: 'center' }}>
         <div className="home-section-card" style={{ maxWidth: '500px', margin: '0 auto' }}>
           <p style={{ color: 'var(--text-muted)', marginBottom: '0.5rem', fontSize: '0.85rem', fontFamily: 'var(--font-mono)', letterSpacing: '0.02em' }}>
             {t('Ready to start?', '准备好开始了吗？')}
