@@ -3,16 +3,6 @@ import { useEffect, useState } from 'react'
 import Sidebar from './Sidebar'
 import { useLanguage, LANGUAGES } from '../context/LanguageContext'
 
-// External link icon
-const ExternalIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-    <polyline points="15 3 21 3 21 9" />
-    <line x1="10" y1="14" x2="21" y2="3" />
-  </svg>
-)
-
-// Hamburger menu icon
 const MenuIcon = ({ isOpen }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="menu-icon">
     {isOpen ? (
@@ -36,108 +26,80 @@ export default function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const { language, toggleLanguage, t } = useLanguage()
 
-  // Close sidebar on route change
   useEffect(() => {
     setSidebarOpen(false)
   }, [location])
 
   return (
     <>
-      {/* Ambient background layers - outside flex container */}
       <div className="ambient-mesh" />
       <div className="grid-bg" />
 
       <div className="app">
         <header className="header">
-          {!isHome && (
-            <button
-              className="mobile-menu-btn"
-              onClick={() => setSidebarOpen(!sidebarOpen)}
-              aria-label="Toggle menu"
-            >
-              <MenuIcon isOpen={sidebarOpen} />
-            </button>
-          )}
+          <div className="header-accent" aria-hidden="true" />
 
-          <Link to="/" className="header-logo">
-            <img src="/bitcoin-logo.svg" alt="Bitcoin" />
-            <div className="logo-text">
-              <span className="logo-main">THE BITCOIN DEFI BIBLE</span>
-              <span className="logo-sub">SLOWFI ON BITCOIN</span>
+          <div className="header-inner">
+            {/* Left: hamburger + logo */}
+            <div className="header-left">
+              {!isHome && (
+                <button
+                  className="mobile-menu-btn"
+                  onClick={() => setSidebarOpen(!sidebarOpen)}
+                  aria-label="Toggle menu"
+                >
+                  <MenuIcon isOpen={sidebarOpen} />
+                </button>
+              )}
+
+              <Link to="/" className="header-logo">
+                <img src="/bitcoin-logo.svg" alt="Bitcoin" className="header-logo-icon" />
+                <div className="header-logo-text">
+                  <span className="header-brand">The Bitcoin DeFi Bible</span>
+                  <span className="header-sub">by OP_NET</span>
+                </div>
+              </Link>
             </div>
-          </Link>
 
-          <div className="header-center">
-            <div className="header-badge">
-              <span>POWERED BY</span>
-              <img src="/opnet-logo-white.png" alt="OP_NET" className="header-opnet-logo" />
+            {/* Center: ecosystem links */}
+            <nav className="header-nav">
+              <a href="https://motoswap.org" target="_blank" rel="noopener noreferrer" className="header-nav-link">Motoswap</a>
+              <a href="https://opnet.org" target="_blank" rel="noopener noreferrer" className="header-nav-link">OP_NET</a>
+              <Link to="/docs/introduction" className={`header-nav-link ${location.pathname.startsWith('/docs') ? 'active' : ''}`}>
+                {t('Docs', '文档')}
+              </Link>
+              <a href="https://opscan.org" target="_blank" rel="noopener noreferrer" className="header-nav-link">OPScan</a>
+              <a href="https://optools.org" target="_blank" rel="noopener noreferrer" className="header-nav-link">OPTools</a>
+              <a href="https://chromewebstore.google.com/detail/opwallet/pmbjpcmaaladnfpacpmhmnfmpklgbdjb?hl=en" target="_blank" rel="noopener noreferrer" className="header-nav-link header-nav-wallet">OP_WALLET</a>
+            </nav>
+
+            {/* Right: lang */}
+            <div className="header-right">
+              <button
+                className="lang-toggle"
+                onClick={toggleLanguage}
+                aria-label="Toggle language"
+              >
+                {language === LANGUAGES.EN ? '中文' : 'EN'}
+              </button>
             </div>
           </div>
 
-          <nav className="header-nav">
-            <Link
-              to="/docs/introduction"
-              className={location.pathname.startsWith('/docs') ? 'active' : ''}
-            >
-              {t('Documentation', '文档')}
+          {/* Mobile nav strip */}
+          <nav className="header-mobile-nav">
+            <a href="https://motoswap.org" target="_blank" rel="noopener noreferrer" className="header-mobile-link">Motoswap</a>
+            <a href="https://opnet.org" target="_blank" rel="noopener noreferrer" className="header-mobile-link">OP_NET</a>
+            <Link to="/docs/introduction" className={`header-mobile-link ${location.pathname.startsWith('/docs') ? 'active' : ''}`}>
+              {t('Docs', '文档')}
             </Link>
-            <Link
-              to="/quiz"
-              className={location.pathname === '/quiz' ? 'active' : ''}
-            >
-              {t('Quiz', '测验')}
-            </Link>
-            <span className="nav-divider" />
-            <a
-              href="https://motoswap.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="external-link"
-            >
-              Motoswap <ExternalIcon />
-            </a>
-            <a
-              href="https://docs.opnet.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="external-link"
-            >
-              {t('OP_NET Docs', 'OP_NET 文档')} <ExternalIcon />
-            </a>
-            <a
-              href="https://opscan.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="external-link"
-            >
-              OPScan <ExternalIcon />
-            </a>
-            <span className="nav-divider" />
-            <button
-              className="lang-toggle"
-              onClick={toggleLanguage}
-              aria-label="Toggle language"
-            >
-              {language === LANGUAGES.EN ? '中文' : 'EN'}
-            </button>
+            <a href="https://opscan.org" target="_blank" rel="noopener noreferrer" className="header-mobile-link">OPScan</a>
+            <a href="https://optools.org" target="_blank" rel="noopener noreferrer" className="header-mobile-link">OPTools</a>
+            <a href="https://chromewebstore.google.com/detail/opwallet/pmbjpcmaaladnfpacpmhmnfmpklgbdjb?hl=en" target="_blank" rel="noopener noreferrer" className="header-mobile-link cta">OP_WALLET</a>
           </nav>
-
-          {/* Mobile language toggle - visible when header-nav is hidden */}
-          <button
-            className="lang-toggle-mobile"
-            onClick={toggleLanguage}
-            aria-label="Toggle language"
-          >
-            {language === LANGUAGES.EN ? '中文' : 'EN'}
-          </button>
         </header>
 
-        {/* Mobile sidebar overlay */}
         {!isHome && sidebarOpen && (
-          <div
-            className="sidebar-overlay"
-            onClick={() => setSidebarOpen(false)}
-          />
+          <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />
         )}
 
         {!isHome && <Sidebar isOpen={sidebarOpen} />}
