@@ -1,0 +1,102 @@
+# The Bitcoin DeFi Bible
+> Your complete guide to Bitcoin DeFi, SlowFi, and OP_NET technology.
+> The cypherpunk's handbook to the next evolution of decentralized finance.
+
+## About This Site
+The Bitcoin DeFi Bible (defibible.org) is a comprehensive guide to native Bitcoin DeFi powered by OP_NET — smart contracts on Bitcoin Layer 1 without bridges, wrapped tokens, or L2s. It covers DeFi mechanics (AMMs, yield farming, staking), Bitcoin-native trading via NativeSwap, and how to deploy tokens and yield farms on Bitcoin.
+
+## Full Content
+For the complete text content of every page on this site, fetch:
+- https://defibible.org/llms-full.txt
+
+## Pages
+
+### Home
+- URL: https://defibible.org/
+- Description: Landing page with overview of Bitcoin DeFi Bible, quick navigation to all topics
+
+### TLDR
+- URL: https://defibible.org/docs/tldr
+- Description: 5-minute overview of Bitcoin DeFi — the big idea, the stack, and what you can do
+
+### Introduction
+- URL: https://defibible.org/docs/introduction
+- Description: Welcome guide explaining DeFi Summer history and what you'll learn
+
+### The SlowFi Thesis
+- URL: https://defibible.org/docs/what-is-slowfi
+- Description: Why exit friction makes DeFi games sustainable and why Bitcoin is the optimal environment
+
+### Why Bitcoin?
+- URL: https://defibible.org/docs/why-bitcoin-defi
+- Description: Bitcoin's structural advantages for DeFi — hard block space limit, fee wall, no wrapped tokens
+
+### OP_NET Overview
+- URL: https://defibible.org/docs/opnet-overview
+- Description: How OP_NET enables smart contracts on Bitcoin L1 — architecture, token standards, epoch system
+
+### Bitcoin Token Wars
+- URL: https://defibible.org/docs/bitcoin-token-wars
+- Description: Why BRC-20 and Runes failed and how OP-20 tokens fix the liquidity problem
+
+### Motoswap Exchange
+- URL: https://defibible.org/docs/motoswap
+- Description: The first fully decentralized exchange on Bitcoin L1 — pools, fees, LP provision, swapping
+
+### NativeSwap (BTC Trading)
+- URL: https://defibible.org/docs/nativeswap
+- Description: Bitcoin-native AMM with P2P settlement — constant product formula, seller queue, two-phase commit
+
+### OP-20S Stablecoins
+- URL: https://defibible.org/docs/op20s-stablecoins
+- Description: Real USD-pegged stablecoins on Bitcoin L1 with peg-aware AMM pricing
+
+### MotoChef (Yield Farming)
+- URL: https://defibible.org/docs/motochef
+- Description: MasterChef-style yield farming on Bitcoin — history of DeFi Summer and how it's replayed on Bitcoin
+
+### Proof of HODL
+- URL: https://defibible.org/docs/proof-of-hodl
+- Description: Earn yield on BTC without locking it — UTXO-based staking with no custody, no delegation, no slashing
+
+### The $MOTO Token
+- URL: https://defibible.org/docs/moto-token
+- Description: Revenue-sharing token — stake MOTO to earn a cut of every swap on Motoswap
+
+### Yield Farming
+- URL: https://defibible.org/docs/yield-farming
+- Description: How yield farming works mechanically — reward math, pool types, bonus periods, staking/harvesting
+
+### Farming Strategies
+- URL: https://defibible.org/docs/farming-strategies
+- Description: Advanced strategies — timing entry, LP vs single-sided, compounding, exit signals
+
+### Deploying Tokens
+- URL: https://defibible.org/docs/deploying-tokens
+- Description: How to deploy OP-20 tokens on Bitcoin L1 — yield-bearing vs simple tokens, supply planning
+
+### Deploying Yield Farms
+- URL: https://defibible.org/docs/deploying-farms
+- Description: How to deploy MotoChef yield farms — pool configuration, weights, bonus periods, step-by-step guide
+
+### Quiz
+- URL: https://defibible.org/quiz
+- Description: Interactive quiz with 50+ questions covering SlowFi, OP_NET, Motoswap, NativeSwap, and more
+
+## Key Concepts
+- **SlowFi**: DeFi mechanism where structural exit friction (slow blocks, high fees) keeps capital in protocols longer
+- **OP_NET**: Consensus protocol enabling smart contracts on Bitcoin Layer 1
+- **NativeSwap**: Bitcoin-native AMM with P2P BTC settlement and two-phase commit
+- **Motoswap**: First DEX on Bitcoin L1 — AMM pools, yield farming, token launches
+- **MotoChef**: MasterChef-style yield farming engine on Bitcoin
+- **Proof of HODL**: Non-custodial BTC staking using UTXO tracking
+- **OP-20**: Fungible token standard on Bitcoin (like ERC-20)
+- **OP-20S**: Stablecoin extension for OP-20 with peg-aware AMM pricing
+- **$MOTO**: Revenue-sharing token — stakers earn fees from all Motoswap swaps
+
+## Ecosystem Links
+- Motoswap DEX: https://motoswap.org
+- OP_NET Docs: https://docs.opnet.org
+- OPScan Explorer: https://opscan.org
+- OPTools: https://optools.org
+- OP_WALLET: https://chromewebstore.google.com/detail/opwallet/pmbjpcmaaladnfpacpmhmnfmpklgbdjb

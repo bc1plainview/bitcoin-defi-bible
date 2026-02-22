@@ -1,0 +1,1098 @@
+# The Bitcoin DeFi Bible — Full Content
+
+> Your complete guide to Bitcoin DeFi, SlowFi, and OP_NET technology.
+> The cypherpunk's handbook to the next evolution of decentralized finance.
+> Source: https://defibible.org
+
+---
+
+# TLDR
+
+Don't have time to read the whole thing? Here's Bitcoin DeFi in 5 minutes.
+
+## The Big Idea
+
+DeFi Summer 2020 made people rich on Ethereum, a slow and expensive chain. Every fast chain since (Solana, BSC, Base) failed to sustain a real DeFi season. Turns out slowness is the feature, not the bug. When it's hard to exit, liquidity stays, TVL compounds, and protocols have time to grow.
+
+Bitcoin's 10-minute blocks take this to the extreme. That's the SlowFi thesis.
+
+## The Stack
+
+| What | What It Does |
+|------|-------------|
+| OP_NET | Smart contract protocol that runs on Bitcoin L1. No bridges, no wrapped tokens, no L2. |
+| OP-20 | Token standard on Bitcoin (like ERC-20 on Ethereum). |
+| Motoswap | The DEX. Automated market maker with liquidity pools. Swap tokens here. |
+| NativeSwap | Swap actual BTC for tokens without wrapping it. Two-phase commit: reserve, then execute. |
+| MotoChef | Yield farming engine. Stake LP tokens, earn $MOTO rewards. Fork of SushiSwap's MasterChef. |
+| Proof of HODL | Earn yield on your BTC without locking it. Bitcoin stays in your wallet, spendable anytime. |
+| $MOTO | Protocol token. Stake it for a share of all swap fees across Motoswap. |
+
+## What You Can Do
+
+1. Swap tokens on Motoswap, or use NativeSwap to trade real BTC for tokens
+2. Provide liquidity to Motoswap pools (pair two tokens), earn swap fees
+3. Farm yield by staking LP tokens in MotoChef farms, earn $MOTO on top of fees
+4. Stake $MOTO to earn a cut of all protocol swap fees
+5. Proof of HODL to earn yield just by holding BTC in your wallet
+6. Mint your own token and deploy it on Bitcoin L1
+7. Create yield farms for your token to bootstrap liquidity and build a community
+
+## Why This Matters
+
+This is DeFi Summer mechanics on the most liquid, most trusted chain in crypto. Bitcoin holders have never had native yield options. Now they do. The infrastructure is live and the games are starting.
+
+---
+
+# Introduction
+
+Welcome to The Bitcoin DeFi Bible, your guide to native Bitcoin DeFi, powered by OP_NET.
+
+> What This Guide Is: This is for users, not developers. You don't need to know how to code. You need to understand how DeFi games work, how to play them, and how to create them.
+
+## DeFi Summer Happened on a Slow Chain
+
+In 2020, Ethereum hosted the most explosive period of wealth creation in crypto history. Sushiswap's vampire attack pulled $1.14 billion in 48 hours. OlympusDAO sustained $4 billion TVL for six months despite being an "obvious ponzi." Yield farmers who understood the mechanics early captured generational wealth.
+
+Here's what most people missed: Ethereum in 2020 was slow and expensive. 15-30 transactions per second. Gas fees that spiked to hundreds of dollars during volatility. Exiting a position meant waiting for off-peak hours, sometimes for days.
+
+Everyone assumed this was a problem to solve. So we built faster chains. Solana processes 3,000+ TPS. Base and BSC handle hundreds. They should be DeFi paradise.
+
+Instead, they're 90%+ memecoin casinos. No sustained DeFi seasons. No compounding TVL. Protocols launch and collapse within weeks.
+
+The "problem" was actually the solution.
+
+> DeFi Summer is Now on Bitcoin: MasterChef yield farms. AMM liquidity pools. LP staking. Token launches. Fee-sharing staking. The entire DeFi Summer playbook is now live on Bitcoin Layer 1. Same mechanics. Better chain.
+
+## What You'll Learn
+
+- The SlowFi Thesis: Why exit friction makes DeFi games sustainable, and why Bitcoin is the optimal environment
+- How OP_NET Works: Smart contracts on Bitcoin L1 without bridges or wrapped tokens
+- NativeSwap Mechanics: How Bitcoin's first native DEX works with P2P BTC settlement
+- Proof of HODL: Earning yield on Bitcoin without giving up custody
+- Playing the Games: Strategies for yield farming, LP provision, and MOTO staking
+- Creating the Games: How to deploy your own tokens and yield farms
+
+## Two Paths Through This Guide
+
+### Path 1: Player
+You want to put your Bitcoin to work. You'll learn how to stake BTC for yield (without giving up custody), provide liquidity, farm tokens, and manage risk. Focus on: SlowFi Thesis → NativeSwap → Proof of HODL → Yield Farming → Strategies.
+
+### Path 2: Creator
+You want to launch a token and bootstrap liquidity. You'll learn how to deploy OP-20 tokens, create NativeSwap pools, and set up yield farms with custom emissions. Focus on: Everything above, plus Deploying Tokens → Deploying Yield Farms.
+
+> Warning — Start Small: DeFi is unforgiving. There's no customer support, no reversals, no FDIC insurance. Start with amounts you can afford to lose while you learn the mechanics.
+
+---
+
+# The SlowFi Thesis
+
+DeFi Summer 2020 happened on a slow, expensive chain. That wasn't despite Ethereum's limitations. It was because of them.
+
+## Understanding the DeFi Game
+
+DeFi protocols are simple once you see through the marketing:
+
+DeFi protocols are reflexive games where capital inflows create yields that attract more capital.
+
+A yield farm launches offering 1000% APY. Early depositors see those returns and tell others. More capital enters, creating more trading fees and token demand. The APY stays high, attracting more capital. The flywheel spins.
+
+This isn't sustainable forever. Eventually emissions run out or demand saturates. But the question isn't whether these games end. It's how long they run before they end. A game that runs 6-12 months can create massive wealth for early participants. A game that collapses in 2 weeks creates nothing but losses.
+
+> Exit Friction: The secret to DeFi games lasting longer isn't better tokenomics. It's exit friction. When money takes longer to leave than to enter, protocols compound upward for months instead of days.
+
+## Exit Velocity Kills Protocols
+
+Every DeFi protocol faces the same fundamental dynamic: capital wants to enter when yields are high and exit when they drop. The protocol survives as long as inflows exceed outflows.
+
+On a fast chain, here's what happens:
+1. Farm launches with high emissions. Early depositors enter.
+2. Word spreads. More capital enters. TVL grows.
+3. Token price rises from demand. APY looks even better.
+4. Someone large decides to take profit and sells.
+5. Token price dips. APY drops. Others see this and decide to exit.
+6. On a fast chain, they can all exit in the same block.
+7. 50,000 unstake transactions, reward claims, and sells execute simultaneously.
+8. Token crashes 80% in minutes. TVL collapses. Game over.
+
+This isn't a hypothetical. Watch any yield farm on Solana, BSC, or Base. TVL collapses 70-90% within 30-60 days as emissions end and exit velocity overwhelms inflows. You can set your watch to it.
+
+## The EIP-1559 Evidence
+
+Ethereum provides a natural experiment. Check DeFiLlama's historical charts: DeFi TVL momentum breaks exactly when EIP-1559 passes in August 2021.
+
+Before EIP-1559:
+- Gas prices were unpredictable and often extremely high
+- Exiting positions required waiting for low-gas windows
+- Unstaking, claiming rewards, and selling meant queueing transactions during off-peak hours
+- Capital was structurally trapped for hours or days
+
+After EIP-1559:
+- Gas became predictable through the base fee mechanism
+- Throughput increased
+- Everyone could exit in parallel
+- The ponzis unwound in real-time
+
+OlympusDAO, the protocol that sustained $4+ billion TVL for six months through pure reflexivity, collapsed within weeks of gas becoming manageable. The mechanics hadn't changed. The exit friction disappeared.
+
+## Fast Chains Have Never Had a DeFi Season
+
+Solana processes 100x more transactions than 2020 Ethereum. It should be DeFi paradise. Instead, it's a memecoin casino. The DeFi protocols that launch collapse before the reflexive flywheel can even start spinning.
+
+This isn't bad luck. It's physics.
+
+## The SlowFi Mechanism
+
+SlowFi isn't a philosophy about "patient capital" or "sustainable yields." Those are nice narratives, but they're not what makes protocols survive.
+
+SlowFi is a mechanism: structural exit friction that keeps capital in protocols long enough for reflexivity to compound.
+
+The mechanism requires:
+- Limited block space: Not everyone can exit at once
+- High fees during volatility: Exiting becomes economically irrational for small positions
+- Slow confirmation times: Panic selling takes hours, not seconds
+
+Traditional finance has always understood this. Buying physical gold, closing on real estate, wire transfers. They all take days. These aren't inefficiencies. They're features that create stability and allow markets to absorb volatility without instant collapse.
+
+SlowFi brings this property to DeFi. Not through artificial lock-ups or penalties, but through the natural constraints of the underlying blockchain.
+
+> Bitcoin = Longer Games: The same LP staking games that ran for 6-8 months on 2020 Ethereum could run for 12-18 months on Bitcoin. Same mechanics. Better environment.
+
+---
+
+# Why Bitcoin?
+
+If SlowFi requires exit friction, why Bitcoin specifically? Why not just use Ethereum during high-gas periods, or any chain that happens to be congested?
+
+## Bitcoin's Structural Advantages
+
+### 1. Hard Block Space Limit
+
+Bitcoin settles approximately 4,000-6,000 transactions every 10 minutes. This isn't a parameter that can be adjusted through governance or protocol upgrades. It's a fundamental constraint of the system.
+
+If 50,000 people want to exit a protocol simultaneously on Bitcoin, it would take 8-12 hours minimum, assuming they're the only transactions on the network. During actual congestion with competing transactions, it could take days.
+
+Compare this to Solana, where 50,000 transactions clear in under a second. Or Ethereum post-EIP-1559, where gas is predictable and throughput has increased. Bitcoin's "limitation" is the feature.
+
+### 2. The Fee Wall
+
+When demand for Bitcoin block space increases, fees don't just rise. They become prohibitively expensive. During peak periods, transaction fees regularly exceed $50-100.
+
+This creates a natural exit barrier through pure economics:
+- You have $500 staked in a yield farm
+- Token price drops 20%. Your position is now worth $400.
+- You want to exit, but fees are $75 to unstake + $75 to sell
+- Exiting costs you $150 (37.5% of your remaining position)
+- Rationally, you wait for fees to drop
+
+While you wait, the protocol has time to stabilize. New capital enters. The token recovers. The panic subsides. You end up not exiting at all.
+
+This isn't theoretical. It's how Bitcoin's fee market has always worked. The fee wall creates "sticky capital", not because users are long-term oriented, but because they're economically rational.
+
+### 3. No Wrapped Tokens or Bridges
+
+This is critical: exit friction only works if your capital is actually on Bitcoin, subject to Bitcoin's block times and fee market.
+
+Bridged BTC on faster chains (WBTC on Ethereum, wBTC on Solana) loses the exit friction benefit entirely. You can exit instantly on the fast chain. The slow chain constraint doesn't apply.
+
+Beyond the SlowFi benefits, bridges introduce massive risks:
+- WBTC: Custodied by BitGo. You're trusting a company.
+- renBTC: Was managed by Alameda. We know how that ended.
+- Bridge exploits: Billions have been stolen from bridge hacks.
+
+Native Bitcoin DeFi means your BTC stays on the most secure network in existence, subject to its natural rate-limiting, with no custodial middlemen.
+
+## The Demand is Proven
+
+Over $5 billion in BTC has flowed into Babylon's "Bitcoin staking" protocol despite severe limitations:
+- Time-locks up to 15 months
+- 7-day minimum unbonding period
+- Delegation to third-party "Finality Providers"
+- Slashing risk if your validator misbehaves
+- Rewards paid in BABY tokens, not Bitcoin (~1% APY)
+
+If Bitcoin holders are willing to accept those tradeoffs for 1% APY in altcoins, the demand for better Bitcoin yield products is enormous.
+
+More than $1 trillion in Bitcoin sits completely idle in wallets. Unlike Ethereum, where 27%+ of supply is actively staked, Bitcoin has historically offered no native yield opportunities. HODLers have been limited to hoping number goes up.
+
+That changes now.
+
+## Timing: The Window is Open
+
+Bitcoin DeFi TVL today is a tiny fraction of what Ethereum had in early 2020. The infrastructure is just coming online. OP_NET enables smart contracts. Motoswap provides the AMM. MotoChef enables yield farming. The pieces are in place.
+
+Early farmers in Ethereum's DeFi Summer captured generational wealth. The Sushiswap vampire attack, OlympusDAO's (3,3) meme, Yearn's vaults. Those who understood the mechanics early and positioned accordingly did extremely well.
+
+The same window is opening on Bitcoin, but with better fundamentals:
+- Stronger exit friction (slower blocks, higher fee ceiling)
+- Better base asset (BTC > ETH as collateral)
+- Proven demand ($5B+ already locked in inferior products)
+- Less competition (most haven't figured this out yet)
+
+> The Opportunity: Understanding SlowFi mechanics while others chase fast-chain memecoins is an informational edge. The question is whether you act on it.
+
+---
+
+# OP_NET Overview
+
+Bitcoin wasn't designed for smart contracts. Satoshi intentionally kept the scripting language limited to prevent the complexity that creates attack vectors. So how do we build DeFi on Bitcoin without breaking what makes Bitcoin valuable?
+
+## The OP_NET Solution
+
+OP_NET is a consensus protocol, the first of its kind on Bitcoin. It enables fully expressive smart contracts directly on Layer 1 without modifying or forking Bitcoin's base protocol. Unlike metaprotocols (BRC-20, Runes, Alkanes) where indexers can show divergent results, OP_NET provides cryptographic proof of correct execution where every participant must arrive at exactly the same result.
+
+OP_NET embeds smart contract calls directly in Bitcoin transactions. The Bitcoin blockchain becomes the data availability layer, while OP_NET nodes provide the execution environment, running WASM contracts and reaching deterministic consensus on state.
+
+### Key Properties
+- No Protocol Changes Required: OP_NET works with Bitcoin as it exists today, using Taproot, SegWit, and Legacy transaction formats
+- Native Bitcoin Only: All fees are paid in BTC. There's no separate protocol token creating misaligned incentives.
+- Self-Custodial: You maintain control of your private keys throughout all operations
+- Deterministic Execution: Smart contracts are written in AssemblyScript and compiled to WebAssembly. Every node executes the same code and reaches the same state.
+
+## Token Standards
+
+OP_NET implements token standards with significant improvements over Ethereum's:
+- OP-20: Fungible tokens (like ERC-20 but better). Includes mandatory safe transfers, delta-based allowances to prevent exploits, and native burn capabilities. Used for MOTO, yield tokens, and any token you deploy.
+- OP-721: Non-fungible tokens (like ERC-721). NFTs on Bitcoin.
+
+These standards enable composability: tokens can interact with DEXs, yield farms, and future protocols in predictable ways.
+
+## The Epoch System
+
+OP_NET organizes Bitcoin blocks into epochs: groups of exactly 5 consecutive Bitcoin blocks (approximately 50 minutes). This provides:
+- Consistent time boundaries for state transitions
+- A framework for miner incentives (epoch mining rewards)
+- Deterministic finality points for applications
+
+## What This Enables
+
+With OP_NET, Bitcoin can support:
+- Automated Market Makers (AMMs): Motoswap's NativeSwap and OP-20 pools
+- Yield Farming: MotoChef's MasterChef-style farms
+- Token Launches: Deploy your own OP-20 tokens with custom parameters
+- Staking: MOTO staking for swap fee revenue
+- Proof of HODL: Non-custodial BTC staking that tracks UTXOs
+
+All of this while your Bitcoin stays on Bitcoin, subject to Bitcoin's security model and Bitcoin's exit friction.
+
+## Getting Set Up
+
+To interact with OP_NET protocols, you need:
+
+### 1. OP_WALLET
+OP_WALLET is a browser extension (Chrome/Brave) that handles OP_NET transactions. It manages your keys, signs transactions, and connects to dApps like Motoswap.
+Install: https://chromewebstore.google.com/detail/opwallet/pmbjpcmaaladnfpacpmhmnfmpklgbdjb
+
+### 2. Bitcoin for Fees
+All OP_NET transactions require BTC for gas. Keep enough in your wallet to cover:
+- Approval transactions (first time interacting with each token)
+- Swaps, stakes, unstakes
+- Harvest/claim operations
+A few thousand satoshis handles most operations. Keep more during high-activity periods.
+
+### 3. Ecosystem Tools
+- OPScan (https://opscan.org): Block explorer for OP_NET transactions and contracts
+- OPTools (https://optools.org): Developer tools and utilities for the OP_NET ecosystem
+- Motoswap (https://motoswap.org): The DEX for swapping, farming, and deploying tokens
+
+### 4. Network Selection
+Make sure you're on the correct network:
+- Mainnet: Real Bitcoin, real value
+- Testnet: Test environment with testnet BTC
+
+> Critical: Always verify you're on the correct network before transacting. Mainnet and testnet addresses look different, but mistakes happen. Double-check.
+
+---
+
+# Bitcoin Token Wars
+
+Before OP_NET, Bitcoin had tokens. BRC-20 and Runes exploded in popularity, creating billions in trading volume. Then they collapsed. Understanding why they pumped and why they failed explains why OP-20 tokens are fundamentally different.
+
+## The Free Mint Revolution
+
+BRC-20 and Runes tapped into something powerful: the free mint. Bitcoin culture has always been about permissionless participation. When BRC-20 launched in March 2023, anyone could mint tokens by simply paying a Bitcoin transaction fee. No presale. No VC allocation. No insider advantage.
+
+The free mint mechanic created genuine FOMO:
+- Tokens were distributed to whoever showed up first
+- Early minters got allocation that later minters couldn't access
+- The race to mint created buzz and community
+- No "team allocation" or "investor unlock" overhang
+
+ORDI, the first BRC-20 token, went from a free mint to a $1 billion market cap. Runes launched in April 2024 and saw similar explosions. The mechanism worked. Bitcoin holders finally had tokens they could own.
+
+## The PSBT Death Spiral
+
+What killed them: PSBT trading.
+
+BRC-20 and Runes tokens trade on PSBT marketplaces like Magic Eden, UniSat, OKX. These are pure order book systems. A seller lists tokens at a price. A buyer either takes it or doesn't. No AMM. No liquidity pool. No automated market making.
+
+This creates a fatal problem:
+
+> The Liquidity Death Spiral: When buy pressure stops, ALL liquidity instantly disappears. On a PSBT marketplace, if nobody wants to buy your token at any price, you literally cannot sell it. There are no liquidity providers. There is no pool to sell into. You own tokens that are mathematically unsellable.
+
+### How the Death Spiral Works
+1. Token launches, free mint creates distribution
+2. Early excitement drives buy orders on PSBT marketplaces
+3. Price rises as buyers compete for listings
+4. Token hits peak, whale decides to take profit
+5. Whale lists large sell order, undercutting existing sellers
+6. Buyers see the dump, pull their bids
+7. Suddenly there are ZERO buy orders
+8. Every holder wants to sell, but there's literally nobody to sell to
+9. Token is effectively worthless and illiquid simultaneously
+
+## Why PSBT Marketplaces Can't Have Real Liquidity
+
+| Feature | AMM (Uniswap-style) | PSBT Marketplace |
+|---------|---------------------|------------------|
+| Liquidity source | LP pools that always exist | Active buyers placing orders |
+| Can you always sell? | Yes (at some price) | Only if someone is bidding |
+| Price discovery | Algorithmic (x * y = k) | Whatever sellers ask |
+| During panic | High slippage but exit exists | Zero bids = no exit |
+
+This is why every BRC-20 and Runes token eventually dies. The trading mechanism guarantees it. When sentiment turns, liquidity doesn't decrease. It vanishes entirely.
+
+## The Arbitrage Solution
+
+OP-20 tokens on Motoswap have something BRC-20 and Runes never will: permanent liquidity through arbitrage.
+
+Imagine a token called EXAMPLE with two pools:
+- EXAMPLE-MOTO pool on Motoswap
+- EXAMPLE-WBTC pool on Motoswap
+
+Someone makes a large sell in the EXAMPLE-MOTO pool. The price of EXAMPLE drops in that pool. But it hasn't dropped yet in EXAMPLE-WBTC.
+
+This creates an arbitrage opportunity:
+1. Arb bot sees price discrepancy between pools
+2. Buys EXAMPLE cheap in the MOTO pool
+3. Sells EXAMPLE at higher price in the WBTC pool
+4. Pockets the difference as profit
+5. Both pools are now balanced at the same price
+
+> Free Money on the Table: Arbitrage is literally free money sitting on the table. There will always be someone (a bot, a trader) willing to grab it. The pools will always be balanced. Liquidity can never dry up like on PSBT marketplaces.
+
+The more trading pairs a token has, the more arbitrage connections exist, the more liquidity is structurally guaranteed. Even if every holder wants to sell, the pools still exist. You can still exit.
+
+This is the fundamental difference between OP-20 and BRC-20/Runes. It's not about technology or standards. It's about the trading mechanism. AMMs with arbitrage create permanent liquidity. PSBT marketplaces create liquidity black holes.
+
+## The Fake Stablecoin Problem
+
+BRC-20 and Runes have "stablecoins" that claim to track USD. They're not actually stable. On a PSBT marketplace, you price tokens in satoshis. When you list a "stablecoin" for sale, you're saying "I'll sell 1 USDT-equivalent token for X sats." But if Bitcoin's price moves, the stablecoin moves with it because everything is priced in sats.
+
+## Multiple Ways to Get OP-20 Tokens
+
+| Method | How It Works | Who It's For |
+|--------|-------------|--------------|
+| Free Mint | Anyone can mint tokens by paying BTC gas fees | Community distribution, fair launch believers |
+| Buy with BTC | Purchase tokens directly via NativeSwap | Anyone with Bitcoin who wants exposure |
+| Buy with OP-20 | Swap MOTO or other OP-20 tokens | Existing OP_NET users rebalancing |
+| LP Mining | Provide liquidity, stake LP, earn tokens | Yield farmers who understand IL |
+| Single-Sided Staking | Stake one token to earn another | Lower risk, simpler participation |
+| Proof of HODL | Stake BTC without custody, earn tokens | Bitcoin holders who won't sell |
+
+## Summary
+
+BRC-20 and Runes had the right idea (free mints, Bitcoin-native) but the wrong trading mechanism (PSBT marketplaces). When buy pressure stopped, liquidity instantly died, and holders were left with unsellable bags.
+
+OP-20 tokens solve this with AMM liquidity and arbitrage. Multiple trading pairs create structural liquidity that can never completely disappear. The free mint culture is preserved, but the trading mechanics are fixed.
+
+---
+
+# Motoswap Exchange
+
+Motoswap is the first fully decentralized exchange on Bitcoin Layer 1. It's a complete DeFi ecosystem on Bitcoin Layer 1, powered by OP_NET, bringing everything from DeFi Summer 2020 to Bitcoin.
+
+Website: https://motoswap.org
+
+## The Motoswap Stack
+
+Motoswap combines multiple components into one integrated platform:
+- NativeSwap: Bitcoin-native AMM for trading BTC directly with P2P settlement
+- OP-20 Pools: Traditional Uniswap-style pools for token-to-token trading
+- MotoChef: MasterChef-style yield farming
+- MOTO Staking: Protocol fee sharing
+- Token Launchpad: Deploy your own tokens and farms
+
+## Two Types of Pools
+
+### NativeSwap Pools (BTC <-> Token)
+These enable trading native Bitcoin for tokens. Key differences:
+- Virtual reserve accounting
+- Seller queue system
+- Two-phase commit for price protection
+- BTC never touches a contract, flows directly between traders
+
+### OP-20 Pools (Token <-> Token)
+Traditional Uniswap V2-style pools:
+- Constant product formula (x * y = k)
+- Two-sided liquidity (deposit both tokens)
+- LP tokens represent your share of the pool
+- Tokens are held by the contract
+
+## Fee Structure
+
+### OP-20 Swaps (Token <-> Token)
+| Fee | Recipient | Purpose |
+|-----|-----------|---------|
+| 0.3% | Liquidity Providers | Rewards LP providers |
+| 0.2% | MOTO Stakers | Protocol revenue sharing |
+| Total: 0.5% | | |
+
+### NativeSwap Swaps (BTC <-> Token)
+| Fee | Recipient | Purpose |
+|-----|-----------|---------|
+| 0.2% | MOTO Stakers | Protocol revenue sharing |
+
+MOTO stakers earn from every single trade on the platform, both OP-20 pools and NativeSwap pools. More trading volume = more rewards.
+
+## Providing Liquidity
+
+### For OP-20 Pools:
+1. Go to the Pool page on Motoswap
+2. Select the token pair (e.g., MOTO-PILL)
+3. Deposit equal value of both tokens
+4. Receive LP tokens representing your share
+5. Earn 0.3% of all trades in that pool (proportional to your share)
+
+### For NativeSwap Pools:
+NativeSwap works differently because BTC isn't held in a pool.
+- Token side: Pool creators deposit tokens when creating the pool
+- Selling tokens: Join the seller queue to receive BTC when a buyer arrives
+- BTC side: Comes from buyers as they purchase tokens
+
+> Current NativeSwap Limitations: NativeSwap is live but some features are still being developed. Add/Remove LP is not yet active for NativeSwap pools. Cancel Sell Orders — once you join the seller queue, you cannot cancel.
+
+## Impermanent Loss
+
+If you provide liquidity to OP-20 pools, you need to understand impermanent loss (IL).
+
+When you deposit two tokens in a 50/50 ratio, the pool automatically rebalances as prices change. If Token A doubles against Token B, the pool sells A to buy B. You end up with less A and more B than if you'd just held.
+
+The loss is "impermanent" because it reverses if prices return to the original ratio. But if you withdraw while prices have diverged, the loss becomes permanent.
+
+> IL Can Be Significant: A 2x price change in one token causes ~5.7% IL. A 5x change causes ~25% IL. Don't provide liquidity without understanding this math.
+
+## Swapping Tokens
+
+### Buying Tokens with BTC (NativeSwap)
+1. Go to Swap, select BTC and the token you want
+2. Enter the amount of BTC to spend
+3. Click Swap to create a reservation
+4. Your price is now locked for 5 blocks
+5. Confirm the execution transaction to complete the swap
+6. BTC goes directly to sellers; you receive tokens
+
+### Selling Tokens for BTC (NativeSwap)
+1. Go to Swap, select your token and BTC
+2. Enter the amount to sell
+3. You join the seller queue at the current oracle price
+4. When a buyer arrives, you receive BTC proportional to your queue position
+5. This happens atomically, you don't need to be online
+
+### Token-to-Token (OP-20 Pools)
+1. Go to Swap, select both tokens
+2. Enter amount
+3. Confirm the swap transaction
+4. Standard AMM swap (no reservation needed)
+
+---
+
+# NativeSwap (BTC Trading)
+
+NativeSwap is the AMM that makes native Bitcoin DeFi possible. It's Uniswap V3-style single-sided liquidity, adapted for Bitcoin's constraints.
+
+Like modern AMMs, NativeSwap uses algorithmic price discovery via the constant product formula. But it's built for Bitcoin: OP-20 tokens are held by the smart contract (like any DEX), while BTC is P2P routed through the contract, verified and enforced but never custodied.
+
+## Why Bitcoin Trading Is Broken
+
+Before NativeSwap, trading Bitcoin-native tokens (BRC-20, Runes, Ordinals) meant using PSBT marketplaces. PSBTs (Partially Signed Bitcoin Transactions) are Bitcoin's native method for multi-party transactions.
+
+### How PSBT Trading Works
+1. Seller creates a listing: Signs a partial transaction
+2. Marketplace holds the PSBT on a centralized server
+3. Buyer completes it: Signs the other half, adding the BTC inputs
+4. Marketplace broadcasts the complete transaction
+
+### Why PSBT Trading Sucks
+
+1. Centralized Order Matching — The marketplace controls which PSBTs are shown. They can front-run, censor, or manipulate.
+2. No Price Discovery — Pure limit orders. Sellers pick arbitrary prices. Wide bid-ask spreads (often 20-50%+).
+3. Liquidity Fragmentation — Every marketplace has its own order book.
+4. MEV and Manipulation — Marketplace operators can see and front-run pending transactions.
+5. No Composability — Can't be integrated into DeFi protocols.
+
+| Problem | PSBT Marketplaces | NativeSwap |
+|---------|-------------------|------------|
+| Price Discovery | None, arbitrary seller prices | Algorithmic via constant product formula |
+| Custody | Centralized marketplace | Never, BTC flows directly P2P |
+| Liquidity | Fragmented across platforms | Unified in protocol |
+| Manipulation | Operators can front-run | Cryptographic price guarantees |
+| Composability | None | Full DeFi integration |
+
+## What NativeSwap Is
+
+NativeSwap is a single-sided liquidity AMM, similar to concentrated liquidity in Uniswap V3, but designed for Bitcoin's constraints.
+
+### Three Core Components
+| Component | Purpose |
+|-----------|---------|
+| Constant Product (k = T * B) | AMM pricing, algorithmic price discovery like Uniswap |
+| Queue System | Single-sided liquidity, sellers provide tokens, buyers bring BTC |
+| P2P Settlement | Bitcoin-native, BTC flows directly between traders with contract enforcement |
+
+## AMM Price Discovery
+
+NativeSwap uses the constant product formula: k = T * B
+
+Where T is the token reserve, B is the BTC reserve, and k is a constant.
+- Sell pressure (more tokens listed) → price goes down
+- Buy pressure (BTC coming in) → price goes up
+
+In NativeSwap, k remains constant because there are no liquidity providers, no shared pool, no fee accrual. The virtual pool is a pricing reference, not a vault.
+
+## Verification, Not Custody
+
+The contract verifies but never custodies. The contract confirms that Bitcoin outputs in swap transactions match reservation requirements: correct amounts, correct addresses. It never controls or holds Bitcoin. BTC flows directly from buyers to sellers.
+
+## The Seller Queue
+
+Sellers don't deposit into a shared pool. They join a queue at the current market price. When a buyer wants to purchase tokens:
+1. The contract calculates the price using the constant product formula
+2. It iterates through the seller queue, taking tokens from each seller in order
+3. The buyer's BTC is split proportionally among sellers who fill the order
+4. Everything happens atomically: all sellers get paid or nothing happens
+
+NativeSwap can coordinate up to 200 different sellers in a single atomic transaction.
+
+### The 50/50 Queue Protection
+When a seller lists tokens:
+- 50% of their listing immediately affects virtual reserves (and price)
+- 50% applies only when that seller's tokens actually begin selling
+
+This protects sellers at the front of the queue from massive sell orders appearing behind them.
+
+## The Two-Phase Commit Protocol
+
+Bitcoin transactions are irreversible. NativeSwap solves the price-change risk with a two-phase commit protocol:
+
+### Phase 1: Reservation
+- You create a reservation transaction proving you control the required BTC
+- You include the BTC as inputs but send it back to yourself as outputs
+- You pay only a small reservation fee
+- The smart contract locks in your exact price quote for 5 blocks (~50 minutes)
+- Your BTC stays in your wallet during this phase
+
+### Phase 2: Execution
+- You send the quoted BTC amount to complete the swap
+- The system generates transactions paying each seller their portion
+- Your price is guaranteed because it was locked in Phase 1
+- Market movements during the wait don't affect you
+
+Benefits:
+- Eliminates front-running: Your price is locked before you send BTC
+- Prevents slippage: You get exactly the price you reserved
+- Protects from manipulation: Price changes after reservation don't affect you
+
+## Queue Priority and Slashing
+
+NativeSwap maintains two queues:
+- Normal Queue: Standard listing, no fee, processed in order
+- Priority Queue: Pay 3% token tax to be processed before normal queue
+
+> Important: Cancelling sell orders is not currently available. Once you join the seller queue, you're committed until a buyer fills your order.
+
+### Future Cancellation Slashing (Not Yet Active)
+| Cancellation | Penalty |
+|-------------|---------|
+| First cancellation | 50% of tokens |
+| Second (within 100 blocks) | 70% of tokens |
+| Subsequent | 90% of tokens |
+
+## Transaction Pinning Protection
+
+NativeSwap eliminates transaction pinning attacks through mandatory CSV (CheckSequenceVerify) timelocks. All sellers must use addresses with at least a one-block timelock.
+
+## Minimum Requirements
+| Operation | Minimum | Reason |
+|-----------|---------|--------|
+| Provider reservation (strict) | 600 sats | Dust limit protection |
+| Provider reservation (standard) | 1,000 sats | Economic minimum for sellers |
+| Trade size | 10,000 sats | Fee economics |
+| Adding liquidity | 10,000 sats | Meaningful position size |
+
+## NativeSwap vs. Everything Else
+
+| Feature | PSBT Marketplaces | Wrapped BTC DEXs | NativeSwap |
+|---------|-------------------|-------------------|------------|
+| Asset | Native BTC | Wrapped (WBTC, etc.) | Native BTC |
+| Custody | Centralized marketplace | Bridge custodian | None, P2P |
+| Price Discovery | None | Yes (other chain) | Yes (constant product) |
+| Bitcoin Security | Partial | No (other chain) | Full |
+| Exit Friction | Yes | No | Yes |
+| DeFi Composability | No | Yes (other chain) | Yes (Bitcoin) |
+
+NativeSwap is the only solution that gives you algorithmic price discovery, trustless execution, native Bitcoin, AND Bitcoin's exit friction.
+
+---
+
+# OP-20S Stablecoins
+
+For the first time ever, you can have real stablecoins on Bitcoin Layer 1 with an AMM to trustlessly swap between BTC and USD-pegged assets.
+
+## The Problem: Getting USD on Bitcoin
+
+### Option 1: Centralized Exchanges
+Send BTC to Coinbase/Binance, sell for USDT/USDC, withdraw to another chain. KYC required. Custodial risk.
+
+### Option 2: Bridges
+Wrap your BTC, bridge to Ethereum, swap there. Custodial risk plus bridge risk. Billions lost to bridge hacks.
+
+### Option 3: BRC-20/Runes "Stablecoins"
+Not actually stable. Everything priced in satoshis. If BTC drops 20%, your "USDT" drops with it.
+
+## The Solution: OP-20S
+
+OP-20S is a stablecoin extension standard for OP-20 tokens on NativeSwap. It enables peg-aware pricing: the AMM knows the target USD value and prices accordingly.
+
+### How It Works
+Stablecoin issuers deploy OP-20 tokens implementing the OP-20S interface:
+- pegRate(): Target price in satoshis per token
+- pegAuthority(): Who can update the peg rate
+- pegUpdatedAt(): When the peg was last updated
+
+NativeSwap detects these tokens and applies StableSwap mathematics — optimized AMM curves that minimize slippage around the peg price.
+
+### StableSwap Pricing
+Regular AMMs use constant product formula (x * y = k). StableSwap uses an amplified invariant that keeps prices much closer to the peg. Same math that powers Curve Finance, now on Bitcoin L1.
+
+## What OP-20S Enables
+
+| Action | Before OP-20S | With OP-20S |
+|--------|---------------|-------------|
+| Take profits in USD | Leave Bitcoin ecosystem | Swap to stablecoin on NativeSwap |
+| Hedge BTC exposure | Impossible natively | Hold OP-20S stablecoins |
+| Stable LP pairs | Not available | TOKEN-USDT pools with minimal IL |
+| Build lending | No stable collateral | Stablecoin collateral enabled |
+
+---
+
+# MotoChef (Yield Farming)
+
+MotoChef is a direct fork of SushiSwap's MasterChef contracts. The same code that fueled DeFi Summer 2020. That entire game is now playable on Bitcoin Layer 1.
+
+## The MasterChef Revolution (2020)
+
+The MasterChef contract is roughly 200 lines of Solidity. It does one thing: distribute tokens to stakers proportionally, based on configurable pool weights and emission rates. This simple contract became the most forked code in DeFi history.
+
+### Food Token Season
+- YAM: Launched August 11, 2020. $600M TVL in 24 hours.
+- PICKLE: MasterChef fork focused on stablecoin yields.
+- KIMCHI: Korean-themed fork. $500M TVL at peak.
+- HOTDOG: Went from $4,000 to $0.004 in one day.
+
+At peak: $15+ billion in total DeFi TVL, hundreds of MasterChef forks, gas fees hit $100+ per transaction.
+
+## Why MasterChef Changed Everything
+
+Before MasterChef, bootstrapping liquidity required VCs, market makers, exchange listings. MasterChef democratized liquidity:
+1. Create a token with a fixed emission schedule
+2. Deploy MasterChef pointing emissions at LP tokens
+3. Announce the farm with a bonus period
+4. Watch capital arrive as farmers chase APY
+
+## The DeFi Summer Playbook
+
+1. Early Entry is Everything — First farmers capture disproportionate rewards
+2. Bonus Periods Create Urgency — 5x or 10x multipliers for the first week
+3. LP Staking Compounds — Stake LP, earn tokens, swap, add liquidity, stake more
+4. Exit Before the Crowd — Sell during the bonus period to capture value
+
+## MotoChef: MasterChef on Bitcoin
+
+MotoChef is a faithful port with identical mechanics:
+- Yield per block: Fixed token emissions every Bitcoin block (~10 min)
+- Pool weights: Allocation points determine emission distribution
+- Bonus multipliers: Launch periods with amplified emissions
+- LP staking: Stake Motoswap LP tokens to earn farm tokens
+- Single-sided staking: Stake individual tokens for lower (but safer) yields
+- Harvest anytime: Claim accumulated rewards without unstaking
+
+Plus something MasterChef never had: Proof of HODL — stake native BTC while keeping it fully spendable.
+
+## The Full DeFi Summer Stack on Bitcoin L1
+
+- Token launches: Deploy OP-20 tokens with custom tokenomics
+- AMM liquidity: NativeSwap for BTC pairs, OP-20 pools for token pairs
+- Yield farming: MotoChef MasterChef-style farms with bonus periods
+- LP staking: Earn emissions on your liquidity positions
+- Fee sharing: MOTO staking for protocol revenue
+- BTC yield: Proof of HODL for non-custodial Bitcoin staking
+
+Farms at: https://motoswap.org/explore/farms
+
+---
+
+# Proof of HODL
+
+Proof of HODL is the first mechanism that lets you earn yield on your BTC without locking it, without delegating it, and without any custodial risk whatsoever.
+
+> Core Innovation: Your BTC stays in your wallet. You can spend it whenever you want. And you still earn rewards. No lock-ups. No slashing. No delegation.
+
+## The $5 Billion Problem
+
+Over 57,000 BTC (~$5 billion) sits locked in Babylon's staking protocol with severe limitations: time-locks up to 15 months, 7-day unbonding, delegation to validators, slashing risk, and rewards in BABY tokens (~1% APY).
+
+That's not Bitcoin staking. That's Bitcoin parking.
+
+## How Proof of HODL Works
+
+The core insight: treat Bitcoin UTXOs as proof of holdings, not locked collateral.
+
+1. Stake your BTC: Create a transaction that sends BTC to yourself. The contract logs the UTXO hash.
+2. Your BTC stays in your wallet: Not locked. Not time-locked. Not delegated. Standard UTXO you control.
+3. Earn rewards: As long as that UTXO exists (hasn't been spent), you accumulate yield.
+4. Claim rewards: Contract checks your UTXO still exists. If it does, you receive rewards.
+5. Automatic unstaking: If you spend that UTXO, you're instantly "unstaked."
+
+No locking. No delegation. No slashing. No unbonding periods.
+
+## The Optional Fee
+
+Yield farms can charge a fee on Bitcoin staking. With a 1% fee on 1 BTC:
+- 0.99 BTC UTXO goes to you (your "staked" position)
+- 0.01 BTC goes to the protocol treasury
+
+The 0.99 BTC remains fully in your custody.
+
+## Proof of HODL vs. Babylon
+
+| Feature | Babylon | Proof of HODL |
+|---------|---------|---------------|
+| Custody | Time-locked; cannot spend | Fully spendable at any time |
+| Lock Period | Up to 15 months; 7-day unbonding | None |
+| Slashing Risk | Yes | None |
+| Delegation | Required | Not required |
+| Unstaking | 7-day + committee approval | Instant (just spend your UTXO) |
+| Rewards | BABY tokens (~1% APY) | Farm tokens (variable APY) |
+| Third Parties | Covenant Committee, Finality Providers | None |
+
+## Best Practices
+
+- Use a Dedicated Wallet: Since spending your staked UTXO unstakes you, use a wallet you won't accidentally transact from.
+- Understand the UTXO Model: Your stake is tied to a specific UTXO, not your address. Additional Bitcoin received to the same address is not part of your stake.
+- Calculate the Fee Tradeoff: If a farm charges 1% fee, calculate whether expected yield justifies entry cost.
+
+---
+
+# The $MOTO Token
+
+$MOTO is Motoswap's native token. It's not a governance token. It's a revenue-sharing token. When you stake MOTO, you earn a cut of every single swap on the platform.
+
+## The Revenue Model
+
+### OP-20 Swaps (Token <-> Token)
+- 0.3% to Liquidity Providers
+- 0.2% to MOTO Staking Pool
+
+### NativeSwap Swaps (BTC <-> Token)
+- 0.2% to MOTO Staking Pool
+
+MOTO stakers earn fees from literally every trade on Motoswap.
+
+## How MOTO Staking Works
+
+Your share = Your staked MOTO / Total staked MOTO
+
+Rewards include any token traded on the platform. Over time, stakers accumulate a diversified basket of tokens.
+
+## The Slashing Mechanism
+
+MOTO staking has a slashing penalty to prevent mercenary capital:
+- When you stake MOTO, a 2,000 block timer (~14 days) starts
+- If you unstake early, you pay a penalty starting at 20%, decreasing 1% every 100 blocks
+- After 2,000 blocks: 0% penalty
+
+> CRITICAL: Every time you claim rewards, your 2,000 block timer resets to zero. This is intentional.
+
+### Penalty Schedule
+| Blocks Since Last Stake/Claim | Approx. Time | Penalty |
+|-------------------------------|-------------|---------|
+| 0 | Just staked/claimed | 20% |
+| 500 | ~3.5 days | 15% |
+| 1,000 | ~7 days | 10% |
+| 1,500 | ~10.5 days | 5% |
+| 2,000+ | ~14+ days | 0% |
+
+Slashed tokens are redistributed to the reward pool — early unstakers subsidize patient stakers.
+
+## Staking Strategies
+
+### "Set and Forget"
+Stake and don't claim for extended periods. Maximize flexibility to exit at 0% penalty. Best for long-term believers.
+
+### "Regular Income"
+Claim on a schedule. Accept timer resets. Plan to never unstake. Best for passive income seekers.
+
+### "Batch Claim"
+Wait until rewards are substantial. Time claims to maximize value per timer reset. Best for active managers.
+
+## Step-by-Step: Staking MOTO
+1. Go to motoswap.org/stake
+2. Connect OP_WALLET
+3. Enter amount
+4. First time: Approve MOTO spending
+5. Confirm stake transaction
+6. Timer begins
+
+---
+
+# Yield Farming
+
+Yield farming is the core game of DeFi. Token deployers pay people to provide capital via token emissions.
+
+## The Reward Math
+
+### Yield Per Block
+Daily emissions = Yield per block * 144
+
+### Pool Weights (Allocation Points)
+Pool share = Pool weight / Total weight of all pools
+
+### Your Share
+Your rewards = (Your stake / Pool TVL) * Pool emissions
+
+### Example
+- Yield per block: 100,000 tokens
+- BTC Pool weight: 100 (out of total 500)
+- Pool TVL: 10 BTC
+- Your stake: 0.5 BTC
+- Pool daily emissions = 100,000 * 144 * (100/500) = 2,880,000 tokens
+- Your share = 0.5 / 10 = 5%
+- Your daily rewards = 2,880,000 * 5% = 144,000 tokens
+
+As more people stake, TVL increases, and your share decreases.
+
+## Pool Types in MotoChef
+
+- Bitcoin Pool (Proof of HODL): Stake BTC without giving up custody
+- Yield Token Pool: Stake the farm's yield token to compound
+- Single-Sided Token Pools: No impermanent loss
+- LP Token Pools: Highest weights, earn swap fees + farming rewards
+
+## The Bonus Period
+
+Most farms launch with a bonus multiplier (2x, 5x, or higher). The bonus period is the most important time to be in a farm. Missing it can mean the difference between 10x returns and breakeven.
+
+## Staking, Harvesting, and Unstaking
+
+### Staking
+Go to motoswap.org/explore/farms → Select farm → Choose pool → Enter amount → Confirm
+
+### Harvesting
+Claims accumulated rewards without withdrawing your stake.
+
+### Unstaking
+Withdraws tokens from pool. Also claims pending rewards in the same transaction.
+
+---
+
+# Farming Strategies
+
+## Timing Your Entry
+
+### The Ideal Entry
+- Block 1 of a bonus period
+- Low TVL (you're early)
+- High emissions (bonus multiplier active)
+
+### The Trap
+- Entering after bonus period ends
+- High TVL (many farmers already in)
+- Normal emissions (no multiplier)
+
+## LP Staking vs. Single-Sided
+
+### LP Staking
+Pros: Higher reward weights (2-3x), earn swap fees, most aligned with deployers
+Cons: Impermanent loss, more complex, two transactions to enter
+
+### Single-Sided Staking
+Pros: No impermanent loss, simple, better if ultra-bullish on one asset
+Cons: Lower reward weights, no swap fees
+
+### Decision Framework
+LP when: Both tokens move together, APY differential is massive, during bonus period, stablecoin pairs
+Single-sided when: Ultra-bullish on one token, expect extreme price divergence, APY difference not worth IL risk
+
+### Advanced Move
+LP during bonus periods → migrate to single-sided after bonus ends.
+
+## Compounding
+
+On Bitcoin, factor in transaction fees. LP compounding requires 4 transactions; single-sided only 2.
+
+## When to Exit
+
+### Exit Signals
+- Bonus period ending
+- TVL dropping
+- Token price declining faster than you're earning
+- Emissions nearing end
+
+### Taking Profits
+- Harvest and sell a portion regularly
+- Convert some to BTC or stables
+- Lock in gains, don't let them evaporate
+
+> The Mental Game: 50,000% APY sounds amazing. But APY is based on current TVL (drops as people enter) and denominated in the farm token (if it drops 80%, your 100% APY is actually a loss). Run the real math.
+
+## Evaluating Farms Before Entry
+
+- What are the pool weights? LP should be highest.
+- How long is emission period?
+- Is there a bonus period?
+- What % of supply goes to farming?
+- What's the token's utility?
+- What's the initial market cap?
+
+---
+
+# Deploying Tokens
+
+The Motoswap Launchpad offers two deployment paths:
+
+## Option 1: Yield-Bearing Token (Token + Farm)
+Deploy a token AND a yield farm together. Use when bootstrapping liquidity for DeFi games.
+
+## Option 2: Simple OP-20 Token
+Basic deployment without yield farm. Use for community tokens, utility tokens, memes.
+
+## Supply Planning
+
+Token parameters are PERMANENT. Cannot be changed after deployment.
+
+### Total Supply
+Maximum tokens that can ever exist. For yield-bearing tokens: 80-95% typically goes to farming.
+
+### Pre-Mint
+Tokens minted immediately at deployment. For yield farms: keep low (2-10%) to build trust.
+
+### Free Mint
+Allow permissionless minting. Deeply embedded in Bitcoin culture. Parameters: supply cap and per-transaction limit.
+
+## Example Distributions
+
+### Yield-Bearing Token
+| Allocation | Amount | Purpose |
+|-----------|--------|---------|
+| Total Supply | 1,000,000,000 | Max tokens ever |
+| Pre-mint | 50,000,000 (5%) | Seed pools |
+| Free mint | 10,000,000 (1%) | Community buzz |
+| Farm emissions | 940,000,000 (94%) | Yield farming rewards |
+
+### Community/Meme Token
+| Allocation | Amount | Purpose |
+|-----------|--------|---------|
+| Total Supply | 21,000,000 | Bitcoin vibes |
+| Pre-mint | 2,100,000 (10%) | Team, liquidity |
+| Free mint | 18,900,000 (90%) | Community distribution |
+
+## Deploying a Simple OP-20 Token
+1. Go to motoswap.org/deploy/token
+2. Connect OP_WALLET
+3. Enter Name, Symbol, Supply, Decimals (use 18)
+4. Configure Pre-mint and Free Mint
+5. Review — parameters are permanent
+6. Deploy and confirm
+7. Save your contract address
+
+## After Deployment
+1. Create a NativeSwap pool
+2. Seed liquidity with pre-minted tokens
+3. Announce to community
+
+---
+
+# Deploying Yield Farms
+
+## Prerequisites
+- A deployed yield token
+- BTC for fees
+- LP tokens (create liquidity first)
+- A reward strategy
+- Banner image (200x400px)
+
+## Order of Operations
+1. Deploy token (with pre-mint) — wait for confirmation
+2. Create NativeSwap pool
+3. Create OP-20 pools (optional)
+4. Deploy yield farm
+Budget 30-40 minutes for the full process.
+
+## Farm Configuration
+
+### Yield Per Block
+Most important parameter. Example:
+- Farm allocation: 940M tokens
+- Yield per block: 100,000
+- Duration: 940M / 100K = 9,400 blocks = ~65 days
+
+### Bonus Multiplier
+Multiplier during bonus period. 5x = 5x emissions during that period.
+
+### Bonus Period End Block
+Set to current block + (days * 144). Example: 800,000 + (7 * 144) = 801,008
+
+## Pool Configuration
+
+### Required Pools
+- Bitcoin Pool: BTC staking via Proof of HODL (you set fee %)
+- Yield Token Pool: Auto-compounding
+
+### Optional Pools
+- MOTO Pool, PILL Pool, custom token pools, LP pools
+
+### Pool Weights
+Weights determine emission distribution. LP should have highest weights.
+
+| Pool | Weight | Share |
+|------|--------|-------|
+| PILL-MOTO LP | 200 | 60% |
+| Bitcoin | 100 | 30% |
+| Single-sided PILL | 25 | 7% |
+| Single-sided MOTO | 10 | 3% |
+
+## Bitcoin Pool Fee
+When users stake BTC with 1% fee:
+- 0.99 BTC → their staked position
+- 0.01 BTC → your fee recipient address
+
+## Step-by-Step Deployment
+1. Go to motoswap.org/deploy
+2. Connect OP_WALLET
+3. Enter farm info (name, description, banner)
+4. Select yield token
+5. Set yield per block
+6. Configure bonus multiplier and end block
+7. Configure pools and weights
+8. Verify admin and fee addresses
+9. Review carefully
+10. Deploy and confirm
+
+## After Deployment
+- Add new pools via farm page
+- Adjust weights (admin only)
+- Monitor TVL
+
+> Launch Checklist: Verify pools configured correctly. LP weights highest. Bonus end block correct. Fee recipient works. Test with small stake first.
+
+---
+
+# Ecosystem Links
+
+- Bitcoin DeFi Bible: https://defibible.org
+- Motoswap DEX: https://motoswap.org
+- OP_NET Documentation: https://docs.opnet.org
+- OPScan Block Explorer: https://opscan.org
+- OPTools: https://optools.org
+- OP_WALLET Chrome Extension: https://chromewebstore.google.com/detail/opwallet/pmbjpcmaaladnfpacpmhmnfmpklgbdjb
