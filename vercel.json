@@ -28,6 +28,6 @@
     }
   ],
   "rewrites": [
-    { "source": "/((?!assets/).*)", "destination": "/index.html" }
+    { "source": "/((?!assets/|llms\\.txt|llms-full\\.txt|robots\\.txt|sitemap\\.xml|og-image\\.png|_redirects).*)", "destination": "/index.html" }
   ]
 }
