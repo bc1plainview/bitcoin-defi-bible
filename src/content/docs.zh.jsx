@@ -581,7 +581,7 @@ export const docsContentZh = {
           它管理您的密钥、签署交易，并连接到像 Motoswap 这样的 dApp。
         </p>
         <p>
-          <a href="https://chromewebstore.google.com/detail/opwallet/pmbjpcmaaladnfpacpmhmnfmpklgbdjb" target="_blank" rel="noopener noreferrer">
+          <a href="https://chromewebstore.google.com/detail/opwallet/pmbjpcmaaladnfpacpmhmnfmpklgbdjb?hl=en" target="_blank" rel="noopener noreferrer">
             安装 OP_WALLET →
           </a>
         </p>
@@ -599,7 +599,14 @@ export const docsContentZh = {
           几千聪可以处理大多数操作。在高活动期间保留更多。
         </p>
 
-        <h3>3. 网络选择</h3>
+        <h3>3. 生态系统工具</h3>
+        <ul>
+          <li><strong><a href="https://opscan.org" target="_blank" rel="noopener noreferrer">OPScan</a>：</strong>OP_NET 交易和合约的区块浏览器</li>
+          <li><strong><a href="https://optools.org" target="_blank" rel="noopener noreferrer">OPTools</a>：</strong>OP_NET 生态系统的开发者工具和实用程序</li>
+          <li><strong><a href="https://motoswap.org" target="_blank" rel="noopener noreferrer">Motoswap</a>：</strong>用于交换、挖矿和部署代币的去中心化交易所</li>
+        </ul>
+
+        <h3>4. 网络选择</h3>
         <p>
           确保您在正确的网络上：
         </p>

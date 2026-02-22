@@ -19,7 +19,6 @@ export default function DocsPage() {
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
-      // Only if not typing in an input
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return
 
       if (e.key === 'ArrowLeft' && doc?.prev) {
@@ -75,20 +74,25 @@ export default function DocsPage() {
         padding: '1rem',
         color: 'var(--text-muted)',
         fontFamily: 'var(--font-mono)',
-        fontSize: '0.75rem'
+        fontSize: '0.7rem',
+        letterSpacing: '0.02em'
       }}>
         <kbd style={{
           padding: '0.25rem 0.5rem',
-          background: 'var(--bg-tertiary)',
-          borderRadius: '4px',
-          border: '1px solid var(--border-color)'
+          background: 'rgba(255, 255, 255, 0.04)',
+          borderRadius: '6px',
+          border: '1px solid rgba(255, 255, 255, 0.06)',
+          fontFamily: 'var(--font-mono)',
+          fontSize: '0.75rem'
         }}>←</kbd>
         {' / '}
         <kbd style={{
           padding: '0.25rem 0.5rem',
-          background: 'var(--bg-tertiary)',
-          borderRadius: '4px',
-          border: '1px solid var(--border-color)'
+          background: 'rgba(255, 255, 255, 0.04)',
+          borderRadius: '6px',
+          border: '1px solid rgba(255, 255, 255, 0.06)',
+          fontFamily: 'var(--font-mono)',
+          fontSize: '0.75rem'
         }}>→</kbd>
         {t(' to navigate', ' 导航')}
       </div>

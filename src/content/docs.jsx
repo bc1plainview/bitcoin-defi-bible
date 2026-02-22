@@ -620,7 +620,7 @@ export const docsContent = {
           It manages your keys, signs transactions, and connects to dApps like Motoswap.
         </p>
         <p>
-          <a href="https://chromewebstore.google.com/detail/opwallet/pmbjpcmaaladnfpacpmhmnfmpklgbdjb" target="_blank" rel="noopener noreferrer">
+          <a href="https://chromewebstore.google.com/detail/opwallet/pmbjpcmaaladnfpacpmhmnfmpklgbdjb?hl=en" target="_blank" rel="noopener noreferrer">
             Install OP_WALLET →
           </a>
         </p>
@@ -638,7 +638,14 @@ export const docsContent = {
           A few thousand satoshis handles most operations. Keep more during high-activity periods.
         </p>
 
-        <h3>3. Network Selection</h3>
+        <h3>3. Ecosystem Tools</h3>
+        <ul>
+          <li><strong><a href="https://opscan.org" target="_blank" rel="noopener noreferrer">OPScan</a>:</strong> Block explorer for OP_NET transactions and contracts</li>
+          <li><strong><a href="https://optools.org" target="_blank" rel="noopener noreferrer">OPTools</a>:</strong> Developer tools and utilities for the OP_NET ecosystem</li>
+          <li><strong><a href="https://motoswap.org" target="_blank" rel="noopener noreferrer">Motoswap</a>:</strong> The DEX for swapping, farming, and deploying tokens</li>
+        </ul>
+
+        <h3>4. Network Selection</h3>
         <p>
           Make sure you're on the correct network:
         </p>

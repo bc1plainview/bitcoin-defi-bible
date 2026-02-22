@@ -33,7 +33,6 @@ const MenuIcon = ({ isOpen }) => (
 export default function Layout() {
   const location = useLocation()
   const isHome = location.pathname === '/'
-  const [scrollProgress, setScrollProgress] = useState(0)
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const { language, toggleLanguage, t } = useLanguage()
 
@@ -42,135 +41,114 @@ export default function Layout() {
     setSidebarOpen(false)
   }, [location])
 
-  // Reading progress tracker
-  useEffect(() => {
-    if (isHome) return
-
-    const handleScroll = () => {
-      const winHeight = window.innerHeight
-      const docHeight = document.documentElement.scrollHeight - winHeight
-      const scrolled = window.scrollY
-      const progress = (scrolled / docHeight) * 100
-      setScrollProgress(Math.min(100, Math.max(0, progress)))
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll()
-
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [isHome, location])
-
   return (
-    <div className="app">
-      <header className="header">
-        {!isHome && (
-          <button
-            className="mobile-menu-btn"
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-            aria-label="Toggle menu"
-          >
-            <MenuIcon isOpen={sidebarOpen} />
-          </button>
-        )}
+    <>
+      {/* Ambient background layers - outside flex container */}
+      <div className="ambient-mesh" />
+      <div className="grid-bg" />
 
-        <Link to="/" className="header-logo">
-          <img src="/bitcoin-logo.svg" alt="Bitcoin" />
-          <div className="logo-text">
-            <span className="logo-main">THE BITCOIN DEFI BIBLE</span>
-            <span className="logo-sub">SLOWFI ON BITCOIN</span>
-          </div>
-        </Link>
+      <div className="app">
+        <header className="header">
+          {!isHome && (
+            <button
+              className="mobile-menu-btn"
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+              aria-label="Toggle menu"
+            >
+              <MenuIcon isOpen={sidebarOpen} />
+            </button>
+          )}
 
-        <div className="header-center">
-          <div className="header-badge">
-            <span>POWERED BY</span>
-            <img src="/opnet-logo.svg" alt="OP_NET" style={{ height: '16px' }} />
-          </div>
-        </div>
-
-        <nav className="header-nav">
-          <Link
-            to="/docs/introduction"
-            className={location.pathname.startsWith('/docs') ? 'active' : ''}
-          >
-            {t('Documentation', '文档')}
+          <Link to="/" className="header-logo">
+            <img src="/bitcoin-logo.svg" alt="Bitcoin" />
+            <div className="logo-text">
+              <span className="logo-main">THE BITCOIN DEFI BIBLE</span>
+              <span className="logo-sub">SLOWFI ON BITCOIN</span>
+            </div>
           </Link>
-          <Link
-            to="/quiz"
-            className={location.pathname === '/quiz' ? 'active' : ''}
-          >
-            {t('Quiz', '测验')}
-          </Link>
-          <span className="nav-divider" />
-          <a
-            href="https://motoswap.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="external-link"
-          >
-            Motoswap <ExternalIcon />
-          </a>
-          <a
-            href="https://docs.opnet.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="external-link"
-          >
-            {t('OP_NET Docs', 'OP_NET 文档')} <ExternalIcon />
-          </a>
-          <a
-            href="https://github.com/btc-vision"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="external-link"
-          >
-            GitHub <ExternalIcon />
-          </a>
-          <span className="nav-divider" />
+
+          <div className="header-center">
+            <div className="header-badge">
+              <span>POWERED BY</span>
+              <img src="/opnet-logo-white.png" alt="OP_NET" className="header-opnet-logo" />
+            </div>
+          </div>
+
+          <nav className="header-nav">
+            <Link
+              to="/docs/introduction"
+              className={location.pathname.startsWith('/docs') ? 'active' : ''}
+            >
+              {t('Documentation', '文档')}
+            </Link>
+            <Link
+              to="/quiz"
+              className={location.pathname === '/quiz' ? 'active' : ''}
+            >
+              {t('Quiz', '测验')}
+            </Link>
+            <span className="nav-divider" />
+            <a
+              href="https://motoswap.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="external-link"
+            >
+              Motoswap <ExternalIcon />
+            </a>
+            <a
+              href="https://docs.opnet.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="external-link"
+            >
+              {t('OP_NET Docs', 'OP_NET 文档')} <ExternalIcon />
+            </a>
+            <a
+              href="https://opscan.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="external-link"
+            >
+              OPScan <ExternalIcon />
+            </a>
+            <span className="nav-divider" />
+            <button
+              className="lang-toggle"
+              onClick={toggleLanguage}
+              aria-label="Toggle language"
+            >
+              {language === LANGUAGES.EN ? '中文' : 'EN'}
+            </button>
+          </nav>
+
+          {/* Mobile language toggle - visible when header-nav is hidden */}
           <button
-            className="lang-toggle"
+            className="lang-toggle-mobile"
             onClick={toggleLanguage}
             aria-label="Toggle language"
           >
             {language === LANGUAGES.EN ? '中文' : 'EN'}
           </button>
-        </nav>
+        </header>
 
-        {/* Mobile language toggle - visible when header-nav is hidden */}
-        <button
-          className="lang-toggle-mobile"
-          onClick={toggleLanguage}
-          aria-label="Toggle language"
-        >
-          {language === LANGUAGES.EN ? '中文' : 'EN'}
-        </button>
-      </header>
-
-      {/* Mobile sidebar overlay */}
-      {!isHome && sidebarOpen && (
-        <div
-          className="sidebar-overlay"
-          onClick={() => setSidebarOpen(false)}
-        />
-      )}
-
-      {!isHome && <Sidebar isOpen={sidebarOpen} />}
-
-      {!isHome && (
-        <div className="reading-progress">
+        {/* Mobile sidebar overlay */}
+        {!isHome && sidebarOpen && (
           <div
-            className="reading-progress-fill"
-            style={{ width: `${scrollProgress}%` }}
+            className="sidebar-overlay"
+            onClick={() => setSidebarOpen(false)}
           />
-        </div>
-      )}
+        )}
 
-      <main
-        className={`main-content ${isHome ? 'home-content' : ''}`}
-        style={isHome ? { marginLeft: 0, maxWidth: '100%', padding: 0 } : {}}
-      >
-        <Outlet />
-      </main>
-    </div>
+        {!isHome && <Sidebar isOpen={sidebarOpen} />}
+
+        <main
+          className={`main-content ${isHome ? 'home-content' : ''}`}
+          style={isHome ? { marginLeft: 0, maxWidth: '100%', padding: 0 } : {}}
+        >
+          <Outlet />
+        </main>
+      </div>
+    </>
   )
 }

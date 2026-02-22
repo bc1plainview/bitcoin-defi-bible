@@ -1,5 +1,4 @@
-import { NavLink, useLocation } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import { useLanguage, LANGUAGES } from '../context/LanguageContext'
 
 // Icons as simple components
@@ -108,30 +107,9 @@ const navigationZh = [
   },
 ]
 
-// Count total pages
-const totalPages = navigationEn.reduce((acc, section) => acc + section.links.length, 0)
-
 export default function Sidebar({ isOpen }) {
-  const location = useLocation()
-  const [currentPageIndex, setCurrentPageIndex] = useState(0)
-  const { language, t } = useLanguage()
+  const { language } = useLanguage()
   const navigation = language === LANGUAGES.ZH ? navigationZh : navigationEn
-
-  // Calculate current page index for progress
-  useEffect(() => {
-    let index = 0
-    for (const section of navigation) {
-      for (const link of section.links) {
-        if (location.pathname === `/docs/${link.slug}`) {
-          setCurrentPageIndex(index + 1)
-          return
-        }
-        index++
-      }
-    }
-  }, [location, navigation])
-
-  const progressPercent = (currentPageIndex / totalPages) * 100
 
   return (
     <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
@@ -153,18 +131,6 @@ export default function Sidebar({ isOpen }) {
           </ul>
         </div>
       ))}
-
-      <div className="sidebar-progress">
-        <div className="sidebar-progress-label">
-          {t('Progress', '进度')}: {currentPageIndex} / {totalPages}
-        </div>
-        <div className="sidebar-progress-bar">
-          <div
-            className="sidebar-progress-fill"
-            style={{ width: `${progressPercent}%` }}
-          />
-        </div>
-      </div>
     </aside>
   )
 }
