@@ -9,6 +9,12 @@
     <meta name="theme-color" content="#f7931a" />
     <link rel="canonical" href="https://defibible.org/" />
 
+    <!-- AI Agent Discovery -->
+    <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full site content (plain text for AI agents)" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Site index and page directory" />
+    <meta name="ai-content-url" content="https://defibible.org/llms-full.txt" />
+    <meta name="ai-site-index" content="https://defibible.org/llms.txt" />
+
     <!-- Open Graph / Telegram / Discord -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://defibible.org/" />
@@ -26,37 +32,113 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "The Bitcoin DeFi Bible",
+      "url": "https://defibible.org",
+      "description": "Your complete guide to Bitcoin DeFi, SlowFi, and OP_NET technology. The cypherpunk's handbook to the next evolution of decentralized finance on Bitcoin Layer 1.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Orange Pill Labs",
+        "url": "https://opnet.org"
+      },
+      "mainEntity": {
+        "@type": "Book",
+        "name": "The Bitcoin DeFi Bible",
+        "author": { "@type": "Person", "name": "Danny Plainview" },
+        "about": [
+          "Bitcoin DeFi",
+          "SlowFi",
+          "OP_NET smart contracts",
+          "Motoswap DEX",
+          "NativeSwap",
+          "Yield Farming on Bitcoin",
+          "OP-20 tokens",
+          "Proof of HODL"
+        ],
+        "hasPart": [
+          { "@type": "Chapter", "name": "TLDR", "url": "https://defibible.org/docs/tldr" },
+          { "@type": "Chapter", "name": "Introduction", "url": "https://defibible.org/docs/introduction" },
+          { "@type": "Chapter", "name": "The SlowFi Thesis", "url": "https://defibible.org/docs/what-is-slowfi" },
+          { "@type": "Chapter", "name": "Why Bitcoin?", "url": "https://defibible.org/docs/why-bitcoin-defi" },
+          { "@type": "Chapter", "name": "OP_NET Overview", "url": "https://defibible.org/docs/opnet-overview" },
+          { "@type": "Chapter", "name": "Bitcoin Token Wars", "url": "https://defibible.org/docs/bitcoin-token-wars" },
+          { "@type": "Chapter", "name": "Motoswap Exchange", "url": "https://defibible.org/docs/motoswap" },
+          { "@type": "Chapter", "name": "NativeSwap (BTC Trading)", "url": "https://defibible.org/docs/nativeswap" },
+          { "@type": "Chapter", "name": "OP-20S Stablecoins", "url": "https://defibible.org/docs/op20s-stablecoins" },
+          { "@type": "Chapter", "name": "MotoChef (Yield Farming)", "url": "https://defibible.org/docs/motochef" },
+          { "@type": "Chapter", "name": "Proof of HODL", "url": "https://defibible.org/docs/proof-of-hodl" },
+          { "@type": "Chapter", "name": "The $MOTO Token", "url": "https://defibible.org/docs/moto-token" },
+          { "@type": "Chapter", "name": "Yield Farming", "url": "https://defibible.org/docs/yield-farming" },
+          { "@type": "Chapter", "name": "Farming Strategies", "url": "https://defibible.org/docs/farming-strategies" },
+          { "@type": "Chapter", "name": "Deploying Tokens", "url": "https://defibible.org/docs/deploying-tokens" },
+          { "@type": "Chapter", "name": "Deploying Yield Farms", "url": "https://defibible.org/docs/deploying-farms" }
+        ]
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <noscript>
       <h1>The Bitcoin DeFi Bible</h1>
-      <p>Your complete guide to Bitcoin DeFi, SlowFi, and OP_NET technology.</p>
-      <p>This site requires JavaScript to run. For a plain-text version of all content, visit:</p>
+      <p>Your complete guide to Bitcoin DeFi, SlowFi, and OP_NET technology. The cypherpunk's handbook to the next evolution of decentralized finance on Bitcoin Layer 1.</p>
+
+      <h2>AI Agents: Read the full site content</h2>
+      <p>This is a JavaScript application. For complete plain-text access to all content:</p>
       <ul>
-        <li><a href="/llms.txt">Site Index (llms.txt)</a></li>
-        <li><a href="/llms-full.txt">Full Content (llms-full.txt)</a></li>
-        <li><a href="/sitemap.xml">Sitemap</a></li>
+        <li><strong><a href="/llms-full.txt">llms-full.txt</a></strong> — Complete text of every page (~1100 lines of markdown)</li>
+        <li><a href="/llms.txt">llms.txt</a> — Site index with page descriptions and URLs</li>
+        <li><a href="/sitemap.xml">sitemap.xml</a> — XML sitemap</li>
       </ul>
-      <h2>Pages</h2>
+
+      <h2>Summary</h2>
+      <p>The Bitcoin DeFi Bible covers native Bitcoin DeFi powered by OP_NET — smart contracts on Bitcoin Layer 1 without bridges, wrapped tokens, or L2s. Topics include: the SlowFi thesis (why slow chains beat fast chains for DeFi), AMM mechanics (Motoswap DEX), BTC-native trading (NativeSwap), stablecoins (OP-20S), yield farming (MotoChef), non-custodial BTC staking (Proof of HODL), the $MOTO revenue-sharing token, and guides for deploying tokens and yield farms.</p>
+
+      <h2>Key Concepts</h2>
+      <dl>
+        <dt>SlowFi</dt><dd>DeFi mechanism where structural exit friction (slow blocks, high fees) keeps capital in protocols longer, enabling sustainable growth.</dd>
+        <dt>OP_NET</dt><dd>Consensus protocol enabling smart contracts on Bitcoin Layer 1 via Tapscript-encoded calldata. Not an L2, not a sidechain.</dd>
+        <dt>Motoswap</dt><dd>First fully decentralized exchange on Bitcoin L1. AMM pools, yield farming, and token launches.</dd>
+        <dt>NativeSwap</dt><dd>Bitcoin-native AMM with P2P BTC settlement using constant product formula, seller queue, and two-phase commit.</dd>
+        <dt>MotoChef</dt><dd>MasterChef-style yield farming on Bitcoin. Stake LP tokens, earn $MOTO rewards.</dd>
+        <dt>Proof of HODL</dt><dd>Non-custodial BTC staking using UTXO tracking. Earn yield without locking your Bitcoin.</dd>
+        <dt>OP-20</dt><dd>Fungible token standard on Bitcoin (like ERC-20 on Ethereum).</dd>
+        <dt>$MOTO</dt><dd>Revenue-sharing protocol token. Stakers earn fees from all Motoswap swaps.</dd>
+      </dl>
+
+      <h2>Chapters</h2>
+      <ol>
+        <li><a href="/docs/tldr">TLDR</a> — Bitcoin DeFi in 5 minutes</li>
+        <li><a href="/docs/introduction">Introduction</a> — Welcome and DeFi Summer history</li>
+        <li><a href="/docs/what-is-slowfi">The SlowFi Thesis</a> — Why exit friction makes DeFi sustainable</li>
+        <li><a href="/docs/why-bitcoin-defi">Why Bitcoin?</a> — Bitcoin's structural advantages for DeFi</li>
+        <li><a href="/docs/opnet-overview">OP_NET Overview</a> — Architecture, token standards, epoch system</li>
+        <li><a href="/docs/bitcoin-token-wars">Bitcoin Token Wars</a> — Why BRC-20/Runes failed, how OP-20 fixes it</li>
+        <li><a href="/docs/motoswap">Motoswap Exchange</a> — Pools, fees, LP provision, swapping</li>
+        <li><a href="/docs/nativeswap">NativeSwap</a> — Bitcoin-native AMM with P2P settlement</li>
+        <li><a href="/docs/op20s-stablecoins">OP-20S Stablecoins</a> — USD-pegged stablecoins with peg-aware pricing</li>
+        <li><a href="/docs/motochef">MotoChef</a> — Yield farming engine, DeFi Summer replayed on Bitcoin</li>
+        <li><a href="/docs/proof-of-hodl">Proof of HODL</a> — Non-custodial BTC yield</li>
+        <li><a href="/docs/moto-token">The $MOTO Token</a> — Revenue-sharing from all Motoswap fees</li>
+        <li><a href="/docs/yield-farming">Yield Farming</a> — Reward math, pool types, staking mechanics</li>
+        <li><a href="/docs/farming-strategies">Farming Strategies</a> — Timing, compounding, exit signals</li>
+        <li><a href="/docs/deploying-tokens">Deploying Tokens</a> — OP-20 token deployment on Bitcoin L1</li>
+        <li><a href="/docs/deploying-farms">Deploying Yield Farms</a> — MotoChef farm configuration and launch</li>
+      </ol>
+
+      <h2>Ecosystem</h2>
       <ul>
-        <li><a href="/docs/tldr">TLDR - 5 Minute Overview</a></li>
-        <li><a href="/docs/introduction">Introduction</a></li>
-        <li><a href="/docs/what-is-slowfi">The SlowFi Thesis</a></li>
-        <li><a href="/docs/why-bitcoin-defi">Why Bitcoin?</a></li>
-        <li><a href="/docs/opnet-overview">OP_NET Overview</a></li>
-        <li><a href="/docs/bitcoin-token-wars">Bitcoin Token Wars</a></li>
-        <li><a href="/docs/motoswap">Motoswap Exchange</a></li>
-        <li><a href="/docs/nativeswap">NativeSwap (BTC Trading)</a></li>
-        <li><a href="/docs/op20s-stablecoins">OP-20S Stablecoins</a></li>
-        <li><a href="/docs/motochef">MotoChef (Yield Farming)</a></li>
-        <li><a href="/docs/proof-of-hodl">Proof of HODL</a></li>
-        <li><a href="/docs/moto-token">The $MOTO Token</a></li>
-        <li><a href="/docs/yield-farming">Yield Farming</a></li>
-        <li><a href="/docs/farming-strategies">Farming Strategies</a></li>
-        <li><a href="/docs/deploying-tokens">Deploying Tokens</a></li>
-        <li><a href="/docs/deploying-farms">Deploying Yield Farms</a></li>
+        <li><a href="https://motoswap.org">Motoswap DEX</a></li>
+        <li><a href="https://docs.opnet.org">OP_NET Documentation</a></li>
+        <li><a href="https://opscan.org">OPScan Block Explorer</a></li>
+        <li><a href="https://optools.org">OPTools</a></li>
+        <li><a href="https://chromewebstore.google.com/detail/opwallet/pmbjpcmaaladnfpacpmhmnfmpklgbdjb">OP_WALLET</a></li>
       </ul>
     </noscript>
   </body>

@@ -1,33 +1,55 @@
 {
   "headers": [
     {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Link", "value": "</llms-full.txt>; rel=\"alternate\"; type=\"text/plain\"; title=\"Full site content for AI agents\", </llms.txt>; rel=\"alternate\"; type=\"text/plain\"; title=\"Site index\"" },
+        { "key": "X-Robots-Tag", "value": "all" }
+      ]
+    },
+    {
       "source": "/llms.txt",
       "headers": [
         { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        { "key": "Cache-Control", "value": "public, max-age=86400" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, HEAD, OPTIONS" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
       ]
     },
     {
       "source": "/llms-full.txt",
       "headers": [
         { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        { "key": "Cache-Control", "value": "public, max-age=86400" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, HEAD, OPTIONS" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
       ]
     },
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/xml; charset=utf-8" }
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
+      "source": "/.well-known/(.*)",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json; charset=utf-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
       ]
     }
   ],
   "rewrites": [
-    { "source": "/((?!assets/|llms\\.txt|llms-full\\.txt|robots\\.txt|sitemap\\.xml|og-image\\.png|_redirects).*)", "destination": "/index.html" }
+    { "source": "/((?!assets/|llms\\.txt|llms-full\\.txt|robots\\.txt|sitemap\\.xml|og-image\\.png|\\.well-known/|_redirects|.*\\.svg|.*\\.png).*)", "destination": "/index.html" }
   ]
 }

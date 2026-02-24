@@ -1,0 +1,14 @@
+{
+  "schema_version": "v1",
+  "name": "The Bitcoin DeFi Bible",
+  "description": "Complete guide to Bitcoin DeFi, SlowFi, and OP_NET technology. Covers AMMs (Motoswap), BTC-native trading (NativeSwap), yield farming (MotoChef), non-custodial staking (Proof of HODL), stablecoins (OP-20S), token deployment, and farming strategies on Bitcoin Layer 1.",
+  "url": "https://defibible.org",
+  "content": {
+    "full_text": "https://defibible.org/llms-full.txt",
+    "site_index": "https://defibible.org/llms.txt",
+    "format": "markdown",
+    "language": "en"
+  },
+  "contact_email": "danny@opnet.org",
+  "legal_info_url": "https://defibible.org/"
+}
